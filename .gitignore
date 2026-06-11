@@ -1,0 +1,12 @@
+# Build folder
+build/
+
+# CMake files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# OS / temp
+.DS_Store
+*.log
