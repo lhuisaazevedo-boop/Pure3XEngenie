@@ -57,66 +57,84 @@ Example output:
 
 The project uses CMake as its build system to ensure portability and scalability.
 
-### Build Instructions:
 
-🧠 Core System
-The Core system is responsible for:
-Managing runtime execution
-Controlling system flow
-Handling module loading
-Managing engine lifecycle
-This is the heart of the engine.
-🎮 GameModules (Future System)
-GameModules will allow dynamic loading of game-like components inside the engine.
-Planned features:
-Load/unload modules at runtime
-Isolated module execution
-Communication with Core system
-Plug-and-play architecture
-📊 System Flow
-The execution flow of the engine follows this pattern:
-Program start (main.cpp)
-Boot system initialization
-Core system loading
-Configuration setup
-Menu display
-Engine execution loop
-Module interaction (future)
-🧪 Development Environment
-This project is developed using:
-C++
-CMake
-Termux (Android Linux environment)
-Git version control
-GitHub repository hosting
-📜 Features Implemented
-✔ Boot system
-✔ Core architecture
-✔ Modular folder structure
-✔ CMake build system
-✔ Git version control
-✔ Console-style output system
-🧭 Roadmap
-Future development goals:
-[ ] Interactive menu system (keyboard input)
-[ ] Real engine loop system
-[ ] GameModules dynamic loader
-[ ] Config file system (.cfg / .json)
-[ ] Logging system expansion
-[ ] UI terminal animations
-[ ] Version 0.1 release
-[ ] Version 1.0 stable engine release
-🔥 Design Philosophy
-Pure3XEngenie follows three principles:
-1. Simplicity
-Keep the engine lightweight and understandable.
-2. Modularity
-Every system is independent and replaceable.
-3. Expandability
-The architecture is designed to grow over time.
-👤 Author
-Lhuis
-Pure3XEngenie Project
-📜 License
-This project is licensed under the MIT License.
-You are free to use, modify, and distribute with attribution.
+📈 Detalhes Estendidos da Engine
+A Pure3XEngenie está em constante evolução como um projeto de engine baseado em aprendizado.
+A arquitetura foi projetada para simular o comportamento de um console real dentro do terminal.
+🧩 Conceito do Sistema de Módulos
+Cada sistema dentro da engine é independente e substituível.
+O Core não depende dos GameModules
+Os GameModules se comunicam através de APIs controladas
+O sistema de Boot inicializa tudo de forma segura
+O sistema de Config define o comportamento em tempo de execução
+🔄 Comportamento em Tempo de Execução
+Durante a execução, a engine segue um ciclo controlado:
+Fase de inicialização
+Execução do boot do sistema
+Ativação do Core
+Verificação dos módulos
+Loop principal da engine
+🖥️ Simulação em Terminal
+A engine foi criada para funcionar totalmente no terminal.
+Isso permite:
+Execução leve
+Compatibilidade entre sistemas
+Facilidade de depuração
+Iteração rápida de testes
+⚡ Filosofia de Performance
+A engine evita excesso de processamento:
+Sem bibliotecas pesadas desnecessárias
+Dependências mínimas
+Foco em C++ puro
+Lógica direta de sistema
+🧠 Objetivo Educacional
+Este projeto também serve como ferramenta de aprendizado para:
+Arquitetura de engines
+Design de sistemas modulares
+Estruturação em C++
+Simulação de sistemas de boot
+🧪 Recursos Experimentais (Planejados)
+Sistemas futuros incluem:
+Carregador dinâmico de plugins
+Simulação de camada de memória virtual
+Renderizador de animações no terminal
+Execução de módulos via scripts
+Sistema baseado em eventos
+📦 Estabilidade de Build
+O sistema atual usa CMake e suporta:
+Compilação incremental
+Ligação entre módulos
+Modos debug e release
+Saída via terminal
+🔐 Segurança e Estrutura
+O projeto evita operações perigosas:
+Sem sobrescrita direta do sistema
+Sem exclusão destrutiva de arquivos
+Uso controlado de memória
+Fluxo de execução estruturado
+🌍 Escopo do Projeto
+A Pure3XEngenie não tem como objetivo substituir engines reais.
+Ela foca em:
+Educação
+Simulação
+Experimentação
+Estudo de arquitetura de sistemas
+🚀 Visão de Futuro
+O objetivo de longo prazo é evoluir para:
+Uma simulação completa de console
+Um sistema modular de execução de jogos
+Uma plataforma de aprendizado de engines
+Um ambiente de testes de arquitetura
+🎯 Metas de Versão
+Versão 0.1 → Estrutura básica da engine
+Versão 0.5 → Sistema de módulos interativos
+Versão 1.0 → Console simulado completo
+👨‍💻 Estilo de Desenvolvimento
+O projeto segue:
+Princípios de código limpo
+Separação modular
+Desenvolvimento incremental
+Foco em terminal
+📜 Continuação
+Novos sistemas serão adicionados conforme a engine evolui.
+Cada atualização melhora a estrutura, estabilidade e fidelidade da simulação de console.
