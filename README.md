@@ -1,140 +1,128 @@
 # 🎮 Pure3XEngenie
 
-Pure3XEngenie is a custom C++ game engine designed with a console-inspired architecture, similar to classic systems like PS3-style boot flow and modular runtime execution.
+Pure3XEngenie é uma engine de jogos em C++ inspirada em sistemas de console, com arquitetura modular e sistema de boot estilo PS3.
 
-The project focuses on building a lightweight, educational, and expandable engine capable of simulating a real console environment inside the terminal.
-
----
-
-# 🧠 Project Vision
-
-The main idea behind Pure3XEngenie is to simulate how a real game console works internally:
-
-- Boot sequence before runtime
-- Core system initialization
-- Modular game loading system
-- Controlled execution loop
-- System-like interface inside terminal
-
-This project is not just a game engine — it is an experimental console framework built for learning low-level architecture and system design.
+O projeto simula um ambiente de console dentro do terminal, com foco em aprendizado, experimentação e design de engines.
 
 ---
 
-# ⚙️ Architecture Overview
+## 🧠 Visão do Projeto
 
-The engine is structured in a modular way to allow scalability and clean separation of responsibilities.
+A ideia principal da Pure3XEngenie é simular o funcionamento interno de um console real:
 
-### Core Layers:
-
-- Boot Layer → system initialization and splash screen
-- Engine Core → main runtime system
-- Game Modules → future dynamic game loading
-- Config System → runtime configuration handling
-- Logging System → debugging and execution logs
+- Sistema de boot antes da execução
+- Inicialização do core
+- Carregamento de módulos de jogo
+- Loop principal da engine
+- Interface estilo console no terminal
 
 ---
 
-# 🧱 Folder Structure
+## ⚙️ Estrutura da Engine
+
+A engine é dividida em módulos independentes:
+
+- Boot → inicialização do sistema
+- Core → núcleo da engine
+- GameModules → módulos de jogos futuros
+- Config → configurações do sistema
+- Logs → registro de execução
 
 ---
 
-# 🚀 Boot System
+## 🧱 Estrutura de Pastas
 
-The Boot System is the first layer executed when running the engine.
 
-It simulates a console startup sequence:
+## ---
 
-- System initialization
-- Core loading
-- Module preparation
-- Transition to main menu
+## 🚀 Boot System
 
-Example output:
+O Boot System simula o início de um console:
+
+- Inicialização do sistema
+- Carregamento do Core
+- Preparação dos módulos
+- Exibição do menu principal
 
 ---
 
-# ⚙️ Build System
+## 🧠 Core System
 
-The project uses CMake as its build system to ensure portability and scalability.
+O Core é responsável por:
 
+- Controle da execução da engine
+- Gerenciamento de fluxo
+- Integração com módulos
+- Ciclo principal do sistema
 
-📈 Detalhes Estendidos da Engine
-A Pure3XEngenie está em constante evolução como um projeto de engine baseado em aprendizado.
-A arquitetura foi projetada para simular o comportamento de um console real dentro do terminal.
-🧩 Conceito do Sistema de Módulos
-Cada sistema dentro da engine é independente e substituível.
-O Core não depende dos GameModules
-Os GameModules se comunicam através de APIs controladas
-O sistema de Boot inicializa tudo de forma segura
-O sistema de Config define o comportamento em tempo de execução
-🔄 Comportamento em Tempo de Execução
-Durante a execução, a engine segue um ciclo controlado:
-Fase de inicialização
-Execução do boot do sistema
-Ativação do Core
-Verificação dos módulos
-Loop principal da engine
-🖥️ Simulação em Terminal
-A engine foi criada para funcionar totalmente no terminal.
-Isso permite:
-Execução leve
-Compatibilidade entre sistemas
-Facilidade de depuração
-Iteração rápida de testes
-⚡ Filosofia de Performance
-A engine evita excesso de processamento:
-Sem bibliotecas pesadas desnecessárias
-Dependências mínimas
-Foco em C++ puro
-Lógica direta de sistema
-🧠 Objetivo Educacional
-Este projeto também serve como ferramenta de aprendizado para:
-Arquitetura de engines
-Design de sistemas modulares
-Estruturação em C++
-Simulação de sistemas de boot
-🧪 Recursos Experimentais (Planejados)
-Sistemas futuros incluem:
-Carregador dinâmico de plugins
-Simulação de camada de memória virtual
-Renderizador de animações no terminal
-Execução de módulos via scripts
-Sistema baseado em eventos
-📦 Estabilidade de Build
-O sistema atual usa CMake e suporta:
-Compilação incremental
-Ligação entre módulos
-Modos debug e release
-Saída via terminal
-🔐 Segurança e Estrutura
-O projeto evita operações perigosas:
-Sem sobrescrita direta do sistema
-Sem exclusão destrutiva de arquivos
-Uso controlado de memória
-Fluxo de execução estruturado
-🌍 Escopo do Projeto
-A Pure3XEngenie não tem como objetivo substituir engines reais.
-Ela foca em:
-Educação
-Simulação
-Experimentação
-Estudo de arquitetura de sistemas
-🚀 Visão de Futuro
-O objetivo de longo prazo é evoluir para:
-Uma simulação completa de console
-Um sistema modular de execução de jogos
-Uma plataforma de aprendizado de engines
-Um ambiente de testes de arquitetura
-🎯 Metas de Versão
-Versão 0.1 → Estrutura básica da engine
-Versão 0.5 → Sistema de módulos interativos
-Versão 1.0 → Console simulado completo
-👨‍💻 Estilo de Desenvolvimento
-O projeto segue:
-Princípios de código limpo
-Separação modular
-Desenvolvimento incremental
-Foco em terminal
-📜 Continuação
-Novos sistemas serão adicionados conforme a engine evolui.
-Cada atualização melhora a estrutura, estabilidade e fidelidade da simulação de console.
+---
+
+## 🎮 GameModules (Futuro)
+
+Permite carregar jogos/modos dentro da engine.
+
+Funções planejadas:
+
+- Carregamento dinâmico
+- Execução isolada
+- Comunicação com Core
+- Sistema plug-and-play
+
+---
+
+## 📊 Fluxo do Sistema
+
+1. main.cpp inicia o programa  
+2. Boot System executa  
+3. Core é carregado  
+4. Configuração aplicada  
+5. Menu exibido  
+6. Loop principal da engine  
+7. Módulos futuros executados  
+
+---
+
+## 🧪 Ambiente de Desenvolvimento
+
+- C++
+- CMake
+- Termux (Android)
+- Git
+- GitHub
+
+---
+
+## 📦 Funcionalidades
+
+- ✔ Boot system
+- ✔ Core engine
+- ✔ Estrutura modular
+- ✔ Build com CMake
+- ✔ Versionamento Git
+- ✔ Output estilo console
+
+---
+
+## 🧭 Roadmap
+
+- [ ] Menu interativo
+- [ ] Loop real da engine
+- [ ] GameModules funcionando
+- [ ] Sistema de configuração (.cfg/.json)
+- [ ] Sistema de logs avançado
+- [ ] Animações no terminal
+- [ ] Versão 0.1
+- [ ] Versão 1.0
+
+---
+
+## 👤 Autor
+
+Lhuis  
+Pure3XEngenie Project
+
+---
+
+## 📜 Licença
+
+MIT License
