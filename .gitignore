@@ -10,3 +10,4 @@ Makefile
 # OS / temp
 .DS_Store
 *.log
+*.tar.gz
