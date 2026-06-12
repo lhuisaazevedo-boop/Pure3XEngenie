@@ -52,8 +52,6 @@ Pure3XEngenie/
 ├── build/
 └── CMakeLists.txt```
 
-----
-
 ## ⚙️ Tecnologias
 
 - C++
