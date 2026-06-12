@@ -1,11 +1,11 @@
-#include "../Core/Engine.h"
 #include "../Core/Boot/Boot.h"
+#include "../Core/Engine.h"
 
 int main() {
 
-    bootSystem();
+    Pure3X::bootSystem();
 
-    Engine engine;
+    Pure3X::Engine engine;
     engine.run();
 
     return 0;

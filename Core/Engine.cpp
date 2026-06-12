@@ -3,6 +3,8 @@
 
 #include <iostream>
 
+namespace Pure3X {
+
 void Engine::run() {
     int option;
 
@@ -44,4 +46,6 @@ void Engine::run() {
                 break;
         }
     }
+}
+
 }

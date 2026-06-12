@@ -1,9 +1,16 @@
 #include "Boot.h"
+#include "../Logs/Log.h"
+
 #include <iostream>
 #include <thread>
 #include <chrono>
 
+namespace Pure3X {
+
 void bootSystem() {
+
+    Log::Init("engine.log");
+    Log::Info("Boot System iniciado");
 
     std::cout << "\n=================================\n";
     std::cout << "   Pure3XEngenie - Boot System   \n";
@@ -18,31 +25,31 @@ void bootSystem() {
         std::cout << "\rCarregando sistema... [";
 
         for (int j = 0; j < width; j++) {
-            if (j < i)
-                std::cout << "█";
-            else
-                std::cout << " ";
+            std::cout << (j < i ? "█" : " ");
         }
 
         std::cout << "] " << percent << "%";
         std::cout.flush();
 
-        std::this_thread::sleep_for(
-            std::chrono::milliseconds(120)
-        );
+        std::this_thread::sleep_for(std::chrono::milliseconds(120));
     }
 
-    std::cout << "\n\nInicializando Kernel...\n";
+    std::cout << "\n\n";
+
+    Log::Info("Inicializando Kernel...");
     std::this_thread::sleep_for(std::chrono::milliseconds(700));
 
-    std::cout << "Carregando Core System...\n";
+    Log::Info("Carregando Core System...");
     std::this_thread::sleep_for(std::chrono::milliseconds(700));
 
-    std::cout << "Verificando memoria...\n";
+    Log::Info("Verificando memória...");
     std::this_thread::sleep_for(std::chrono::milliseconds(700));
 
-    std::cout << "Inicializando Modulos...\n";
+    Log::Info("Inicializando módulos...");
     std::this_thread::sleep_for(std::chrono::milliseconds(700));
 
-    std::cout << "\n[OK] Sistema iniciado com sucesso!\n\n";
+    Log::Info("Sistema iniciado com sucesso!");
+    Log::Shutdown();
+}
+
 }

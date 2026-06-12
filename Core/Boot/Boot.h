@@ -1,6 +1,3 @@
-#ifndef BOOT_H
-#define BOOT_H
-
+namespace Pure3X {
 void bootSystem();
-
-#endif
+}

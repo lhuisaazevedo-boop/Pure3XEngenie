@@ -1,9 +1,10 @@
-#ifndef ENGINE_H
-#define ENGINE_H
+#pragma once
+
+namespace Pure3X {
 
 class Engine {
 public:
     void run();
 };
 
-#endif
+}
