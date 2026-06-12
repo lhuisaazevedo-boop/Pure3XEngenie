@@ -82,28 +82,73 @@ Pure3XEngenie/
 
 ---
 
-## 🗺️ Roadmap
+## 🔮 Recursos Planejados
+
+A Pure3XEngenie está sendo desenvolvida de forma gradual, com foco em estabilidade, organização e desempenho.
+
+### Roadmap Futuro
 
 ### v0.2.0
 
-- Sistema de Configurações
-- Sistema de Logs
-- Melhorias no Boot
+- Config Manager
+- Logs System
+- Melhorias no Boot System
 
 ### v0.3.0
 
 - Module Manager
-- Gerenciamento de Pacotes
-- Sistema de Plugins
+- Sistema de Eventos
+- Melhor organização do Core
 
-### Futuro
+### v0.4.0
 
-- SDL2
+- Integração SDL2
 - Sistema de Áudio
-- Render Backend
-- GameModules
-- Ferramentas para Emulação
+- Render Backend Inicial
 
+### v0.5.0
+
+- Ferramentas Avançadas de Desenvolvimento
+- Sistema de Depuração
+- Gerenciamento de Recursos
+
+### v0.6.0 (Planejado)
+
+## ⏳ Time Manager
+
+Sistema responsável pelo controle temporal da engine.
+
+### Funcionalidades Previstas
+
+- Pause Engine
+- Resume Engine
+- Slow Motion
+- Fast Forward
+- Frame Step Mode
+
+## ❄️ Time Freeze System (Experimental)
+
+Sistema experimental para congelamento e controle avançado do tempo da engine.
+
+### Objetivos
+
+- Congelar atualizações do sistema
+- Congelar física e animações
+- Ferramentas de depuração avançadas
+- Suporte a cenas complexas e carregamentos extensos
+- Base para futuras tecnologias experimentais
+
+### Aplicações Futuras
+
+- Desenvolvimento de jogos
+- Ferramentas de depuração
+- Simulações avançadas
+- Sistemas experimentais de emulação
+- Controle temporal da engine
+
+### Status
+
+🚧 Em pesquisa e planejamento.
 ---
 
 ## 📌 Versão
