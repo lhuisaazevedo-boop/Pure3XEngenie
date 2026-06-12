@@ -33,7 +33,9 @@ O projeto já possui uma arquitetura modular funcional e está preparado para ex
 ---
 
 ## 📁 Estrutura Atual
-
+```md
+```bash
+---
 Pure3XEngenie/
 ├── Core/
 │   ├── Boot/
