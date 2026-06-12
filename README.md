@@ -34,35 +34,6 @@ O projeto já possui uma arquitetura modular funcional e está preparado para ex
 
 ## 📁 Estrutura Atual
 
-```text
-Pure3XEngenie/
-├── Core/
-│   ├── Boot/
-│   │   ├── Boot.h
-│   │   └── Boot.cpp
-│   │
-│   ├── System/
-│   │   ├── System.h
-│   │   └── System.cpp
-│   │
-│   ├── Engine.h
-│   └── Engine.cpp
-│
-├── Config/
-├── GameModules/
-├── Logs/
-├── include/
-├── src/
-├── build/
-└── CMakeLists.txt
-
-- Estrutura preparada para expansão
-
----
-
-## 📁 Estrutura Atual
-
-```text
 Pure3XEngenie/
 ├── Core/
 │   ├── Boot/
