@@ -146,17 +146,51 @@ Sistema experimental para congelamento e controle avançado do tempo da engine.
 - Sistemas experimentais de emulação
 - Controle temporal da engine
 
-### Status
-
 🚧 Em pesquisa e planejamento.
 ---
 
-## 📌 Versão
+## 🚀 Desenvolvimento Atual
 
-Versão Atual: v0.1.0 Alpha
+A Pure3XEngenie encontra-se atualmente na versão **v0.1.0 Alpha**, com foco na construção de uma arquitetura sólida, modular e escalável.
 
-Status: Estável para desenvolvimento
+## 📦 Próxima Atualização
 
+### v0.1.1 Alpha
+
+Recursos planejados:
+
+- Config Manager
+- Logs System
+- Melhorias no Boot System
+- Melhor organização do Core
+- Informações avançadas do sistema
+- Preparação para Module Manager
+
+## 🔮 Visão de Longo Prazo
+
+A Pure3XEngenie está sendo desenvolvida do zero em C++, com foco em desempenho, modularidade e evolução contínua.
+
+O projeto servirá como base para futuras tecnologias gráficas, sistemas avançados de gerenciamento e pesquisas relacionadas à emulação e desenvolvimento de engines.
+
+## 📊 Status
+
+- ✅ v0.1.0 Alpha Publicada
+- 🚧 Desenvolvimento da v0.1.1 Alpha em andamento
+- 📅 Próxima etapa: Config Manager e Logs System
+
+## 🔮 Visão de Longo Prazo
+
+A Pure3XEngenie continuará evoluindo através de atualizações incrementais, priorizando estabilidade, desempenho e organização do código.
+
+Futuras versões incluirão:
+
+- SDL2
+- Sistema de Áudio
+- Module Manager
+- Event System
+- Render Backend
+- Time Manager
+- Time Freeze System (Experimental)
 ---
 
 ## 👨‍💻 Autor
