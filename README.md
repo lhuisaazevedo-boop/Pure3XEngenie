@@ -32,10 +32,8 @@ O projeto já possui uma arquitetura modular funcional e está preparado para ex
 
 ---
 
-## 📁 Estrutura Atual
-```md
-```bash
----
+## 📁 Estrutura do Projeto
+
 Pure3XEngenie/
 ├── Core/
 │   ├── Boot/
@@ -56,6 +54,8 @@ Pure3XEngenie/
 ├── src/
 ├── build/
 └── CMakeLists.txt
+
+----
 
 ## ⚙️ Tecnologias
 
@@ -91,6 +91,11 @@ Pure3XEngenie/
 - Event System
 - Arquitetura mais modular
 
+### v0.3.0
+- Sistema de Configuração Base
+- Melhorias no Logger
+- Preparação para Modules
+
 ### v0.4.0
 - Integração SDL2
 - Sistema de áudio
@@ -119,6 +124,7 @@ Sistema experimental para controle avançado do tempo da engine.
 
 - ✅ v0.1.0 Alpha publicada
 - 🚧 v0.1.1 em desenvolvimento
+- 🚧 v0.3.0 planejada
 - 📅 Próxima etapa: Config + Logs System
 
 ---
