@@ -1,34 +1,39 @@
-# 🚀 Pure3XEngenie v0.1.0 Alpha
+🚀 Pure3XEngenie v0.1.1 Alpha
 
-## 📌 Status Atual
+📌 Status Atual
 
-A Pure3XEngenie é uma engine em desenvolvimento escrita em C++.
-
-O projeto possui arquitetura modular e atualmente conta com sistemas básicos de boot, gerenciamento de sistema e núcleo principal da engine.
+A Pure3XEngenie é uma engine em desenvolvimento escrita em C++, com arquitetura modular e foco em aprendizado, organização e evolução contínua.
 
 ---
 
-## ✅ Funcionalidades Implementadas
+✅ Funcionalidades Implementadas
 
-### 🟢 Boot System
+🟢 Boot System
 
 - Inicialização da engine
 - Barra de carregamento
 - Sequência de boot
 
-### 🧠 Core Engine
+🧠 Core Engine
 
 - Núcleo principal
 - Controle de execução
 - Menu principal
 
-### 🖥️ System Manager
+🖥️ System Manager
 
 - Status do sistema
 - Verificação de componentes
 - Informações da engine
 
-### 🎮 Interface Terminal
+🌐 Network System
+
+- Teste de conexão (Ping)
+- Exibição do endereço IP
+- Verificação de portas
+- Menu de rede
+
+🎮 Interface Terminal
 
 - Navegação por menus
 - Seleção de opções
@@ -36,106 +41,120 @@ O projeto possui arquitetura modular e atualmente conta com sistemas básicos de
 
 ---
 
-## 📁 Estrutura do Projeto
+📁 Estrutura do Projeto
 
-```text
 Pure3XEngenie/
 ├── Core/
+│   ├── Boot/
+│   ├── Logs/
+│   ├── Network/
+│   └── System/
 ├── Config/
+├── Docs/
 ├── GameModules/
-├── Logs/
 ├── include/
 ├── src/
 ├── build/
+├── bin/
 └── CMakeLists.txt
-```
+
 ---
-## ⚙️ Tecnologias
+
+⚙️ Tecnologias
 
 - C++
 - CMake
 - Git
 - GitHub
-- Termux
 
 ---
 
-## 🧩 Componentes Ativos
+🧩 Componentes Ativos
 
 - Boot System ✔
 - Core Engine ✔
 - System Manager ✔
 - Menu System ✔
 - Status System ✔
+- Network System ✔
 
 ---
 
-## 🔮 Roadmap
+🔮 Roadmap
 
-### v0.1.1 Alpha
+✅ v0.1.1 Alpha (Atual)
+
+- Sistema de Rede
+- Menu de Rede
+- Organização do Core
+- Status atualizado
+- Estrutura modular
+- Backup oficial da versão
+
+🚧 v0.1.2 Alpha
 
 - Config Manager
-- Logs System
-- Melhorias no Boot System
-- Melhor organização do Core
+- Configuração persistente
+- Melhorias no Logs System
 - Informações avançadas do sistema
 
-### v0.2.0
+🚧 v0.2.0
 
 - Module Manager
 - Event System
 - Arquitetura mais modular
 
-### v0.3.0
+🚧 v0.3.0
 
-- Sistema de Configuração Base
+- File System
+- Configuração Base
 - Melhorias no Logger
 - Preparação para Modules
 
-### v0.4.0
+🚧 v0.4.0
 
 - Integração SDL2
 - Sistema de áudio
-- Render backend inicial
+- Render Backend inicial
 
-### v0.5.0
+🚧 v0.5.0
 
-- Sistema de Renderização intermediário
+- Sistema de Renderização
 - Otimização do Core Engine
 - Base para sistemas gráficos
 
-### v0.6.0 (Planejado)
+📅 v0.6.0 (Planejado)
 
 - Time Manager
 - Time Freeze System (Experimental)
 
 ---
 
-## ⏳ Time Freeze System (Experimental)
+⏳ Time Freeze System (Experimental)
 
-### 🎯 Objetivo
+🎯 Objetivo
 
 Sistema experimental para controle avançado do tempo da engine.
 
-### ⚙️ Funcionalidades
+⚙️ Funcionalidades
 
 - Congelar atualizações do sistema
 - Congelar física e animações
-- Ferramentas de depuração avançadas
+- Ferramentas de depuração
 - Suporte a simulações complexas
 
 ---
 
-## 📊 Status do Projeto
+📊 Status do Projeto
 
 - ✅ v0.1.0 Alpha publicada
-- 🚧 v0.1.1 em desenvolvimento
-- 🚧 v0.3.0 planejada
-- 📅 Próxima etapa: Config + Logs System
+- ✅ v0.1.1 Alpha publicada
+- 🚧 v0.1.2 Alpha em desenvolvimento
+- 📅 Próxima etapa: Config Manager
 
 ---
 
-## 👨‍💻 Autor
+👨‍💻 Autor
 
 Lhuis
 
@@ -143,7 +162,7 @@ Projeto desenvolvido para estudo de arquitetura de engines em C++.
 
 ---
 
-## 📜 Licença
+📜 Licença
 
 Projeto em desenvolvimento.
 
