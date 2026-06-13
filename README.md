@@ -1,8 +1,10 @@
-###🚀 Pure3XEngenie v0.1.1 Alpha
+### 🚀 Pure3XEngenie v0.1.1 Alpha
 
 📌 Status Atual
 
-A Pure3XEngenie é uma engine em desenvolvimento escrita em C++, com arquitetura modular e foco em aprendizado, organização e evolução contínua.
+A Pure3XEngenie é uma engine em desenvolvimento escrita em C++, com arquitetura modular e foco em aprendizado, organização, desempenho e evolução contínua.
+
+Esta versão (v0.1.1 Alpha) representa uma grande evolução do projeto, introduzindo o Network System, melhorias no Core Engine, atualização do System Manager, reorganização da estrutura do projeto e documentação mais completa.
 
 ---
 
@@ -30,7 +32,7 @@ A Pure3XEngenie é uma engine em desenvolvimento escrita em C++, com arquitetura
 
 - Teste de conexão (Ping)
 - Exibição do endereço IP
-- Verificação de portas
+- Verificação de portas abertas
 - Menu de rede
 
 🎮 Interface Terminal
@@ -71,12 +73,12 @@ Pure3XEngenie/
 
 🧩 Componentes Ativos
 
-- Boot System ✔
-- Core Engine ✔
-- System Manager ✔
-- Menu System ✔
-- Status System ✔
-- Network System ✔
+- ✅ Boot System
+- ✅ Core Engine
+- ✅ System Manager
+- ✅ Menu System
+- ✅ Status System
+- ✅ Network System
 
 ---
 
@@ -84,10 +86,10 @@ Pure3XEngenie/
 
 ✅ v0.1.1 Alpha (Atual)
 
-- Sistema de Rede
+- Network System
 - Menu de Rede
 - Organização do Core
-- Status atualizado
+- Status do Sistema atualizado
 - Estrutura modular
 - Backup oficial da versão
 
@@ -102,19 +104,19 @@ Pure3XEngenie/
 
 - Module Manager
 - Event System
-- Arquitetura mais modular
+- Arquitetura modular aprimorada
 
 🚧 v0.3.0
 
 - File System
-- Configuração Base
+- Sistema Base de Configuração
 - Melhorias no Logger
 - Preparação para Modules
 
 🚧 v0.4.0
 
 - Integração SDL2
-- Sistema de áudio
+- Sistema de Áudio
 - Render Backend inicial
 
 🚧 v0.5.0
@@ -134,13 +136,13 @@ Pure3XEngenie/
 
 🎯 Objetivo
 
-Sistema experimental para controle avançado do tempo da engine.
+Criar um sistema experimental capaz de controlar o tempo de execução da engine, permitindo pausar ou congelar atualizações para testes, depuração e futuras simulações.
 
-⚙️ Funcionalidades
+Funcionalidades planejadas
 
 - Congelar atualizações do sistema
 - Congelar física e animações
-- Ferramentas de depuração
+- Ferramentas avançadas de depuração
 - Suporte a simulações complexas
 
 ---
@@ -158,7 +160,7 @@ Sistema experimental para controle avançado do tempo da engine.
 
 Lhuis
 
-Projeto desenvolvido para estudo de arquitetura de engines em C++.
+Projeto desenvolvido para estudo de arquitetura de engines em C++, organização de software e desenvolvimento de sistemas modulares.
 
 ---
 
@@ -166,4 +168,4 @@ Projeto desenvolvido para estudo de arquitetura de engines em C++.
 
 Projeto em desenvolvimento.
 
-Todos os direitos reservados ao autor.
+© Todos os direitos reservados ao autor.
