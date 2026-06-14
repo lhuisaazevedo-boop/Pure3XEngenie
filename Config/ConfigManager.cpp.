@@ -1,0 +1,47 @@
+#include "ConfigManager.h"
+
+#include <fstream>
+#include <iostream>
+
+ConfigManager::ConfigManager() {
+    configPath = "Config/config.ini";
+}
+
+bool ConfigManager::LoadConfig() {
+    std::ifstream file(configPath);
+
+    if (!file.is_open()) {
+        std::cout << "[CONFIG] Arquivo nao encontrado.\n";
+        return false;
+    }
+
+    std::cout << "[CONFIG] Configuracao carregada.\n";
+    file.close();
+    return true;
+}
+
+bool ConfigManager::SaveConfig() {
+    std::ofstream file(configPath);
+
+    if (!file.is_open()) {
+        std::cout << "[CONFIG] Erro ao salvar configuracao.\n";
+        return false;
+    }
+
+    file << "# Pure3XEngenie Config\n";
+
+    file.close();
+
+    std::cout << "[CONFIG] Configuracao salva.\n";
+    return true;
+}
+
+void ConfigManager::SetValue(const std::string& key,
+                             const std::string& value) {
+    // Implementação futura
+}
+
+std::string ConfigManager::GetValue(
+    const std::string& key) {
+    return "";
+}

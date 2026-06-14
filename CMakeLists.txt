@@ -16,15 +16,16 @@ add_executable(Pure3XEngenie
     Core/Network/network_manager.cpp
     Core/Network/network_utils.cpp
 
-    Core/Config/config_manager.cpp
+    Config/ConfigManager.cpp
 )
 
 target_include_directories(Pure3XEngenie PRIVATE
     .
+    Config
+
     Core
     Core/Boot
     Core/System
     Core/Logs
     Core/Network
-    Core/Config
 )
