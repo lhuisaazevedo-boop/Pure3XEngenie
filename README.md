@@ -110,27 +110,29 @@ Pure3XEngenie/
 - ✅ Menu System
 - ✅ Status System
 - ✅ Network System
+- ✅ Config Manager (estrutura implementada e preparada para expansão)
 
 ---
 
 ## 🔮 Roadmap ##
 
-## ✅ v0.1.1 Alpha (Atual) ##
+✅ v0.1.1 Alpha Update (Atual)
 
 - Network System
 - Menu de Rede
 - Organização do Core
 - Status do Sistema atualizado
-- Estrutura modular
+- Config Manager (estrutura inicial)
+- Atualização do "network_config.h"
+- Melhorias no CMake
 - Backup oficial da versão
 
 ## 🚧 v0.1.2 Alpha ##
 
-- Config Manager
-- Sistema de configuração persistente
-- Estrutura completa do "network_config.h"
+- Configurações persistentes
+- Expansão do Config Manager
 - Melhorias no Network Manager
-- Logs do sistema
+- Sistema de Logs aprimorado
 - Melhor organização do código
 - Correções gerais
 
@@ -168,7 +170,7 @@ Pure3XEngenie/
 
 ## ⏳ Time Freeze System (Experimental) ##
 
-### 🎯 Objetivo ###
+🎯 Objetivo
 
 Desenvolver um sistema experimental capaz de controlar o tempo de execução da engine, permitindo pausar ou congelar atualizações para testes, depuração e futuras simulações.
 
@@ -184,9 +186,9 @@ Funcionalidades planejadas
 ## 📊 Status do Projeto ##
 
 - ✅ v0.1.0 Alpha publicada
-- ✅ v0.1.1 Alpha publicada
+- ✅ v0.1.1 Alpha Update publicada
 - 🚧 v0.1.2 Alpha em desenvolvimento
-- 📅 Próxima etapa: Config Manager
+- 📅 Próxima etapa: Expansão do Config Manager
 
 ---
 
