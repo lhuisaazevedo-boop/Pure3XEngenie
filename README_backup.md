@@ -1,150 +1,205 @@
-# 🚀 Pure3XEngenie v0.1.0 Alpha
+## 🚀 Pure3XEngenie v0.1.1 Alpha ##
 
-## 📌 Status Atual
-
-A Pure3XEngenie é uma engine em desenvolvimento escrita em C++.
-
-O projeto possui arquitetura modular e atualmente conta com sistemas básicos de boot, gerenciamento de sistema e núcleo principal da engine.
+«⚠️ A Pure3XEngenie encontra-se em fase Alpha.
+Novos recursos, melhorias e otimizações são adicionados continuamente a cada versão.»
 
 ---
 
-## ✅ Funcionalidades Implementadas
+## 📌 Status Atual ##
 
-### 🟢 Boot System
+A Pure3XEngenie é uma engine em desenvolvimento escrita em C++, com arquitetura modular e foco em aprendizado, organização, desempenho e evolução contínua.
+
+A versão v0.1.1 Alpha representa um grande avanço no projeto, introduzindo o Network System, melhorias no Core Engine, atualização do System Manager, reorganização da estrutura do projeto e uma documentação muito mais completa.
+
+---
+
+## ✅ Funcionalidades Implementadas ##
+
+## 🟢 Boot System ##
 
 - Inicialização da engine
 - Barra de carregamento
 - Sequência de boot
 
-### 🧠 Core Engine
+## 🧠 Core Engine ##
 
 - Núcleo principal
 - Controle de execução
 - Menu principal
 
-### 🖥️ System Manager
+## 🖥️ System Manager ##
 
 - Status do sistema
 - Verificação de componentes
 - Informações da engine
 
-### 🎮 Interface Terminal
+## 🌐 Network System ##
+
+- Teste de conexão (Ping)
+- Exibição do endereço IP
+- Verificação de portas abertas
+- Menu de rede
+
+## 🎮 Interface Terminal ##
 
 - Navegação por menus
 - Seleção de opções
 - Estrutura expansível
 
 ---
-
-## 📁 Estrutura do Projeto
+## 📁 Estrutura do Projeto ##
 
 ```text
 Pure3XEngenie/
 ├── Core/
+│   ├── Boot/
+│   ├── Logs/
+│   ├── Network/
+│   │   ├── network_config.h
+│   │   ├── network_manager.cpp
+│   │   ├── network_manager.h
+│   │   └── network_utils.cpp
+│   └── System/
+│       ├── System.cpp
+│       └── System.h
 ├── Config/
+├── Docs/
 ├── GameModules/
-├── Logs/
 ├── include/
 ├── src/
 ├── build/
-└── CMakeLists.txt
+├── bin/
+├── CMakeLists.txt
+├── Engine.cpp
+├── LICENSE
+└── README.md
 ```
 ---
-## ⚙️ Tecnologias
+## ⭐ Características ##
+
+- Arquitetura modular em C++
+- Organização por subsistemas
+- Compilação com CMake
+- Interface em terminal
+- Sistema de Boot
+- Gerenciador do Sistema
+- Sistema de Rede
+- Fácil expansão para novos módulos
+---
+
+## ⚙️ Tecnologias ##
 
 - C++
 - CMake
 - Git
 - GitHub
-- Termux
+
+## 🎯 Objetivos ##
+
+- Aprender arquitetura de engines
+- Desenvolver sistemas modulares
+- Criar uma base sólida em C++
+- Evoluir continuamente a cada versão Alpha
+---
+
+## 🧩 Componentes Ativos ##
+
+- ✅ Boot System
+- ✅ Core Engine
+- ✅ System Manager
+- ✅ Menu System
+- ✅ Status System
+- ✅ Network System
 
 ---
 
-## 🧩 Componentes Ativos
+## 🔮 Roadmap ##
 
-- Boot System ✔
-- Core Engine ✔
-- System Manager ✔
-- Menu System ✔
-- Status System ✔
+## ✅ v0.1.1 Alpha (Atual) ##
 
----
+- Network System
+- Menu de Rede
+- Organização do Core
+- Status do Sistema atualizado
+- Estrutura modular
+- Backup oficial da versão
 
-## 🔮 Roadmap
-
-### v0.1.1 Alpha
+## 🚧 v0.1.2 Alpha ##
 
 - Config Manager
-- Logs System
-- Melhorias no Boot System
-- Melhor organização do Core
-- Informações avançadas do sistema
+- Sistema de configuração persistente
+- Estrutura completa do "network_config.h"
+- Melhorias no Network Manager
+- Logs do sistema
+- Melhor organização do código
+- Correções gerais
 
-### v0.2.0
+## 🚧 v0.2.0 ##
 
 - Module Manager
 - Event System
-- Arquitetura mais modular
+- Arquitetura modular aprimorada
 
-### v0.3.0
+## 🚧 v0.3.0 ##
 
-- Sistema de Configuração Base
+- File System
+- Sistema Base de Configuração
 - Melhorias no Logger
 - Preparação para Modules
 
-### v0.4.0
+## 🚧 v0.4.0 ##
 
 - Integração SDL2
-- Sistema de áudio
-- Render backend inicial
+- Sistema de Áudio
+- Render Backend inicial
 
-### v0.5.0
+## 🚧 v0.5.0 ##
 
-- Sistema de Renderização intermediário
+- Sistema de Renderização
 - Otimização do Core Engine
 - Base para sistemas gráficos
 
-### v0.6.0 (Planejado)
+## 📅 v0.6.0 (Planejado) ##
 
 - Time Manager
 - Time Freeze System (Experimental)
 
 ---
 
-## ⏳ Time Freeze System (Experimental)
+## ⏳ Time Freeze System (Experimental) ##
 
-### 🎯 Objetivo
+### 🎯 Objetivo ###
 
-Sistema experimental para controle avançado do tempo da engine.
+Desenvolver um sistema experimental capaz de controlar o tempo de execução da engine, permitindo pausar ou congelar atualizações para testes, depuração e futuras simulações.
 
-### ⚙️ Funcionalidades
+Funcionalidades planejadas
 
 - Congelar atualizações do sistema
 - Congelar física e animações
-- Ferramentas de depuração avançadas
+- Ferramentas avançadas de depuração
 - Suporte a simulações complexas
 
 ---
 
-## 📊 Status do Projeto
+## 📊 Status do Projeto ##
 
 - ✅ v0.1.0 Alpha publicada
-- 🚧 v0.1.1 em desenvolvimento
-- 🚧 v0.3.0 planejada
-- 📅 Próxima etapa: Config + Logs System
+- ✅ v0.1.1 Alpha publicada
+- 🚧 v0.1.2 Alpha em desenvolvimento
+- 📅 Próxima etapa: Config Manager
 
 ---
 
-## 👨‍💻 Autor
+## 👨‍💻 Autor ##
 
 Lhuis
 
-Projeto desenvolvido para estudo de arquitetura de engines em C++.
+Projeto desenvolvido para estudo de arquitetura de engines em C++, organização de software e desenvolvimento de sistemas modulares.
 
 ---
 
-## 📜 Licença
+## 📜 Licença ##
 
 Projeto em desenvolvimento.
 
-Todos os direitos reservados ao autor.
+© Todos os direitos reservados ao autor.
