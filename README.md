@@ -1,11 +1,11 @@
-### 🚀 Pure3XEngenie v0.1.1 Alpha ###
+## 🚀 Pure3XEngenie v0.1.1 Alpha ##
 
 «⚠️ A Pure3XEngenie encontra-se em fase Alpha.
 Novos recursos, melhorias e otimizações são adicionados continuamente a cada versão.»
 
 ---
 
-### 📌 Status Atual ###
+## 📌 Status Atual ##
 
 A Pure3XEngenie é uma engine em desenvolvimento escrita em C++, com arquitetura modular e foco em aprendizado, organização, desempenho e evolução contínua.
 
@@ -13,34 +13,34 @@ A versão v0.1.1 Alpha representa um grande avanço no projeto, introduzindo o N
 
 ---
 
-### ✅ Funcionalidades Implementadas ###
+## ✅ Funcionalidades Implementadas ##
 
-##$🟢 Boot System ###
+## 🟢 Boot System ##
 
 - Inicialização da engine
 - Barra de carregamento
 - Sequência de boot
 
-### 🧠 Core Engine ####
+## 🧠 Core Engine ##
 
 - Núcleo principal
 - Controle de execução
 - Menu principal
 
-###🖥️ System Manager ###
+## 🖥️ System Manager ##
 
 - Status do sistema
 - Verificação de componentes
 - Informações da engine
 
-##$ 🌐 Network System ###
+## 🌐 Network System ##
 
 - Teste de conexão (Ping)
 - Exibição do endereço IP
 - Verificação de portas abertas
 - Menu de rede
 
-### 🎮 Interface Terminal ###
+## 🎮 Interface Terminal ##
 
 - Navegação por menus
 - Seleção de opções
@@ -87,14 +87,14 @@ Pure3XEngenie/
 - Fácil expansão para novos módulos
 ---
 
-### ⚙️ Tecnologias ###
+## ⚙️ Tecnologias ##
 
 - C++
 - CMake
 - Git
 - GitHub
 
-## 🎯 Objetivos ###
+## 🎯 Objetivos ##
 
 - Aprender arquitetura de engines
 - Desenvolver sistemas modulares
@@ -102,7 +102,7 @@ Pure3XEngenie/
 - Evoluir continuamente a cada versão Alpha
 ---
 
-### 🧩 Componentes Ativos ###
+## 🧩 Componentes Ativos ##
 
 - ✅ Boot System
 - ✅ Core Engine
@@ -113,9 +113,9 @@ Pure3XEngenie/
 
 ---
 
-### 🔮 Roadmap ###
+## 🔮 Roadmap ##
 
-### ✅ v0.1.1 Alpha (Atual) ###
+## ✅ v0.1.1 Alpha (Atual) ##
 
 - Network System
 - Menu de Rede
@@ -124,7 +124,7 @@ Pure3XEngenie/
 - Estrutura modular
 - Backup oficial da versão
 
-### 🚧 v0.1.2 Alpha ###
+## 🚧 v0.1.2 Alpha ##
 
 - Config Manager
 - Sistema de configuração persistente
@@ -134,39 +134,39 @@ Pure3XEngenie/
 - Melhor organização do código
 - Correções gerais
 
-### 🚧 v0.2.0 ###
+## 🚧 v0.2.0 ##
 
 - Module Manager
 - Event System
 - Arquitetura modular aprimorada
 
-### 🚧 v0.3.0 ###
+## 🚧 v0.3.0 ##
 
 - File System
 - Sistema Base de Configuração
 - Melhorias no Logger
 - Preparação para Modules
 
-### 🚧 v0.4.0 ###
+## 🚧 v0.4.0 ##
 
 - Integração SDL2
 - Sistema de Áudio
 - Render Backend inicial
 
-### 🚧 v0.5.0 ###
+## 🚧 v0.5.0 ##
 
 - Sistema de Renderização
 - Otimização do Core Engine
 - Base para sistemas gráficos
 
-### 📅 v0.6.0 (Planejado) ###
+## 📅 v0.6.0 (Planejado) ##
 
 - Time Manager
 - Time Freeze System (Experimental)
 
 ---
 
-### ⏳ Time Freeze System (Experimental) ###
+## ⏳ Time Freeze System (Experimental) ##
 
 ### 🎯 Objetivo ###
 
@@ -181,7 +181,7 @@ Funcionalidades planejadas
 
 ---
 
-### 📊 Status do Projeto ###
+## 📊 Status do Projeto ##
 
 - ✅ v0.1.0 Alpha publicada
 - ✅ v0.1.1 Alpha publicada
@@ -190,7 +190,7 @@ Funcionalidades planejadas
 
 ---
 
-### 👨‍💻 Autor ###
+## 👨‍💻 Autor ##
 
 Lhuis
 
@@ -198,7 +198,7 @@ Projeto desenvolvido para estudo de arquitetura de engines em C++, organização
 
 ---
 
-### 📜 Licença ###
+## 📜 Licença ##
 
 Projeto em desenvolvimento.
 
