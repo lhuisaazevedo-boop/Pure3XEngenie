@@ -39,10 +39,23 @@ void Engine::run() {
                 break;
 
             case 3:
-                std::cout << "\n[CONFIG] Ainda em desenvolvimento.\n";
-                break;
+    std::cout << "\n========== CONFIGURACOES ==========\n";
+    std::cout << "Engine     : Pure3XEngenie\n";
+    std::cout << "Versao     : 0.1.2 Alpha Update\n";
+    std::cout << "Idioma     : pt_BR\n";
+    std::cout << "Debug      : ON\n";
+    std::cout << "Log Level  : INFO\n";
+    std::cout << "Rede       : Ativa\n";
+    std::cout << "Boot       : OK\n";
+    std::cout << "Config.ini : Carregado\n";
+    std::cout << "===================================\n";
 
-            case 4: {
+    std::cout << "\nPressione Enter para continuar...";
+    std::cin.ignore(1000, '\n');
+    std::cin.get();
+    break;
+
+        case 4: {
                 int network_option;
                 bool back = false;
                 while (!back) {

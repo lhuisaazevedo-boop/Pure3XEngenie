@@ -1,3 +1,4 @@
+#include "Core/Logs/Log.h"
 #include "Config/ConfigManager.h"
 #include "Core/Engine.h"
 #include "Core/System/System.h"
@@ -9,6 +10,9 @@ namespace Pure3X {
 
 void Engine::run() {
 
+    Log::Init("Logs/engine.log");
+    Log::Info("Boot iniciado");
+
     ConfigManager config;
 
     if (!config.LoadConfig()) {
@@ -16,13 +20,17 @@ void Engine::run() {
         config.SaveConfig();
     }
 
+    Log::Info("Config carregada");
+    Log::Info("Engine iniciada");
+    Log::Info("Sistema pronto");
+
     int option;
 
     while (true) {
 
         std::cout << "\n=========================================\n";
-        std::cout << "        🎮 Pure3XEngenie OS\n";
-        std::cout << "            v0.1.2 Alpha\n";
+        std::cout << "        Pure3XEngenie OS\n";
+        std::cout << "         v0.1.2 Alpha Update\n";
         std::cout << "=========================================\n";
         std::cout << " 1 - Iniciar Engine\n";
         std::cout << " 2 - Status do Sistema\n";
@@ -41,6 +49,7 @@ void Engine::run() {
         switch (option) {
 
         case 1:
+            Log::Info("Engine iniciada pelo usuario");
             std::cout << "\n[OK] Iniciando Engine...\n";
             std::cout << "Pure3XEngenie ativa!\n";
             break;
@@ -50,11 +59,21 @@ void Engine::run() {
             break;
 
         case 3:
+
             std::cout << "\n========== CONFIGURACOES ==========\n";
-            std::cout << "Engine : Pure3XEngenie\n";
-            std::cout << "Versao : 0.1.2 Alpha\n";
-            std::cout << "Idioma : pt_BR\n";
+            std::cout << "Engine     : Pure3XEngenie\n";
+            std::cout << "Versao     : 0.1.2 Alpha Update\n";
+            std::cout << "Idioma     : pt_BR\n";
+            std::cout << "Debug      : ON\n";
+            std::cout << "Log Level  : INFO\n";
+            std::cout << "Rede       : Ativa\n";
+            std::cout << "Boot       : OK\n";
+            std::cout << "Config.ini : Carregado\n";
             std::cout << "===================================\n";
+
+            std::cout << "\nPressione Enter para continuar...";
+            std::cin.ignore(1000, '\n');
+            std::cin.get();
             break;
 
         case 4: {
@@ -65,7 +84,7 @@ void Engine::run() {
             while (!back) {
 
                 std::cout << "\n=================================\n";
-                std::cout << "         🌐 Menu de Rede\n";
+                std::cout << "         Menu de Rede\n";
                 std::cout << "=================================\n";
                 std::cout << " 1 - Testar Conexao\n";
                 std::cout << " 2 - Exibir Endereco IP\n";
@@ -74,7 +93,11 @@ void Engine::run() {
                 std::cout << "=================================\n";
                 std::cout << "Escolha uma opcao: ";
 
-                std::cin >> network_option;
+                if (!(std::cin >> network_option)) {
+                    std::cin.clear();
+                    std::cin.ignore(1000, '\n');
+                    continue;
+                }
 
                 switch (network_option) {
 
@@ -110,6 +133,10 @@ void Engine::run() {
         }
 
         case 5:
+
+            Log::Info("Encerrando sistema");
+            Log::Shutdown();
+
             std::cout << "\n[SAINDO] Encerrando sistema...\n";
             return;
 
