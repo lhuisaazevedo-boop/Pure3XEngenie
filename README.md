@@ -13,8 +13,7 @@ A versão v0.1.3 Alpha consolida a base do projeto com melhorias no Boot System,
 
 ---
 
-## ✅ Funcionalidades Implementadas #$
-
+## ✅ Funcionalidades Implementadas ##
 ## 🟢 Boot System ##
 
 - Inicialização da Engine
@@ -179,13 +178,9 @@ Pure3XEngenie/
 ## 👨‍💻 Autor ##
 
 Lhuis
-
-Projeto desenvolvido para estudo de arquitetura de engines em C++ e pesquisa sobre tecnologias relacionadas à emulação.
-
+Projeto desenvolvido para pesquisa, aprendizado e evolução de uma engine experimental voltada ao estudo da arquitetura do PlayStation 3.
 ---
 
 ## 📜 Licença ##
 
-Projeto em desenvolvimento.
-
-© Todos os direitos reservados ao autor.
+MIT License.
