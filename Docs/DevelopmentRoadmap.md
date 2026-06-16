@@ -104,3 +104,111 @@ v0.1.3 Alpha
 ## 📌 Observação
 
 Este roadmap é atualizado continuamente. Toda nova funcionalidade do Pure3XEngenie deve ser registrada aqui antes de iniciar o desenvolvimento.
+---
+
+# 🖥️ Core
+
+Status: Em desenvolvimento
+
+- Boot System
+- System Manager
+- Config Manager
+- Network Manager
+- Log Manager
+- Language Manager
+- Engine Manager
+
+---
+
+# 🎮 Emulation
+
+Status: Pesquisa
+
+- NCE (Native Code Execution)
+- PPE
+- SPU
+- RSX
+- Loader
+- ELF
+- SELF
+- SPRX
+
+---
+
+# 🧩 Graphics
+
+Status: Pesquisa
+
+- OpenGL
+- Vulkan
+- Render Backend
+- Shader Manager
+- Texture Manager
+- Framebuffer
+
+---
+
+# 🔊 Audio
+
+Status: Planejado
+
+- Audio Engine
+- Mixer
+- Áudio 3D
+- Decoder
+- Suporte a múltiplos formatos
+
+---
+
+# 🎮 Input
+
+Status: Planejado
+
+- Gamepad
+- Teclado
+- Mouse
+- Touch
+- Mapeamento de controles
+
+---
+
+# 💾 File System
+
+Status: Planejado
+
+- Virtual File System (VFS)
+- Gerenciador de Arquivos
+- Cache
+- Save Data
+
+---
+
+# 🛠️ Developer Tools
+
+Status: Planejado
+
+- Debugger
+- Profiler
+- Console da Engine
+- Log Viewer
+- Performance Monitor
+
+---
+
+# 📚 Documentation
+
+Status: Atualização contínua
+
+- README.md
+- Wiki
+- API Reference
+- Tutoriais
+- FAQ
+- Changelog
+- Guias de desenvolvimento
+
+---
+
+# 📌 Observações
+
+Este roadmap será atualizado a cada nova versão Alpha, Beta e Release do Pure3XEngenie. Novos módulos poderão ser adicionados conforme a evolução do projeto.
