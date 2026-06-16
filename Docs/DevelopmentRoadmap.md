@@ -101,14 +101,9 @@ v0.1.3 Alpha
 
 ---
 
-## 📌 Observação
+## 🖥️ Core ##
 
-Este roadmap é atualizado continuamente. Toda nova funcionalidade do Pure3XEngenie deve ser registrada aqui antes de iniciar o desenvolvimento.
----
-
-# 🖥️ Core
-
-Status: Em desenvolvimento
+## Status: Em desenvolvimento ##
 
 - Boot System
 - System Manager
