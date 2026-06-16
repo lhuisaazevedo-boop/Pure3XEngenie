@@ -8,8 +8,8 @@ void System::showStatus() {
     std::cout << "=================================\n";
 
     std::cout << "Engine     : Pure3XEngenie\n";
-    std::cout << "Versao     : 0.1.2 Alpha Update\n";
-    std::cout << "Build      : Alpha\n";
+    std::cout << "Versao     : v0.1.3 Alpha\n";
+    std::cout << "Build      : 0013\n";
     std::cout << "Idioma     : pt_BR\n";
     std::cout << "Debug      : ON\n";
     std::cout << "Log Level  : INFO\n";
