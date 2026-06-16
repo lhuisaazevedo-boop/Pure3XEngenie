@@ -1,15 +1,15 @@
 ## 🚀 Pure3XEngenie v0.1.2 Alpha ##
 
-«⚠️ Pure3XEngenie encontra-se em fase Alpha.
-Novos recursos, melhorias e otimizações são adicionados a cada versão.»
+> ⚠️ O Pure3XEngenie encontra-se em fase **Alpha**.
+> Novos recursos, melhorias e otimizações são adicionados a cada versão.
 
 ---
 
-## 📌 Status Atua ##
+## 📌 Status Atual ##
 
-A Pure3XEngenie é uma engine em desenvolvimento escrita em C++, focada em arquitetura modular, organização de código e evolução contínua.
+O **Pure3XEngenie** é uma engine em desenvolvimento, escrita em **C++**, com arquitetura modular e foco em pesquisa, desempenho e expansão futura.
 
-A versão v0.1.2 Alpha consolida a base do projeto com novos módulos, melhorias no sistema de configuração e organização da estrutura interna.
+A versão **v0.1.2 Alpha** consolida a base do projeto com novos módulos, melhorias estruturais e uma organização mais sólida do código.
 
 ---
 
@@ -38,7 +38,7 @@ A versão v0.1.2 Alpha consolida a base do projeto com novos módulos, melhorias
 ## ⚙️ Config Manager ##
 
 - Estrutura inicial implementada
-- Arquivo "config.ini"
+- Arquivo config.ini
 - Leitura e gravação de configurações
 - Base preparada para futuras opções
 
@@ -51,9 +51,9 @@ A versão v0.1.2 Alpha consolida a base do projeto com novos módulos, melhorias
 
 ## 📄 Log System ##
 
-- Inicialização
-- Mensagens do Boot
-- Encerramento do sistema
+- Inicialização do sistema
+- Registro das mensagens do Boot
+- Registro do encerramento da Engine
 
 ## 🎮 Interface Terminal ##
 
@@ -64,6 +64,7 @@ A versão v0.1.2 Alpha consolida a base do projeto com novos módulos, melhorias
 ---
 
 ## 📁 Estrutura do Projeto ##
+
 ```text
 Pure3XEngenie/
 ├── Config/
@@ -163,13 +164,13 @@ Pure3XEngenie/
 
 ## 🚧 v0.2.0 ##
 
-- File System
-- Melhorias no Logger
-- Sistema de módulos
+- Expansão da arquitetura da Engine
+- Novos módulos internos
+- Melhorias de desempenho
 
 ## 🚧 v0.3.0 ##
 
-- Integração SDL2
+- Integração com SDL2
 - Sistema de áudio
 - Render Backend
 
