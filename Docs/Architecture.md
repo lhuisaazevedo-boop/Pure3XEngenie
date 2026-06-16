@@ -1,7 +1,7 @@
-# Arquitetura da Engine
+## Arquitetura da Engine ##
 
-## Estrutura Atual
-
+## Estrutura Atual ##
+```text
 Pure3XEngenie/
 ├── Core/
 ├── Config/
@@ -11,11 +11,11 @@ Pure3XEngenie/
 ├── src/
 │   └── main.cpp
 └── CMakeLists.txt
-
+```
 ---
 
-## Estrutura Planejada
-
+## Estrutura Planejada ##
+```text
 Pure3XEngenie/
 ├── src/
 │   ├── main.cpp        # Entrada da Engine
@@ -30,10 +30,10 @@ Pure3XEngenie/
 ├── GameModules/
 ├── include/
 └── CMakeLists.txt
-
+```
 ---
 
-## Objetivo
+## Objetivo ##
 
 - Separar a Engine da lógica de emulação.
 - Criar um gerenciador de jogos (`Games`).
