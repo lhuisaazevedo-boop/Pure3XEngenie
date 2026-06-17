@@ -184,3 +184,9 @@ Projeto desenvolvido para pesquisa, aprendizado e evolução de uma engine exper
 ## 📜 Licença ##
 
 MIT License.
+
+Aviso de Licença e Créditos
+
+Este projeto é desenvolvido por Lhuis e continua em desenvolvimento ativo.
+
+O Pure3XEngenie continuará recebendo atualizações frequentes. Cópias não oficiais podem ficar desatualizadas e não representar a versão oficial mais recente do projeto..
