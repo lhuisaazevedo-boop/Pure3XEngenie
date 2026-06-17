@@ -1,58 +1,88 @@
-Pure3XEngenie - Development Notes
+# Pure3XEngenie - Development Notes
 
-Ambiente Preparado
+## Ambiente Preparado
 
-Durante o desenvolvimento da v0.1.0 Alpha foram preparados componentes que serão utilizados futuramente pela Engine.
+Durante o desenvolvimento da versão **v0.1.3 Update**, foram preparados os componentes necessários para a futura expansão da Pure3XEngenie no ambiente Android.
 
-Ferramentas Instaladas
+A infraestrutura inicial foi organizada para suportar o desenvolvimento de recursos gráficos, multimídia e ferramentas nativas nas próximas versões da Engine.
 
-- Termux:X11
-- X11 Repository
-- PulseAudio
+---
 
-Objetivo
+## Ferramentas Instaladas
 
-Preparar o ambiente para futuras implementações gráficas e multimídia da Pure3XEngenie.
+- Termux
+- Android NDK r29
+- CMake
+- Ninja
+- Git
+- LLVM/Clang
+- Ambiente preparado para desenvolvimento nativo em Android
 
-Recursos Planejados
+---
 
-SDL2
+## Objetivo
+
+Preparar a infraestrutura de desenvolvimento para futuras implementações gráficas, multimídia e otimizações voltadas ao Android, mantendo uma arquitetura modular e escalável.
+
+---
+
+## Recursos Planejados
+
+### SDL2
 
 - Criação de janelas
 - Gerenciamento de eventos
-- Sistema de entrada
+- Sistema de entrada (Input)
 
-Sistema de Vídeo
+### Sistema de Vídeo
 
 - Renderização inicial
 - Backend gráfico
+- Gerenciamento de superfícies
 
-Sistema de Áudio
+### Sistema de Áudio
 
 - Reprodução de áudio
 - Gerenciamento de dispositivos
+- Base para futura Audio Engine
 
-Status Atual
+---
 
-Infraestrutura instalada e testada.
+## Status Atual
 
-Ainda não integrada ao Core da Engine.
+- Infraestrutura de desenvolvimento preparada.
+- Android NDK r29 instalado e configurado.
+- Ambiente de compilação funcional.
+- Core da Engine estabilizado.
+- Documentação revisada e expandida.
 
-Próximos Passos
+Os recursos gráficos e multimídia ainda não foram integrados ao Core da Engine.
 
-v0.1.1 Alpha
+---
 
-- Config Manager
-- Logs System
-- Network Manager
+## Próximos Passos
 
-Futuro
+### v0.1.4 Alpha
+
+- Melhorias no Boot System
+- Aprimoramento do Config Manager
+- Melhor organização do Core
+- Continuação da documentação
+
+### Futuro
 
 - SDL2
+- Graphics Engine
 - Render Backend
-- Audio System
-- Ferramentas gráficas
+- Audio Engine
+- Language Manager
+- Sistema de Plugins
+- Ferramentas para desenvolvedores
 
-Observação
+---
 
-A prioridade atual permanece na estabilização da arquitetura principal da Pure3XEngenie antes da implementação de recursos gráficos avançados.
+## Observação
+
+⚠️ A prioridade atual permanece na estabilização da arquitetura principal da Pure3XEngenie antes da implementação dos recursos gráficos e multimídia.
+
+O suporte ao Android encontra-se em fase inicial de preparação e poderá apresentar instabilidades até que a infraestrutura esteja completamente integrada ao Core da Engine.
