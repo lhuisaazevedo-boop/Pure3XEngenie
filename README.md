@@ -1,19 +1,21 @@
 ## 🚀 Pure3XEngenie v0.1.3 Alpha ##
 
 «⚠️ O Pure3XEngenie encontra-se em fase Alpha.
-Novos recursos, melhorias e otimizações são adicionados a cada atualização.»
+
+Novos recursos, melhorias, correções e otimizações são adicionados a cada atualização.»
 
 ---
 
 ## 📌 Status Atual ##
 
-O Pure3XEngenie é uma engine em desenvolvimento, escrita em C++, com foco em arquitetura modular, organização do código e pesquisas relacionadas à emulação de PlayStation 3 no ecossistema Android.
+O Pure3XEngenie é uma engine experimental desenvolvida em C++, voltada para pesquisa, aprendizado e evolução da arquitetura do PlayStation 3.
 
-A versão v0.1.3 Alpha consolida a base do projeto com melhorias no Boot System, Config Manager, System Manager, Network Manager e na estrutura geral da Engine.
+A versão v0.1.3 Alpha representa um grande avanço no projeto, consolidando uma base estável de compilação, uma estrutura modular organizada e melhorias significativas na documentação.
 
 ---
 
 ## ✅ Funcionalidades Implementadas ##
+
 ## 🟢 Boot System ##
 
 - Inicialização da Engine
@@ -24,7 +26,7 @@ A versão v0.1.3 Alpha consolida a base do projeto com melhorias no Boot System,
 
 ## 🧠 Core Engine ##
 
-- Núcleo principal
+- Núcleo principal da Engine
 - Controle de execução
 - Menu principal
 - Organização modular
@@ -41,11 +43,11 @@ A versão v0.1.3 Alpha consolida a base do projeto com melhorias no Boot System,
 
 - Estrutura implementada
 - Arquivo "config.ini"
-- Sistema preparado para múltiplos idiomas
-- Configurações do Boot
+- Base preparada para múltiplos idiomas
+- Configurações de Boot
 - Configurações de Rede
 - Configurações de Logs
-- Base preparada para futuras opções
+- Preparado para futuras opções
 
 ## 🌐 Network System ##
 
@@ -53,19 +55,19 @@ A versão v0.1.3 Alpha consolida a base do projeto com melhorias no Boot System,
 - Exibição do endereço IP
 - Verificação de portas abertas
 - Menu de rede
-- Base preparada para futuras melhorias
+- Estrutura preparada para futuras melhorias
 
 ## 📄 Log System ##
 
-- Inicialização do sistema
-- Registro das mensagens do Boot
+- Registro da inicialização
+- Registro do Boot
 - Registro do encerramento da Engine
 
 ## 🎮 Interface Terminal ##
 
 - Navegação por menus
-- Sistema modular
 - Interface organizada
+- Sistema modular
 
 ---
 
@@ -95,13 +97,13 @@ Pure3XEngenie/
 
 - Arquitetura modular
 - C++17
-- Compilação com CMake
+- Sistema de compilação com CMake
 - Boot System
 - Config Manager
 - Network Manager
 - Log System
 - Interface em Terminal
-- Fácil expansão
+- Estrutura preparada para expansão
 
 ---
 
@@ -115,31 +117,9 @@ Pure3XEngenie/
 
 ---
 
-## 🧩 Componentes Ativos ##
-
-- ✅ Boot System
-- ✅ Core Engine
-- ✅ System Manager
-- ✅ Config Manager
-- ✅ Network System
-- ✅ Log System
-- ✅ Menu Principal
-
----
-
-## 📊 Status do Projeto ##
-
-- ✅ v0.1.0 Alpha
-- ✅ v0.1.1 Alpha
-- ✅ v0.1.2 Alpha
-- ✅ v0.1.3 Alpha
-- 🚧 v0.1.4 Alpha (em desenvolvimento)
-
----
-
 ## 📚 Documentação ##
 
-## A documentação oficial está disponível na pasta Docs. ##
+A documentação oficial encontra-se na pasta Docs.
 
 - OfficialDocumentation.md
 - DevelopmentRoadmap.md
@@ -154,7 +134,7 @@ Pure3XEngenie/
 - Melhorias no Boot System
 - Melhorias no Config Manager
 - Novas opções de rede
-- Melhor organização do Core
+- Organização do Core
 
 ## 🚧 v0.1.5 Alpha ##
 
@@ -165,11 +145,11 @@ Pure3XEngenie/
 
 ## 🚧 Futuro ##
 
-- Sistema de plugins
+- Sistema de Plugins
 - Graphics Engine
 - Audio Engine
 - Language Manager
-- NCE (Native Code Execution)
+- Native Code Execution (NCE)
 - Time Manager
 - Ferramentas para desenvolvedores
 
@@ -178,15 +158,19 @@ Pure3XEngenie/
 ## 👨‍💻 Autor ##
 
 Lhuis
+
 Projeto desenvolvido para pesquisa, aprendizado e evolução de uma engine experimental voltada ao estudo da arquitetura do PlayStation 3.
+
 ---
 
 ## 📜 Licença ##
 
-MIT License.
+Este projeto é distribuído sob a MIT License.
 
 Aviso de Licença e Créditos
 
 Este projeto é desenvolvido por Lhuis e continua em desenvolvimento ativo.
 
-O Pure3XEngenie continuará recebendo atualizações frequentes. Cópias não oficiais podem ficar desatualizadas e não representar a versão oficial mais recente do projeto..
+Você pode estudar e contribuir conforme os termos da licença. Caso utilize partes do código, preserve os créditos do autor original.
+
+O Pure3XEngenie continuará recebendo atualizações frequentes. Cópias não oficiais podem ficar desatualizadas e não representar a versão oficial mais recente do projeto.
