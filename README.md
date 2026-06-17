@@ -1,8 +1,8 @@
-## 🚀 Pure3XEngenie v0.1.3 Alpha ##
+## 🚀 Pure3XEngenie v0.1.3 Update #
 
 «⚠️ O Pure3XEngenie encontra-se em fase Alpha.
 
-Novos recursos, melhorias, correções e otimizações são adicionados a cada atualização.»
+Novos recursos, melhorias, correções e otimizações são adicionados continuamente durante o desenvolvimento da Engine.»
 
 ---
 
@@ -10,7 +10,19 @@ Novos recursos, melhorias, correções e otimizações são adicionados a cada a
 
 O Pure3XEngenie é uma engine experimental desenvolvida em C++, voltada para pesquisa, aprendizado e evolução da arquitetura do PlayStation 3.
 
-A versão v0.1.3 Alpha representa um grande avanço no projeto, consolidando uma base estável de compilação, uma estrutura modular organizada e melhorias significativas na documentação.
+A versão v0.1.3 Update representa um importante avanço no projeto, consolidando uma base estável de compilação, reorganizando a estrutura da Engine e preparando o ambiente para futuras integrações com o Android.
+
+---
+
+## ⚠️ Aviso sobre o Android ##
+
+O Pure3XEngenie iniciou oficialmente a preparação para oferecer suporte à plataforma Android.
+
+O ambiente de desenvolvimento já conta com a infraestrutura necessária para futuras implementações utilizando o Android NDK.
+
+Entretanto, o suporte ao Android ainda se encontra em fase experimental e poderá sofrer alterações, limitações e instabilidades durante as próximas versões Alpha.
+
+Status do suporte Android: 🚧 Experimental.
 
 ---
 
@@ -47,7 +59,7 @@ A versão v0.1.3 Alpha representa um grande avanço no projeto, consolidando uma
 - Configurações de Boot
 - Configurações de Rede
 - Configurações de Logs
-- Preparado para futuras opções
+- Estrutura preparada para futuras opções
 
 ## 🌐 Network System ##
 
@@ -55,7 +67,7 @@ A versão v0.1.3 Alpha representa um grande avanço no projeto, consolidando uma
 - Exibição do endereço IP
 - Verificação de portas abertas
 - Menu de rede
-- Estrutura preparada para futuras melhorias
+- Base preparada para futuras melhorias
 
 ## 📄 Log System ##
 
@@ -76,12 +88,6 @@ A versão v0.1.3 Alpha representa um grande avanço no projeto, consolidando uma
 Pure3XEngenie/
 ├── Config/
 ├── Core/
-│   ├── Boot/
-│   ├── Logs/
-│   ├── Network/
-│   ├── System/
-│   ├── Engine.cpp
-│   └── Engine.h
 ├── Docs/
 ├── GameModules/
 ├── include/
@@ -114,6 +120,7 @@ Pure3XEngenie/
 - Git
 - GitHub
 - Termux
+- Android NDK (Preparação Experimental)
 
 ---
 
@@ -133,13 +140,13 @@ A documentação oficial encontra-se na pasta Docs.
 
 - Melhorias no Boot System
 - Melhorias no Config Manager
-- Novas opções de rede
 - Organização do Core
+- Continuação da preparação para Android
 
 ## 🚧 v0.1.5 Alpha ##
 
-- Início da Wiki oficial
 - Expansão da documentação
+- Wiki oficial
 - Guia de instalação
 - Manual do desenvolvedor
 
@@ -152,6 +159,7 @@ A documentação oficial encontra-se na pasta Docs.
 - Native Code Execution (NCE)
 - Time Manager
 - Ferramentas para desenvolvedores
+- Integração completa com Android
 
 ---
 
@@ -171,6 +179,6 @@ Aviso de Licença e Créditos
 
 Este projeto é desenvolvido por Lhuis e continua em desenvolvimento ativo.
 
-Você pode estudar e contribuir conforme os termos da licença. Caso utilize partes do código, preserve os créditos do autor original.
+Você pode estudar, contribuir e adaptar o código conforme os termos da licença MIT, preservando os créditos do autor original.
 
 O Pure3XEngenie continuará recebendo atualizações frequentes. Cópias não oficiais podem ficar desatualizadas e não representar a versão oficial mais recente do projeto.
