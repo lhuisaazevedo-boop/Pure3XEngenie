@@ -5,7 +5,7 @@
 <h1 align="center">Pure3XEngenie</h1>
 
 <p align="center">
-## Experimental PlayStation 3 Engine for Android ##
+Experimental PlayStation 3 Engine for Android
 </p>
 
 ---
