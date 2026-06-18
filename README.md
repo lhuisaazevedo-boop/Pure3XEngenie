@@ -1,28 +1,28 @@
-## 🚀 Pure3XEngenie v0.1.3 Update #
+## 🚀 Pure3XEngenie v0.1.4 Alpha ##
 
-«⚠️ O Pure3XEngenie encontra-se em fase Alpha.
+«⚠️ O Pure3XEngenie encontra-se em desenvolvimento na fase Alpha.
 
-Novos recursos, melhorias, correções e otimizações são adicionados continuamente durante o desenvolvimento da Engine.»
+Novos recursos, melhorias, correções e otimizações são adicionados continuamente a cada atualização.»
 
 ---
 
 ## 📌 Status Atual ##
 
-O Pure3XEngenie é uma engine experimental desenvolvida em C++, voltada para pesquisa, aprendizado e evolução da arquitetura do PlayStation 3.
+O Pure3XEngenie é uma engine experimental desenvolvida em C++, focada em pesquisa, arquitetura modular e estudos relacionados à emulação e execução de sistemas complexos.
 
-A versão v0.1.3 Update representa um importante avanço no projeto, consolidando uma base estável de compilação, reorganizando a estrutura da Engine e preparando o ambiente para futuras integrações com o Android.
+A versão v0.1.4 Alpha representa uma evolução importante da estrutura interna da engine, introduzindo um sistema centralizado de informações de versão através do Version Core, tornando futuras atualizações muito mais simples e organizadas.
 
 ---
 
-## ⚠️ Aviso sobre o Android ##
+## ⚠️ Suporte ao Android ##
 
-O Pure3XEngenie iniciou oficialmente a preparação para oferecer suporte à plataforma Android.
+O Pure3XEngenie iniciou oficialmente a preparação para oferecer suporte ao Android.
 
-O ambiente de desenvolvimento já conta com a infraestrutura necessária para futuras implementações utilizando o Android NDK.
+O ambiente de desenvolvimento já possui uma base funcional utilizando Termux, CMake e Android NDK.
 
-Entretanto, o suporte ao Android ainda se encontra em fase experimental e poderá sofrer alterações, limitações e instabilidades durante as próximas versões Alpha.
+Atualmente o suporte permanece em fase experimental.
 
-Status do suporte Android: 🚧 Experimental.
+Status: 🚧 Experimental
 
 ---
 
@@ -31,63 +31,87 @@ Status do suporte Android: 🚧 Experimental.
 ## 🟢 Boot System ##
 
 - Inicialização da Engine
-- Logo ASCII do Pure3XEngenie
+- Logo ASCII
 - Barra de carregamento
-- Sequência de Boot aprimorada
+- Sequência de Boot
+- Sistema de Logs
 - Tela "Pure3XEngenie Ready"
 
-## 🧠 Core Engine ##
+## 🧠 Core ##
 
-- Núcleo principal da Engine
-- Controle de execução
-- Menu principal
-- Organização modular
+- Arquitetura modular
+- Organização da Engine
+- Controle da execução
+- Base para expansão
+
+## 📦 Version Core (Novo na v0.1.4) ##
+
+- Centralização das informações da Engine
+- Nome da Engine
+- Versão
+- Build
+- Desenvolvedor
+- Plataforma
+- Idioma
+
+Agora todas essas informações são controladas em um único local:
+```text
+core/
+└── version/
+    ├── version.h
+    ├── version.cpp
+    └── changelog.h
+```
+Isso elimina a necessidade de alterar diversos arquivos sempre que uma nova versão for lançada.
 
 ## 🖥️ System Manager ##
 
 - Status do sistema
-- Verificação de componentes
 - Informações da Engine
-- Exibição da versão
-- Idioma atual
+- Verificação dos componentes
+- Leitura automática do Version Core
 
 ## ⚙️ Config Manager ##
 
-- Estrutura implementada
-- Arquivo "config.ini"
-- Base preparada para múltiplos idiomas
-- Configurações de Boot
-- Configurações de Rede
-- Configurações de Logs
-- Estrutura preparada para futuras opções
+- Estrutura modular
+- Configuração de Boot
+- Configuração de Rede
+- Configuração de Logs
+- Preparação para múltiplos idiomas
 
 ## 🌐 Network System ##
 
 - Teste de conexão
-- Exibição do endereço IP
-- Verificação de portas abertas
-- Menu de rede
+- Endereço IP
+- Portas
 - Base preparada para futuras melhorias
 
 ## 📄 Log System ##
 
 - Registro da inicialização
 - Registro do Boot
-- Registro do encerramento da Engine
+- Registro do encerramento
 
 ## 🎮 Interface Terminal ##
 
-- Navegação por menus
+- Menu principal
+- Navegação por opções
 - Interface organizada
-- Sistema modular
+- Estrutura modular
 
 ---
 
 ## 📁 Estrutura do Projeto ##
-```
+```md
 Pure3XEngenie/
 ├── Config/
 ├── Core/
+│   ├── Boot/
+│   ├── Config/
+│   ├── Logger/
+│   ├── Platform/
+│   ├── System/
+│   └── Version/
 ├── Docs/
 ├── GameModules/
 ├── include/
@@ -101,14 +125,15 @@ Pure3XEngenie/
 
 ## ⭐ Características ##
 
-- Arquitetura modular
+- Arquitetura Modular
 - C++17
-- Sistema de compilação com CMake
+- CMake
 - Boot System
+- Version Core
 - Config Manager
 - Network Manager
 - Log System
-- Interface em Terminal
+- Interface Terminal
 - Estrutura preparada para expansão
 
 ---
@@ -120,13 +145,13 @@ Pure3XEngenie/
 - Git
 - GitHub
 - Termux
-- Android NDK (Preparação Experimental)
+- Android NDK (Experimental)
 
 ---
 
 ## 📚 Documentação ##
 
-A documentação oficial encontra-se na pasta Docs.
+Toda a documentação oficial encontra-se na pasta Docs.
 
 - OfficialDocumentation.md
 - DevelopmentRoadmap.md
@@ -136,29 +161,29 @@ A documentação oficial encontra-se na pasta Docs.
 
 ## 🔮 Roadmap ##
 
-## 🚧 v0.1.4 Alpha ##
+🚧 v0.1.4 Alpha Update
 
-- Melhorias no Boot System
-- Melhorias no Config Manager
+- Melhorias no Boot
+- Melhorias no Version Core
 - Organização do Core
-- Continuação da preparação para Android
+- Correções internas
+- Expansão da documentação
 
 ## 🚧 v0.1.5 Alpha ##
 
-- Expansão da documentação
-- Wiki oficial
-- Guia de instalação
-- Manual do desenvolvedor
+- GameModules
+- Language Manager
+- Configurações avançadas
+- Melhorias na arquitetura
 
-## 🚧 Futuro ##
+## 🚀 Futuro ##
 
-- Sistema de Plugins
+- Plugin System
 - Graphics Engine
 - Audio Engine
-- Language Manager
 - Native Code Execution (NCE)
 - Time Manager
-- Ferramentas para desenvolvedores
+- Ferramentas para Desenvolvedores
 - Integração completa com Android
 
 ---
@@ -167,18 +192,14 @@ A documentação oficial encontra-se na pasta Docs.
 
 Lhuis
 
-Projeto desenvolvido para pesquisa, aprendizado e evolução de uma engine experimental voltada ao estudo da arquitetura do PlayStation 3.
+Projeto desenvolvido para pesquisa, aprendizado e evolução de uma engine experimental escrita em C++.
 
 ---
 
 ## 📜 Licença ##
 
-Este projeto é distribuído sob a MIT License.
+Distribuído sob a MIT License.
 
-Aviso de Licença e Créditos
+Você pode estudar, modificar e contribuir com o projeto, respeitando os termos da licença e mantendo os créditos do autor original.
 
-Este projeto é desenvolvido por Lhuis e continua em desenvolvimento ativo.
-
-Você pode estudar, contribuir e adaptar o código conforme os termos da licença MIT, preservando os créditos do autor original.
-
-O Pure3XEngenie continuará recebendo atualizações frequentes. Cópias não oficiais podem ficar desatualizadas e não representar a versão oficial mais recente do projeto.
+O Pure3XEngenie continuará recebendo atualizações frequentes. As versões oficiais serão sempre publicadas neste repositório.
