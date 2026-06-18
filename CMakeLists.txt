@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 project(Pure3XEngenie
-    VERSION 0.1.3
+    VERSION 0.1.4
     DESCRIPTION "Experimental PlayStation 3 Engine for Android"
     LANGUAGES CXX
 )
@@ -14,14 +14,20 @@ add_executable(Pure3XEngenie
     src/main.cpp
 
     Core/Engine.cpp
+
     Core/Boot/Boot.cpp
     Core/System/System.cpp
     Core/Logs/Log.cpp
-
     Core/Network/network_manager.cpp
     Core/Network/network_utils.cpp
 
     Config/ConfigManager.cpp
+
+    core/boot/boot_system.cpp
+    core/config/config_manager.cpp
+    core/logger/logger.cpp
+    core/platform/platform.cpp
+    core/system/system.cpp
 )
 
 target_include_directories(Pure3XEngenie PRIVATE
@@ -33,6 +39,13 @@ target_include_directories(Pure3XEngenie PRIVATE
     Core/System
     Core/Logs
     Core/Network
+
+    core
+    core/boot
+    core/config
+    core/logger
+    core/platform
+    core/system
 )
 
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")

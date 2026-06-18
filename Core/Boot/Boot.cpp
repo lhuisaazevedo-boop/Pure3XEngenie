@@ -1,5 +1,6 @@
 #include "Boot.h"
 #include "../Logs/Log.h"
+#include "../../core/version/version.h"
 
 #include <iostream>
 #include <thread>
@@ -13,7 +14,9 @@ void bootSystem() {
     Log::Info("Boot System iniciado");
 
     std::cout << "\n==========================================\n";
-    std::cout << "             Pure3XEngenie\n";
+    std::cout << "             "
+              << Pure3XEngenie::Version::Name
+              << "\n";
     std::cout << "==========================================\n\n";
 
     std::cout << "        ██████╗ ██╗   ██╗██████╗ ███████╗\n";
@@ -26,8 +29,16 @@ void bootSystem() {
     std::cout << "        Experimental Engine for PS3 Research\n";
     std::cout << "==========================================\n\n";
 
-    std::cout << "Version   : v0.1.3 Alpha\n";
-    std::cout << "Developer : Lhuis\n\n";
+    std::cout << "Version   : "
+              << Pure3XEngenie::Version::Version << "\n";
+    std::cout << "Build     : "
+              << Pure3XEngenie::Version::Build << "\n";
+    std::cout << "Developer : "
+              << Pure3XEngenie::Version::Developer << "\n";
+    std::cout << "Platform  : "
+              << Pure3XEngenie::Version::Platform << "\n";
+    std::cout << "Language  : "
+              << Pure3XEngenie::Version::Language << "\n\n";
 
     const int width = 30;
 
@@ -67,7 +78,9 @@ void bootSystem() {
     Log::Info("Sistema iniciado com sucesso!");
 
     std::cout << "\n==========================================\n";
-    std::cout << "         Pure3XEngenie Ready\n";
+    std::cout << "         "
+              << Pure3XEngenie::Version::Name
+              << " Ready\n";
     std::cout << "==========================================\n\n";
 
     Log::Shutdown();
