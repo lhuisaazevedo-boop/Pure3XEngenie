@@ -1,24 +1,30 @@
+<p align="center">
+  <img src="Docs/images/Pure3XEngenie.png" alt="Pure3XEngenie Banner" width="100%">
+</p><h1 align="center">Pure3XEngenie</h1><p align="center">
+Experimental PlayStation 3 Engine for Android
+</p>---
+
 ## Pure3XEngenie v0.1.4 Update ##
 
 «⚠️ O Pure3XEngenie encontra-se em desenvolvimento na fase Alpha.»
 
-Novos recursos, melhorias, correções e otimizações são adicionados continuamente a cada atualização.
+Novos recursos, melhorias, correções e otimizações são adicionados a cada versão.
 
 ---
 
 ## 📌 Status Atual ##
 
-O Pure3XEngenie é uma engine experimental desenvolvida em C++, focada em pesquisa, aprendizado e desenvolvimento de tecnologias para emulação do PlayStation 3 no Android.
+O Pure3XEngenie é uma engine experimental desenvolvida em C++, focada em pesquisa, arquitetura modular e desenvolvimento de baixo nível para emulação de PlayStation 3 no Android.
 
-A versão v0.1.4 Update representa uma grande evolução da estrutura interna do projeto, com reorganização completa do Core, melhorias no Boot System e preparação para os futuros módulos do PS3.
+A versão v0.1.4 Update representa uma grande evolução da estrutura interna do projeto, preparando a base para os próximos módulos do Core PS3.
 
 ---
 
 ## ⚠️ Suporte ao Android ##
 
-O Pure3XEngenie iniciou oficialmente a preparação para oferecer suporte ao Android.
+O Pure3XEngenie iniciou oficialmente a preparação para oferecer suporte nativo ao Android.
 
-O ambiente de desenvolvimento já possui uma base funcional utilizando C++, CMake, Termux e Android NDK.
+O ambiente de desenvolvimento já possui uma base funcional utilizando Termux, CMake, Android NDK e arquitetura ARM64.
 
 Status: 🚧 Experimental
 
@@ -33,14 +39,18 @@ Status: 🚧 Experimental
 - Barra de carregamento
 - Sequência de Boot
 - Sistema de Logs
-- Tela "Pure3XEngenie Ready"
+- Tela Pure3XEngenie Ready
+
+---
 
 ## 🧠 Core ##
 
-- Arquitetura modular
+- Arquitetura Modular
 - Organização completa da Engine
 - Controle da execução
 - Base preparada para expansão
+
+---
 
 ## 📦 Version Core ##
 
@@ -52,21 +62,21 @@ Status: 🚧 Experimental
 - Plataforma
 - Idioma
 
-## Estrutura: ##
-```md
+## Estrutura ##
+```
 core/
 └── version/
     ├── version.h
     ├── version.cpp
     └── changelog.h
 ```
-Agora todas as informações da versão ficam centralizadas em um único local.
+Agora todas as informações da Engine ficam centralizadas em um único local.
 
 ---
 
 ## 🖥️ System Manager ##
 
-- Status do sistema
+- Status do Sistema
 - Informações da Engine
 - Verificação dos componentes
 - Leitura automática do Version Core
@@ -88,7 +98,7 @@ Agora todas as informações da versão ficam centralizadas em um único local.
 - Teste de conexão
 - Endereço IP
 - Informações da rede
-- Portas abertas
+- Portas
 - Base preparada para futuras melhorias
 
 ---
@@ -97,7 +107,7 @@ Agora todas as informações da versão ficam centralizadas em um único local.
 
 - Logger reescrito
 - Logs em arquivo
-- Níveis:
+- Níveis de Log
 ```
 [INFO]
 [OK]
@@ -111,7 +121,7 @@ Agora todas as informações da versão ficam centralizadas em um único local.
 
 ## 🎮 Interface Terminal ##
 
-- Menu principal
+- Menu Principal
 - Tela de Status
 - Sistema de Configuração
 - Menu de Rede
@@ -168,9 +178,9 @@ Pure3XEngenie/
 
 ---
 
-## 📚 Documentação ##
+## 📚 Documentação #$
 
-A documentação oficial encontra-se na pasta Docs.
+Toda a documentação oficial encontra-se na pasta Docs.
 
 - OfficialDocumentation.md
 - DevelopmentRoadmap.md
@@ -224,7 +234,7 @@ A documentação oficial encontra-se na pasta Docs.
 
 ## 🚧 v0.1.8 Alpha ##
 
-- RSX (Graphics) Base
+- RSX Graphics Base
 - SPU Framework
 - Melhorias de desempenho
 - Sistema de Plugins
@@ -247,17 +257,14 @@ A documentação oficial encontra-se na pasta Docs.
 - Native Code Execution (NCE)
 - Vulkan Renderer
 - Time Manager
-- Plugin System
-- Ferramentas para Desenvolvedores
-- Integração completa com Android
 
 ---
 
 ## 👨‍💻 Autor ##
 
-Lhuis
+Lhuis (LhuisDev)
 
-Projeto desenvolvido para pesquisa, aprendizado e evolução de uma engine experimental para PlayStation 3 em Android.
+Projeto desenvolvido para pesquisa, aprendizado e evolução de uma engine experimental de PlayStation 3 para Android.
 
 ---
 
@@ -267,4 +274,4 @@ Distribuído sob a MIT License.
 
 Você pode estudar, modificar e contribuir com o projeto, respeitando os termos da licença e mantendo os créditos do autor original.
 
-O Pure3XEngenie continuará recebendo atualizações frequentes. As versões oficiais serão sempre publicadas neste repositório.
+O Pure3XEngenie continuará recebendo atualizações frequentes. Todas as versões oficiais serão publicadas neste repositório.
