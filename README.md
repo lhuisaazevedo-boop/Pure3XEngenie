@@ -1,16 +1,16 @@
-## 🚀 Pure3XEngenie v0.1.4 Alpha ##
+## Pure3XEngenie v0.1.4 Update ##
 
-«⚠️ O Pure3XEngenie encontra-se em desenvolvimento na fase Alpha.
+«⚠️ O Pure3XEngenie encontra-se em desenvolvimento na fase Alpha.»
 
-Novos recursos, melhorias, correções e otimizações são adicionados continuamente a cada atualização.»
+Novos recursos, melhorias, correções e otimizações são adicionados continuamente a cada atualização.
 
 ---
 
 ## 📌 Status Atual ##
 
-O Pure3XEngenie é uma engine experimental desenvolvida em C++, focada em pesquisa, arquitetura modular e estudos relacionados à emulação e execução de sistemas complexos.
+O Pure3XEngenie é uma engine experimental desenvolvida em C++, focada em pesquisa, aprendizado e desenvolvimento de tecnologias para emulação do PlayStation 3 no Android.
 
-A versão v0.1.4 Alpha representa uma evolução importante da estrutura interna da engine, introduzindo um sistema centralizado de informações de versão através do Version Core, tornando futuras atualizações muito mais simples e organizadas.
+A versão v0.1.4 Update representa uma grande evolução da estrutura interna do projeto, com reorganização completa do Core, melhorias no Boot System e preparação para os futuros módulos do PS3.
 
 ---
 
@@ -18,9 +18,7 @@ A versão v0.1.4 Alpha representa uma evolução importante da estrutura interna
 
 O Pure3XEngenie iniciou oficialmente a preparação para oferecer suporte ao Android.
 
-O ambiente de desenvolvimento já possui uma base funcional utilizando Termux, CMake e Android NDK.
-
-Atualmente o suporte permanece em fase experimental.
+O ambiente de desenvolvimento já possui uma base funcional utilizando C++, CMake, Termux e Android NDK.
 
 Status: 🚧 Experimental
 
@@ -40,11 +38,11 @@ Status: 🚧 Experimental
 ## 🧠 Core ##
 
 - Arquitetura modular
-- Organização da Engine
+- Organização completa da Engine
 - Controle da execução
-- Base para expansão
+- Base preparada para expansão
 
-## 📦 Version Core (Novo na v0.1.4) ##
+## 📦 Version Core ##
 
 - Centralização das informações da Engine
 - Nome da Engine
@@ -54,15 +52,17 @@ Status: 🚧 Experimental
 - Plataforma
 - Idioma
 
-Agora todas essas informações são controladas em um único local:
-```text
+## Estrutura: ##
+```md
 core/
 └── version/
     ├── version.h
     ├── version.cpp
     └── changelog.h
 ```
-Isso elimina a necessidade de alterar diversos arquivos sempre que uma nova versão for lançada.
+Agora todas as informações da versão ficam centralizadas em um único local.
+
+---
 
 ## 🖥️ System Manager ##
 
@@ -71,52 +71,71 @@ Isso elimina a necessidade de alterar diversos arquivos sempre que uma nova vers
 - Verificação dos componentes
 - Leitura automática do Version Core
 
+---
+
 ## ⚙️ Config Manager ##
 
-- Estrutura modular
-- Configuração de Boot
-- Configuração de Rede
-- Configuração de Logs
+- Configuração modular
+- Boot
+- Rede
+- Logs
 - Preparação para múltiplos idiomas
+
+---
 
 ## 🌐 Network System ##
 
 - Teste de conexão
 - Endereço IP
-- Portas
+- Informações da rede
+- Portas abertas
 - Base preparada para futuras melhorias
 
-## 📄 Log System ##
+---
 
-- Registro da inicialização
-- Registro do Boot
-- Registro do encerramento
+## 📄 Logger ##
+
+- Logger reescrito
+- Logs em arquivo
+- Níveis:
+```
+[INFO]
+[OK]
+[WARN]
+[ERROR]
+```
+- Detecção automática de Threads
+- Preparação para Debug
+
+---
 
 ## 🎮 Interface Terminal ##
 
 - Menu principal
-- Navegação por opções
+- Tela de Status
+- Sistema de Configuração
+- Menu de Rede
 - Interface organizada
-- Estrutura modular
 
 ---
 
 ## 📁 Estrutura do Projeto ##
-```md
+```
 Pure3XEngenie/
 ├── Config/
-├── Core/
-│   ├── Boot/
-│   ├── Config/
-│   ├── Logger/
-│   ├── Platform/
-│   ├── System/
-│   └── Version/
 ├── Docs/
-├── GameModules/
+├── build/
+├── core/
+│   ├── boot/
+│   ├── config/
+│   ├── gamemodules/
+│   ├── logger/
+│   ├── network/
+│   ├── platform/
+│   ├── system/
+│   └── version/
 ├── include/
 ├── src/
-├── build/
 ├── CMakeLists.txt
 ├── README.md
 └── LICENSE
@@ -131,8 +150,8 @@ Pure3XEngenie/
 - Boot System
 - Version Core
 - Config Manager
+- Logger
 - Network Manager
-- Log System
 - Interface Terminal
 - Estrutura preparada para expansão
 
@@ -151,7 +170,7 @@ Pure3XEngenie/
 
 ## 📚 Documentação ##
 
-Toda a documentação oficial encontra-se na pasta Docs.
+A documentação oficial encontra-se na pasta Docs.
 
 - OfficialDocumentation.md
 - DevelopmentRoadmap.md
@@ -159,30 +178,76 @@ Toda a documentação oficial encontra-se na pasta Docs.
 
 ---
 
-## 🔮 Roadmap ##
+## 🗺️ Roadmap ##
 
-🚧 v0.1.4 Alpha Update
+## ✅ v0.1.4 Update ##
 
+- Reorganização completa do Core
+- Novo Logger
+- Version Core
 - Melhorias no Boot
-- Melhorias no Version Core
-- Organização do Core
-- Correções internas
-- Expansão da documentação
+- Menu de Rede
+- Status do Sistema
+- Correções gerais
+- Preparação para GameModules
+
+---
 
 ## 🚧 v0.1.5 Alpha ##
 
-- GameModules
+- Expansão dos GameModules
+- Loader Base
 - Language Manager
 - Configurações avançadas
-- Melhorias na arquitetura
+- Melhor organização do projeto
 
-## 🚀 Futuro ##
+---
 
-- Plugin System
+## 🚧 v0.1.6 Alpha ##
+
+- PS3 Module
+- ELF Loader
+- SELF Loader
+- SPRX Loader
+- Melhorias no sistema de arquivos
+
+---
+
+## 🚧 v0.1.7 Alpha ##
+
+- Memory Manager
+- Virtual File System
+- Kernel Base
+- Thread Manager
+
+---
+
+## 🚧 v0.1.8 Alpha ##
+
+- RSX (Graphics) Base
+- SPU Framework
+- Melhorias de desempenho
+- Sistema de Plugins
+
+---
+
+## 🚀 v0.1.9 Alpha ##
+
+- Primeira estrutura funcional do Core PS3
+- Melhor integração dos módulos
+- Base para carregamento de jogos
+- Preparação para futuras versões Beta
+
+---
+
+## 🔮 Futuro ##
+
 - Graphics Engine
 - Audio Engine
 - Native Code Execution (NCE)
+- Vulkan Renderer
 - Time Manager
+- Plugin System
 - Ferramentas para Desenvolvedores
 - Integração completa com Android
 
@@ -192,7 +257,7 @@ Toda a documentação oficial encontra-se na pasta Docs.
 
 Lhuis
 
-Projeto desenvolvido para pesquisa, aprendizado e evolução de uma engine experimental escrita em C++.
+Projeto desenvolvido para pesquisa, aprendizado e evolução de uma engine experimental para PlayStation 3 em Android.
 
 ---
 

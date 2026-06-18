@@ -1,5 +1,5 @@
-#include "../Core/Boot/Boot.h"
-#include "../Core/Engine.h"
+#include "../core/boot/Boot.h"
+#include "../core/Engine.h"
 
 int main() {
 

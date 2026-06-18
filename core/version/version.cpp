@@ -5,32 +5,32 @@ namespace Version {
 
 const char* GetEngineName()
 {
-    return "Pure3XEngenie";
+    return Name;
 }
 
 const char* GetVersion()
 {
-    return "v0.1.4 Alpha";
+    return Version;
 }
 
 const char* GetBuild()
 {
-    return "0014";
+    return Build;
 }
 
 const char* GetDeveloper()
 {
-    return "Lhuis";
+    return Developer;
 }
 
 const char* GetPlatform()
 {
-    return "Android";
+    return Platform;
 }
 
 const char* GetLanguage()
 {
-    return "English";
+    return Language;
 }
 
 } // namespace Version

@@ -11,41 +11,54 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_executable(Pure3XEngenie
+
+    # Main
     src/main.cpp
 
-    Core/Engine.cpp
+    # Engine
+    core/Engine.cpp
 
-    Core/Boot/Boot.cpp
-    Core/System/System.cpp
-    Core/Logs/Log.cpp
-    Core/Network/network_manager.cpp
-    Core/Network/network_utils.cpp
+    # Boot
+    core/boot/Boot.cpp
 
+    # Config
     Config/ConfigManager.cpp
-
-    core/boot/boot_system.cpp
     core/config/config_manager.cpp
-    core/logger/logger.cpp
-    core/platform/platform.cpp
+
+    # System
+    core/system/System.cpp
     core/system/system.cpp
+
+    # Logger
+    core/logger/Log.cpp
+    core/logger/logger.cpp
+
+    # Network
+    core/network/network_manager.cpp
+    core/network/network_utils.cpp
+
+    # Version
+    core/version/version.cpp
+
+    # Game Modules
+    core/gamemodules/GameModule.cpp
 )
 
 target_include_directories(Pure3XEngenie PRIVATE
-    .
-    Config
 
-    Core
-    Core/Boot
-    Core/System
-    Core/Logs
-    Core/Network
+    .
+
+    Config
 
     core
     core/boot
     core/config
+    core/gamemodules
     core/logger
+    core/network
     core/platform
     core/system
+    core/version
 )
 
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
