@@ -1,37 +1,33 @@
 <p align="center">
-  <img src="Docs/images/Pure3XEngenie.png" alt="Pure3XEngenie Banner" width="100%">
-</p>
+  <img src="Docs/images/Pure3XEngenie-0.1.5-Alpha.png" alt="Pure3XEngenie v0.1.5 Alpha Banner" width="100%">
+</p><h1 align="center">Pure3XEngenie</h1><p align="center">
+Engine Experimental de PlayStation 3 para Android
+</p>---
 
-<h1 align="center">Pure3XEngenie</h1>
-
-<p align="center">
-Experimental PlayStation 3 Engine for Android
-</p>
-
----
-## Pure3XEngenie v0.1.4 Update ##
+## 🚀 Pure3XEngenie v0.1.5 Alpha ##
 
 «⚠️ O Pure3XEngenie encontra-se em desenvolvimento na fase Alpha.»
 
-Novos recursos, melhorias, correções e otimizações são adicionados a cada versão.
+A versão v0.1.5 Alpha representa a maior atualização da arquitetura do projeto até o momento, trazendo novos módulos fundamentais para o desenvolvimento futuro da engine.
 
 ---
 
 ## 📌 Status Atual ##
 
-O Pure3XEngenie é uma engine experimental desenvolvida em C++, focada em pesquisa, arquitetura modular e desenvolvimento de baixo nível para emulação de PlayStation 3 no Android.
+O Pure3XEngenie é uma engine experimental de PlayStation 3 desenvolvida totalmente em C++20, com foco em Android.
 
-A versão v0.1.4 Update representa uma grande evolução da estrutura interna do projeto, preparando a base para os próximos módulos do Core PS3.
+Objetivos atuais:
 
----
+- Arquitetura modular
+- Base da Engine
+- Emulator Core
+- Kernel Base
+- Loader PS3
+- Virtual File System
+- Compatibilidade futura com Vulkan
+- Preparação para Android NDK
 
-## ⚠️ Suporte ao Android ##
-
-O Pure3XEngenie iniciou oficialmente a preparação para oferecer suporte nativo ao Android.
-
-O ambiente de desenvolvimento já possui uma base funcional utilizando Termux, CMake, Android NDK e arquitetura ARM64.
-
-Status: 🚧 Experimental
+## Status: 🚧 Alpha v0.1.5 ##
 
 ---
 
@@ -44,22 +40,22 @@ Status: 🚧 Experimental
 - Barra de carregamento
 - Sequência de Boot
 - Sistema de Logs
-- Tela Pure3XEngenie Ready
 
 ---
 
-## 🧠 Core ##
+## 🧠 Engine Core ##
 
 - Arquitetura Modular
-- Organização completa da Engine
-- Controle da execução
-- Base preparada para expansão
+- Organização da Engine
+- Controle de Execução
+- Estrutura preparada para expansão
 
 ---
 
-## 📦 Version Core ##
+## 📦 Version System ##
 
-- Centralização das informações da Engine
+core/version/
+
 - Nome da Engine
 - Versão
 - Build
@@ -67,70 +63,96 @@ Status: 🚧 Experimental
 - Plataforma
 - Idioma
 
-## Estrutura ##
-```
-core/
-└── version/
-    ├── version.h
-    ├── version.cpp
-    └── changelog.h
-```
-Agora todas as informações da Engine ficam centralizadas em um único local.
-
----
-
-## 🖥️ System Manager ##
-
-- Status do Sistema
-- Informações da Engine
-- Verificação dos componentes
-- Leitura automática do Version Core
-
 ---
 
 ## ⚙️ Config Manager ##
 
-- Configuração modular
-- Boot
-- Rede
-- Logs
+- Configuração da Engine
+- Configuração Modular
 - Preparação para múltiplos idiomas
-
----
-
-## 🌐 Network System ##
-
-- Teste de conexão
-- Endereço IP
-- Informações da rede
-- Portas
-- Base preparada para futuras melhorias
 
 ---
 
 ## 📄 Logger ##
 
-- Logger reescrito
+- Logger da Engine
 - Logs em arquivo
+- Informações da Engine
 - Níveis de Log
-```
-[INFO]
-[OK]
-[WARN]
-[ERROR]
-```
-- Detecção automática de Threads
 - Preparação para Debug
 
 ---
 
-## 🎮 Interface Terminal ##
+## 🌐 Network ##
 
-- Menu Principal
-- Tela de Status
-- Sistema de Configuração
-- Menu de Rede
-- Interface organizada
+- Teste de conexão
+- Informações da Rede
+- Endereço IP
+
+---
+
+## 🎮 Game Modules ##
+
+- Estrutura para módulos de jogos
+- Organização modular
+
+---
+
+## 📦 Module Manager ##
+
+- Registro de módulos
+- Inicialização automática
+- Encerramento automático
+
+---
+
+## 💿 Loader ##
+
+- ELF Loader
+- SELF Loader
+- SPRX Loader
+
+---
+
+## 📁 Virtual File System (VFS) ##
+
+- Virtual File System
+- File System
+- Directory Manager
+
+---
+
+## ⚙️ Kernel Base ##
+
+- Kernel
+- Process Manager
+- Thread Manager
+
+---
+
+## 🕹 Emulator Core ##
+
+- Emulator
+- CPU
+- GPU
+- SPU
+- Memory
+
+---
+
+## 💽 Disc / Game Manager ##
+
+- Disc Manager
+- Game Manager
+
+---
+
+## 🧠 Memory Manager ##
+
+- Gerenciamento de Memória
+- Leitura de memória
+- Escrita de memória
+- Inicialização de memória
 
 ---
 
@@ -139,17 +161,25 @@ Agora todas as informações da Engine ficam centralizadas em um único local.
 Pure3XEngenie/
 ├── Config/
 ├── Docs/
+│   └── images/
+│       └── Pure3XEngenie-0.1.5-Alpha.png
 ├── build/
 ├── core/
 │   ├── boot/
 │   ├── config/
+│   ├── disc/
+│   ├── emulator/
 │   ├── gamemodules/
+│   ├── kernel/
+│   ├── loader/
 │   ├── logger/
+│   ├── memory/
+│   ├── modules/
 │   ├── network/
 │   ├── platform/
 │   ├── system/
-│   └── version/
-├── include/
+│   ├── version/
+│   └── vfs/
 ├── src/
 ├── CMakeLists.txt
 ├── README.md
@@ -159,33 +189,37 @@ Pure3XEngenie/
 
 ## ⭐ Características ##
 
+- C++20
 - Arquitetura Modular
-- C++17
-- CMake
 - Boot System
-- Version Core
+- Version Manager
 - Config Manager
 - Logger
 - Network Manager
-- Interface Terminal
-- Estrutura preparada para expansão
+- Module Manager
+- Emulator Core
+- Disc Manager
+- Memory Manager
+- Kernel Base
+- Loader
+- Virtual File System
 
 ---
 
 ## ⚙️ Tecnologias ##
 
-- C++
+- C++20
 - CMake
 - Git
 - GitHub
 - Termux
-- Android NDK (Experimental)
+- Android NDK (Preparação)
 
 ---
 
-## 📚 Documentação #$
+## 📚 Documentação ##
 
-Toda a documentação oficial encontra-se na pasta Docs.
+Toda a documentação oficial encontra-se na pasta Docs/.
 
 - OfficialDocumentation.md
 - DevelopmentRoadmap.md
@@ -195,88 +229,104 @@ Toda a documentação oficial encontra-se na pasta Docs.
 
 ## 🗺️ Roadmap ##
 
-## ✅ v0.1.4 Update ##
+## ✅ v0.1.5 Alpha ##
 
-- Reorganização completa do Core
-- Novo Logger
-- Version Core
-- Melhorias no Boot
-- Menu de Rede
-- Status do Sistema
-- Correções gerais
-- Preparação para GameModules
-
----
-
-## 🚧 v0.1.5 Alpha ##
-
-- Expansão dos GameModules
-- Loader Base
-- Language Manager
-- Configurações avançadas
-- Melhor organização do projeto
+- Emulator Core
+- Disc Manager
+- Game Manager
+- Memory Manager
+- Module Manager
+- Kernel Base
+- Loader System
+- Virtual File System
+- Melhorias no Logger
+- Reorganização do Projeto
+- Migração para C++20
 
 ---
 
 ## 🚧 v0.1.6 Alpha ##
 
-- PS3 Module
-- ELF Loader
-- SELF Loader
-- SPRX Loader
-- Melhorias no sistema de arquivos
+- Base RSX Graphics
+- Backend Vulkan
+- Shader Manager
+- Texture Cache
+- Framebuffer Manager
+- Pipeline de Renderização
 
 ---
 
 ## 🚧 v0.1.7 Alpha ##
 
-- Memory Manager
-- Virtual File System
-- Kernel Base
-- Thread Manager
+- Interpretador PPU
+- Interpretador SPU
+- Framework de Syscalls
+- Audio Framework
+- Input Manager
+- Cache de Arquivos
+- Melhorias de Desempenho
 
 ---
 
 ## 🚧 v0.1.8 Alpha ##
 
-- RSX Graphics Base
-- SPU Framework
-- Melhorias de desempenho
-- Sistema de Plugins
+- Loader de Homebrew PS3
+- Leitura de PARAM.SFO
+- Execução inicial de EBOOT.BIN
+- Sistema de Save Data
+- Melhorias Gráficas
+- Melhorias de Áudio
+- Melhorias de Compatibilidade
 
 ---
 
 ## 🚀 v0.1.9 Alpha ##
 
-- Primeira estrutura funcional do Core PS3
-- Melhor integração dos módulos
-- Base para carregamento de jogos
-- Preparação para futuras versões Beta
+- Primeiro Boot de Homebrew PS3
+- Compatibilidade inicial com jogos
+- Frontend Android
+- Geração do APK
+- Otimizações de desempenho
+- Melhorias de estabilidade
+- Testes públicos
 
 ---
 
 ## 🔮 Futuro ##
 
-- Graphics Engine
+- Renderizador RSX Avançado
+- Vulkan Otimizado
+- Recompilador Dinâmico (JIT)
+- Shader Cache
+- Texture Cache
 - Audio Engine
-- Native Code Execution (NCE)
-- Vulkan Renderer
-- Time Manager
+- Suporte a Controles
+- Save States
+- Interface Android
+- Compatibilidade crescente com PlayStation 3
 
 ---
 
-## 👨‍💻 Autor ##
+## 👨‍💻 Desenvolvedor ##
 
 Lhuis (LhuisDev)
 
-Projeto desenvolvido para pesquisa, aprendizado e evolução de uma engine experimental de PlayStation 3 para Android.
+Projeto independente desenvolvido para pesquisa, aprendizado e evolução de uma Engine Experimental de PlayStation 3 para Android.
 
 ---
 
 ## 📜 Licença ##
 
-Distribuído sob a MIT License.
+Distribuído sob a licença MIT.
 
 Você pode estudar, modificar e contribuir com o projeto, respeitando os termos da licença e mantendo os créditos do autor original.
 
-O Pure3XEngenie continuará recebendo atualizações frequentes. Todas as versões oficiais serão publicadas neste repositório.
+---
+
+## 📢 Aviso ##
+
+A partir da versão v0.1.5 Alpha, o Pure3XEngenie passará a receber uma atualização oficial por noite.
+
+Esse novo ciclo permitirá mais tempo para desenvolvimento, testes, correções e estabilidade antes de cada nova versão.
+
+Obrigado por acompanhar o desenvolvimento do Pure3XEngenie! 🚀
