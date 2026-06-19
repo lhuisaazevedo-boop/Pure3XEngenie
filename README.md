@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Docs/images/Pure3XEngenie-0.1.5-Alpha.png" alt="Pure3XEngenie v0.1.5 Alpha Banner" width="100%">
+  <img src="docs/images/Pure3XEngenie-0.1.5-Alpha.png" alt="Pure3XEngenie v0.1.5 Alpha Banner">
 </p>
 
 <h1 align="center">Pure3XEngenie</h1>
@@ -9,7 +9,6 @@ Engine Experimental de PlayStation 3 para Android
 </p>
 
 ---
-
 # 🚀 Pure3XEngenie v0.1.5 Alpha
 «⚠️ O Pure3XEngenie encontra-se em desenvolvimento na fase Alpha.»
 
