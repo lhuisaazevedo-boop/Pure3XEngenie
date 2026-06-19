@@ -1,11 +1,16 @@
 <p align="center">
   <img src="Docs/images/Pure3XEngenie-0.1.5-Alpha.png" alt="Pure3XEngenie v0.1.5 Alpha Banner" width="100%">
-</p><h1 align="center">Pure3XEngenie</h1><p align="center">
+</p>
+
+<h1 align="center">Pure3XEngenie</h1>
+
+<p align="center">
 Engine Experimental de PlayStation 3 para Android
-</p>---
+</p>
 
-## 🚀 Pure3XEngenie v0.1.5 Alpha ##
+---
 
+# 🚀 Pure3XEngenie v0.1.5 Alpha
 «⚠️ O Pure3XEngenie encontra-se em desenvolvimento na fase Alpha.»
 
 A versão v0.1.5 Alpha representa a maior atualização da arquitetura do projeto até o momento, trazendo novos módulos fundamentais para o desenvolvimento futuro da engine.
