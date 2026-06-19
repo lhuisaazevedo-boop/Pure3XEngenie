@@ -5,26 +5,31 @@
 namespace Pure3XEngenie {
 namespace Config {
 
-bool Initialize() {
+bool Initialize()
+{
     std::cout << "[Config] Initializing Config Manager..." << std::endl;
     return true;
 }
 
-bool Load() {
+bool Load()
+{
     std::cout << "[Config] Loading configuration..." << std::endl;
     return true;
 }
 
-bool Save() {
+bool Save()
+{
     std::cout << "[Config] Saving configuration..." << std::endl;
     return true;
 }
 
-void ResetToDefault() {
+void ResetToDefault()
+{
     std::cout << "[Config] Restoring default settings..." << std::endl;
 }
 
-void Shutdown() {
+void Shutdown()
+{
     std::cout << "[Config] Config Manager shutdown." << std::endl;
 }
 

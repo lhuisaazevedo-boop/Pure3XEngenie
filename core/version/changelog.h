@@ -3,30 +3,21 @@
 namespace Pure3XEngenie {
 namespace Changelog {
 
-// ======================================================
-// Pure3XEngenie ChangeLog
-// ======================================================
-
 constexpr const char* Current = R"(
 
-========================================
-Pure3XEngenie v0.1.4 Alpha
-========================================
-
-• Sistema de versão centralizado
-• Boot utilizando informações da Version
-• Status do Sistema utilizando Version
-• Criação do módulo Version
-• Criação do ChangeLog
-• Melhor organização do Core
-• Preparação para futuras atualizações
-
-Próxima versão:
 v0.1.5 Alpha
-- Expansão do Core
-- Asset Manager
-- GameModules
-- Documentação e Wiki
+------------
+
+• Novo sistema GameModules
+• Preparação para Module Manager
+• Base para Loader (ELF, SELF e SPRX)
+• Melhorias no Boot System
+• Logger otimizado
+• Config Manager atualizado
+• Estrutura modular refinada
+• Correções internas
+• Melhorias de desempenho
+• Preparação para futuras versões
 
 )";
 

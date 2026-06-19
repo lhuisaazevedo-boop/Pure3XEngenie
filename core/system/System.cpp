@@ -5,8 +5,8 @@
 #include <iostream>
 #include <thread>
 
-void System::showStatus() {
-
+void System::showStatus()
+{
     std::cout << "\n=========================================\n";
     std::cout << "          STATUS DO SISTEMA\n";
     std::cout << "=========================================\n\n";
@@ -32,14 +32,14 @@ void System::showStatus() {
         std::cout << " OK\n";
     };
 
-    Check("CPU       ");
-    Check("RAM       ");
-    Check("CORE      ");
-    Check("REDE      ");
-    Check("CONFIG    ");
-    Check("BOOT      ");
-    Check("LOGGER    ");
-    Check("VERSION   ");
+    Check("CPU");
+    Check("RAM");
+    Check("CORE");
+    Check("REDE");
+    Check("CONFIG");
+    Check("BOOT");
+    Check("LOGGER");
+    Check("VERSION");
 
     std::cout << "\n=========================================\n";
     std::cout << "Sistema funcionando normalmente.\n";

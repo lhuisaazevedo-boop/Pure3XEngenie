@@ -1,5 +1,6 @@
 #include "Engine.h"
 #include "system/System.h"
+#include "version/version.h"
 
 #include <cstdlib>
 #include <iostream>
@@ -8,6 +9,7 @@
 namespace Pure3X {
 
 void Engine::run() {
+
     int option;
 
     while (true) {
@@ -32,24 +34,30 @@ void Engine::run() {
         switch (option) {
 
         case 1:
+
             std::cout << "\n[OK] Iniciando Engine...\n";
             std::cout << "Pure3XEngenie ativa!\n";
             break;
 
         case 2:
+
             System::showStatus();
             break;
 
         case 3:
+
             std::cout << "\n========== CONFIGURACOES ==========\n";
-            std::cout << "Engine     : Pure3XEngenie\n";
-            std::cout << "Versao     : 0.1.4 Alpha\n";
-            std::cout << "Idioma     : pt_BR\n";
+            std::cout << "Engine     : " << Pure3XEngenie::Version::Name << "\n";
+            std::cout << "Versao     : " << Pure3XEngenie::Version::Version << "\n";
+            std::cout << "Build      : " << Pure3XEngenie::Version::Build << "\n";
+            std::cout << "Developer  : " << Pure3XEngenie::Version::Developer << "\n";
+            std::cout << "Platform   : " << Pure3XEngenie::Version::Platform << "\n";
+            std::cout << "Idioma     : " << Pure3XEngenie::Version::Language << "\n";
             std::cout << "Debug      : ON\n";
             std::cout << "Log Level  : INFO\n";
             std::cout << "Rede       : Ativa\n";
             std::cout << "Boot       : OK\n";
-            std::cout << "Config.ini : Carregado\n";
+            std::cout << "GameModule : Disponivel\n";
             std::cout << "===================================\n";
 
             std::cout << "\nPressione Enter para continuar...";
@@ -65,7 +73,7 @@ void Engine::run() {
             while (!back) {
 
                 std::cout << "\n=================================\n";
-                std::cout << "         MENU DE REDE\n";
+                std::cout << "        MENU DE REDE\n";
                 std::cout << "=================================\n";
                 std::cout << " 1 - Testar Conexao (Ping)\n";
                 std::cout << " 2 - Exibir Endereco IP\n";
@@ -113,10 +121,12 @@ void Engine::run() {
         }
 
         case 5:
+
             std::cout << "\n[SAINDO] Encerrando sistema...\n";
             return;
 
         default:
+
             std::cout << "\n[ERRO] Opcao invalida!\n";
             break;
         }

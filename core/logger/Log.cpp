@@ -17,8 +17,11 @@ void Log::Init(const std::string& file)
     Info("Logger inicializado");
     Info("=================================");
 
-    Info("Platform : Android");
-    Info("Threads  : " + std::to_string(std::thread::hardware_concurrency()));
+    Info("Engine    : Pure3XEngenie");
+    Info("Platform  : Android");
+    Info("Version   : 0.1.5 Alpha");
+    Info("Threads   : " + std::to_string(std::thread::hardware_concurrency()));
+    Info("Logger    : Ready");
 }
 
 void Log::Shutdown()

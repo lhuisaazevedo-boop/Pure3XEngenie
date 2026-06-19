@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.16)
 
 project(Pure3XEngenie
-    VERSION 0.1.4
+    VERSION 0.1.5
     DESCRIPTION "Experimental PlayStation 3 Engine for Android"
     LANGUAGES CXX
 )
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
@@ -23,15 +23,13 @@ add_executable(Pure3XEngenie
 
     # Config
     Config/ConfigManager.cpp
-    core/config/config_manager.cpp
+    core/config/ConfigFile.cpp
 
     # System
     core/system/System.cpp
-    core/system/system.cpp
 
     # Logger
     core/logger/Log.cpp
-    core/logger/logger.cpp
 
     # Network
     core/network/network_manager.cpp
@@ -42,6 +40,41 @@ add_executable(Pure3XEngenie
 
     # Game Modules
     core/gamemodules/GameModule.cpp
+    core/gamemodules/ModuleManager.cpp
+
+    # Module Manager
+    core/modules/Module.cpp
+    core/modules/ModuleManager.cpp
+
+    # Emulator Core
+    core/emulator/Emulator.cpp
+    core/emulator/CPU.cpp
+    core/emulator/GPU.cpp
+    core/emulator/SPU.cpp
+    core/emulator/Memory.cpp
+
+    # Disc / Game Manager
+    core/disc/Disc.cpp
+    core/disc/GameManager.cpp
+
+    # Memory Manager
+    core/memory/MemoryManager.cpp
+
+    # Loader
+    core/loader/Loader.cpp
+    core/loader/ELF/ElfLoader.cpp
+    core/loader/SELF/SelfLoader.cpp
+    core/loader/SPRX/SprxLoader.cpp
+
+    # Virtual File System (VFS)
+    core/vfs/VFS.cpp
+    core/vfs/FileSystem.cpp
+    core/vfs/Directory.cpp
+
+    # Kernel
+    core/kernel/Kernel.cpp
+    core/kernel/Process.cpp
+    core/kernel/Thread.cpp
 )
 
 target_include_directories(Pure3XEngenie PRIVATE
@@ -54,7 +87,30 @@ target_include_directories(Pure3XEngenie PRIVATE
     core/boot
     core/config
     core/gamemodules
+    core/modules
     core/logger
+
+    # Emulator
+    core/emulator
+
+    # Disc
+    core/disc
+
+    # Memory
+    core/memory
+
+    # Loader
+    core/loader
+    core/loader/ELF
+    core/loader/SELF
+    core/loader/SPRX
+
+    # Kernel
+    core/kernel
+
+    # VFS
+    core/vfs
+
     core/network
     core/platform
     core/system
