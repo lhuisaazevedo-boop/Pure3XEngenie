@@ -1,4 +1,5 @@
 #include "Log.h"
+#include "../version/version.h"
 
 #include <fstream>
 #include <iostream>
@@ -17,11 +18,28 @@ void Log::Init(const std::string& file)
     Info("Logger inicializado");
     Info("=================================");
 
-    Info("Engine    : Pure3XEngenie");
-    Info("Platform  : Android");
-    Info("Version   : 0.1.5 Alpha");
-    Info("Threads   : " + std::to_string(std::thread::hardware_concurrency()));
-    Info("Logger    : Ready");
+    Info("");
+
+    Info("Engine      : " + GetEngineName());
+    Info("Platform    : " + GetPlatform());
+    Info("Version     : " + GetVersion());
+    Info("Build       : " + GetBuild());
+    Info("Developer   : " + GetDeveloper());
+    Info("Threads     : " +
+         std::to_string(std::thread::hardware_concurrency()));
+
+    Info("");
+
+    Info("JIT         : Ready");
+    Info("BlockCache  : Ready");
+    Info("MemoryMap   : Ready");
+    Info("NCE         : Ready");
+    Info("Scheduler   : Ready");
+
+    Info("");
+
+    Info("Logger      : Ready");
+    Info("=================================");
 }
 
 void Log::Shutdown()

@@ -1,37 +1,29 @@
 #include "version.h"
 
-namespace Pure3XEngenie {
-namespace Version {
+namespace Pure3X {
 
-const char* GetEngineName()
-{
-    return Name;
+std::string GetEngineName() {
+    return "Pure3XEngenie";
 }
 
-const char* GetVersion()
-{
-    return Version;
+std::string GetVersion() {
+    return "0.1.6 Alpha";
 }
 
-const char* GetBuild()
-{
-    return Build;
+std::string GetBuild() {
+    return "Build 001";
 }
 
-const char* GetDeveloper()
-{
-    return Developer;
+std::string GetDeveloper() {
+    return "LhuisDev";
 }
 
-const char* GetPlatform()
-{
-    return Platform;
+std::string GetPlatform() {
+    return "Android";
 }
 
-const char* GetLanguage()
-{
-    return Language;
+std::string GetLanguage() {
+    return "C++20";
 }
 
-} // namespace Version
-} // namespace Pure3XEngenie
+}

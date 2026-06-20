@@ -47,12 +47,12 @@ void Engine::run() {
         case 3:
 
             std::cout << "\n========== CONFIGURACOES ==========\n";
-            std::cout << "Engine     : " << Pure3XEngenie::Version::Name << "\n";
-            std::cout << "Versao     : " << Pure3XEngenie::Version::Version << "\n";
-            std::cout << "Build      : " << Pure3XEngenie::Version::Build << "\n";
-            std::cout << "Developer  : " << Pure3XEngenie::Version::Developer << "\n";
-            std::cout << "Platform   : " << Pure3XEngenie::Version::Platform << "\n";
-            std::cout << "Idioma     : " << Pure3XEngenie::Version::Language << "\n";
+            std::cout << "Engine     : " << Pure3X::GetEngineName() << "\n";
+            std::cout << "Versao     : " << Pure3X::GetVersion() << "\n";
+            std::cout << "Build      : " << Pure3X::GetBuild() << "\n";
+            std::cout << "Developer  : " << Pure3X::GetDeveloper() << "\n";
+            std::cout << "Platform   : " << Pure3X::GetPlatform() << "\n";
+            std::cout << "Idioma     : " << Pure3X::GetLanguage() << "\n";
             std::cout << "Debug      : ON\n";
             std::cout << "Log Level  : INFO\n";
             std::cout << "Rede       : Ativa\n";

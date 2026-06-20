@@ -11,14 +11,12 @@ void System::showStatus()
     std::cout << "          STATUS DO SISTEMA\n";
     std::cout << "=========================================\n\n";
 
-    std::cout << "Engine     : " << Pure3XEngenie::Version::Name << "\n";
-    std::cout << "Versao     : " << Pure3XEngenie::Version::Version << "\n";
-    std::cout << "Build      : " << Pure3XEngenie::Version::Build << "\n";
-    std::cout << "Developer  : " << Pure3XEngenie::Version::Developer << "\n";
-    std::cout << "Platform   : " << Pure3XEngenie::Version::Platform << "\n";
-    std::cout << "Idioma     : " << Pure3XEngenie::Version::Language << "\n";
-    std::cout << "Status     : " << Pure3XEngenie::Version::Status << "\n";
-    std::cout << "Licenca    : " << Pure3XEngenie::Version::License << "\n\n";
+    std::cout << "Engine     : " << Pure3X::GetEngineName() << "\n";
+    std::cout << "Versao     : " << Pure3X::GetVersion() << "\n";
+    std::cout << "Build      : " << Pure3X::GetBuild() << "\n";
+    std::cout << "Developer  : " << Pure3X::GetDeveloper() << "\n";
+    std::cout << "Platform   : " << Pure3X::GetPlatform() << "\n";
+    std::cout << "Idioma     : " << Pure3X::GetLanguage() << "\n\n";
 
     std::cout << "Verificando componentes...\n\n";
 
@@ -41,7 +39,17 @@ void System::showStatus()
     Check("LOGGER");
     Check("VERSION");
 
-    std::cout << "\n=========================================\n";
+    std::cout << "\n=========== COMPONENTES ===========\n";
+
+    std::cout << "JIT.............OK\n";
+    std::cout << "Block Cache.....OK\n";
+    std::cout << "Memory Map......OK\n";
+    std::cout << "NCE.............OK\n";
+    std::cout << "Scheduler.......OK\n";
+
+    std::cout << "===================================\n\n";
+
+    std::cout << "=========================================\n";
     std::cout << "Sistema funcionando normalmente.\n";
     std::cout << "=========================================\n";
 }

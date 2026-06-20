@@ -1,25 +1,28 @@
-#pragma once
+#ifndef PURE3X_CPU_H
+#define PURE3X_CPU_H
+
+#include "../jit/JITCompiler.h"
 
 #include <cstdint>
 
-namespace Pure3X
-{
+namespace Pure3X {
 
-class CPU
-{
+class CPU {
 public:
     CPU();
 
     bool Initialize();
-    void Reset();
-    void ExecuteCycle();
+    void Shutdown();
 
-    uint64_t GetPC() const;
-    void SetPC(uint64_t pc);
+    bool ExecuteInstruction(uint64_t address);
+
+    void EnableJIT(bool enable);
 
 private:
-    uint64_t m_pc;
-    bool m_initialized;
+    bool m_useJIT;
+    JITCompiler m_jit;
 };
 
 } // namespace Pure3X
+
+#endif // PURE3X_CPU_H

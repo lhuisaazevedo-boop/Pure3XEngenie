@@ -2,44 +2,53 @@
 
 #include <iostream>
 
-namespace Pure3X
-{
+namespace Pure3X {
 
 CPU::CPU()
-    : m_pc(0),
-      m_initialized(false)
+    : m_useJIT(false)
 {
 }
 
 bool CPU::Initialize()
 {
-    m_initialized = true;
-    std::cout << "[CPU] Inicializado\n";
+    std::cout << "[CPU] Inicializando CPU..." << std::endl;
+
+    m_jit.Initialize();
+
     return true;
 }
 
-void CPU::Reset()
+void CPU::Shutdown()
 {
-    m_pc = 0;
-    std::cout << "[CPU] Reset\n";
+    m_jit.Shutdown();
+
+    std::cout << "[CPU] CPU encerrada." << std::endl;
 }
 
-void CPU::ExecuteCycle()
+void CPU::EnableJIT(bool enable)
 {
-    if (!m_initialized)
-        return;
-
-    ++m_pc;
+    m_useJIT = enable;
 }
 
-uint64_t CPU::GetPC() const
+bool CPU::ExecuteInstruction(uint64_t address)
 {
-    return m_pc;
-}
+    if (m_useJIT)
+    {
+        std::cout << "[CPU] Executando via JIT." << std::endl;
 
-void CPU::SetPC(uint64_t pc)
-{
-    m_pc = pc;
+        return m_jit.CompileBlock(address);
+    }
+
+    std::cout << "[CPU] Executando via Interpreter." << std::endl;
+
+    // Futuramente:
+    // Decoder PowerPC
+    // FXU
+    // FPU
+    // Branch Unit
+    // Load/Store
+
+    return true;
 }
 
 } // namespace Pure3X

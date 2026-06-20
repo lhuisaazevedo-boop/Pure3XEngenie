@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 project(Pure3XEngenie
-    VERSION 0.1.5
+    VERSION 0.1.6
     DESCRIPTION "Experimental PlayStation 3 Engine for Android"
     LANGUAGES CXX
 )
@@ -75,6 +75,16 @@ add_executable(Pure3XEngenie
     core/kernel/Kernel.cpp
     core/kernel/Process.cpp
     core/kernel/Thread.cpp
+
+    # JIT
+    core/jit/JITCompiler.cpp
+    core/jit/BlockCache.cpp
+    core/jit/MemoryMap.cpp
+    core/jit/NCE.cpp
+
+    # Scheduler
+    core/scheduler/FIFOQueue.cpp
+    core/scheduler/InstructionScheduler.cpp
 )
 
 target_include_directories(Pure3XEngenie PRIVATE
@@ -89,6 +99,10 @@ target_include_directories(Pure3XEngenie PRIVATE
     core/gamemodules
     core/modules
     core/logger
+    core/network
+    core/platform
+    core/system
+    core/version
 
     # Emulator
     core/emulator
@@ -108,13 +122,14 @@ target_include_directories(Pure3XEngenie PRIVATE
     # Kernel
     core/kernel
 
+    # JIT
+    core/jit
+
+    # Scheduler
+    core/scheduler
+
     # VFS
     core/vfs
-
-    core/network
-    core/platform
-    core/system
-    core/version
 )
 
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")

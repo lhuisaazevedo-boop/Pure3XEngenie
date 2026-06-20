@@ -3,82 +3,75 @@
 #include "../version/version.h"
 
 #include <chrono>
+#include <iomanip>
 #include <iostream>
 #include <thread>
 
 namespace Pure3X {
 
-void bootSystem() {
+static void BootProgress(const std::string& module)
+{
+    constexpr int width = 20;
 
-    Log::Init("engine.log");
-    Log::Info("[BOOT] Inicializando Boot System...");
+    std::cout << std::left << std::setw(12) << module << " ";
 
-    std::cout << "\n==========================================\n";
-    std::cout << "             "
-              << Pure3XEngenie::Version::Name
-              << "\n";
-    std::cout << "==========================================\n\n";
-
-    std::cout << "        ██████╗ ██╗   ██╗██████╗ ███████╗\n";
-    std::cout << "        ██╔══██╗██║   ██║██╔══██╗██╔════╝\n";
-    std::cout << "        ██████╔╝██║   ██║██████╔╝█████╗\n";
-    std::cout << "        ██╔═══╝ ██║   ██║██╔══██╗██╔══╝\n";
-    std::cout << "        ██║     ╚██████╔╝██║  ██║███████╗\n";
-    std::cout << "        ╚═╝      ╚═════╝ ╚═╝  ╚═╝╚══════╝\n\n";
-
-    std::cout << "        Experimental Engine for PS3 Research\n";
-    std::cout << "==========================================\n\n";
-
-    std::cout << "Version   : " << Pure3XEngenie::Version::Version << "\n";
-    std::cout << "Build     : " << Pure3XEngenie::Version::Build << "\n";
-    std::cout << "Developer : " << Pure3XEngenie::Version::Developer << "\n";
-    std::cout << "Platform  : " << Pure3XEngenie::Version::Platform << "\n";
-    std::cout << "Language  : " << Pure3XEngenie::Version::Language << "\n\n";
-
-    constexpr int width = 30;
-
-    std::cout << "Loading Boot System...\n";
-
-    for (int i = 0; i <= width; ++i) {
+    for (int i = 0; i <= width; i++) {
 
         int percent = (i * 100) / width;
 
-        std::cout << "\r[";
+        std::cout << "\r";
+        std::cout << std::left << std::setw(12) << module;
+        std::cout << " [";
 
-        for (int j = 0; j < width; ++j) {
+        for (int j = 0; j < width; j++)
             std::cout << (j < i ? "█" : " ");
-        }
 
-        std::cout << "] " << percent << "%";
+        std::cout << "] ";
+        std::cout << std::setw(3) << percent << "%";
+
         std::cout.flush();
 
-        std::this_thread::sleep_for(std::chrono::milliseconds(80));
+        std::this_thread::sleep_for(std::chrono::milliseconds(25));
     }
 
-    std::cout << "\n\n";
+    std::cout << "  READY\n";
+}
 
-    Log::Info("[BOOT] Inicializando Kernel...");
-    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+void bootSystem()
+{
+    Log::Init("engine.log");
 
-    Log::Info("[BOOT] Carregando Core...");
-    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+    std::cout << "\n";
+    std::cout << "=============================================\n";
+    std::cout << "          Pure3XEngenie Boot System\n";
+    std::cout << "=============================================\n\n";
 
-    Log::Info("[BOOT] Carregando Config Manager...");
-    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+    std::cout << "Engine     : " << GetEngineName() << '\n';
+    std::cout << "Version    : " << GetVersion() << '\n';
+    std::cout << "Build      : " << GetBuild() << '\n';
+    std::cout << "Developer  : " << GetDeveloper() << '\n';
+    std::cout << "Platform   : " << GetPlatform() << '\n';
+    std::cout << "Language   : " << GetLanguage() << "\n\n";
 
-    Log::Info("[BOOT] Inicializando Network Manager...");
-    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+    std::cout << "Inicializando componentes...\n\n";
 
-    Log::Info("[BOOT] Inicializando Logger...");
-    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+    BootProgress("Kernel");
+    BootProgress("CPU");
+    BootProgress("Memory");
+    BootProgress("Network");
+    BootProgress("Logger");
 
-    Log::Info("[BOOT] Sistema iniciado com sucesso!");
+    BootProgress("JIT");
+    BootProgress("BlockCache");
+    BootProgress("MemoryMap");
+    BootProgress("NCE");
+    BootProgress("Scheduler");
 
-    std::cout << "\n==========================================\n";
-    std::cout << "         "
-              << Pure3XEngenie::Version::Name
-              << " Ready\n";
-    std::cout << "==========================================\n\n";
+    std::cout << "\n=============================================\n";
+    std::cout << "             Engine Ready\n";
+    std::cout << "=============================================\n\n";
+
+    Log::Info("[BOOT] Sistema iniciado com sucesso.");
 
     Log::Shutdown();
 }
