@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/images/Pure3XEngenie-0.1.6-Alpha.png" alt="Pure3XEngenie" width="900">
+  <img src="assets/images/Pure3XEngenie.png" alt="Pure3XEngenie" width="900">
 </p>
 
 <h1 align="center">Pure3XEngenie</h1>
