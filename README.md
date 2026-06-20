@@ -1,140 +1,137 @@
 <p align="center">
-  <img src="docs/images/Pure3XEngenie-0.1.5-Alpha.png" alt="Pure3XEngenie v0.1.5 Alpha Banner">
+  <img src="assets/images/Pure3XEngenie-0.1.6-Alpha.png" alt="Pure3XEngenie" width="900">
 </p>
 
 <h1 align="center">Pure3XEngenie</h1>
 
 <p align="center">
-Engine Experimental de PlayStation 3 para Android
+Engine Experimental de Emulação de PlayStation 3 para Android
 </p>
 
 ---
-# 🚀 Pure3XEngenie v0.1.5 Alpha
-«⚠️ O Pure3XEngenie encontra-se em desenvolvimento na fase Alpha.»
 
-A versão v0.1.5 Alpha representa a maior atualização da arquitetura do projeto até o momento, trazendo novos módulos fundamentais para o desenvolvimento futuro da engine.
+# 🚀 Pure3XEngenie v0.1.6 Alpha
+
+> ⚠️ **O Pure3XEngenie encontra-se em desenvolvimento na fase Alpha.**
+
+A versão **v0.1.6 Alpha** representa um grande avanço na arquitetura interna da Engine, iniciando oficialmente a infraestrutura necessária para a futura emulação do PlayStation 3 em dispositivos Android.
+
+**Ainda não existe execução de jogos, firmware ou Homebrew.**
+
+O foco desta versão é preparar toda a base da Engine para futuras implementações.
 
 ---
 
-## 📌 Status Atual ##
+# 📌 Status Atual
 
-O Pure3XEngenie é uma engine experimental de PlayStation 3 desenvolvida totalmente em C++20, com foco em Android.
+O Pure3XEngenie é uma Engine de emulação de PlayStation 3 totalmente desenvolvida do zero em C++20, voltada exclusivamente para Android.
 
-Objetivos atuais:
+## Objetivos atuais
 
-- Arquitetura modular
+- Arquitetura Modular
 - Base da Engine
 - Emulator Core
 - Kernel Base
 - Loader PS3
 - Virtual File System
-- Compatibilidade futura com Vulkan
-- Preparação para Android NDK
+- Sistema JIT
+- Native Code Execution
+- Android NDK
+- ARM64
+- Preparação para Vulkan
 
-## Status: 🚧 Alpha v0.1.5 ##
+## Status
 
----
-
-## ✅ Funcionalidades Implementadas ##
-
-## 🟢 Boot System ##
-
-- Inicialização da Engine
-- Logo ASCII
-- Barra de carregamento
-- Sequência de Boot
-- Sistema de Logs
+🚧 Alpha v0.1.6
 
 ---
 
-## 🧠 Engine Core ##
+# ✅ Funcionalidades Implementadas
+
+## 🟢 Boot System
+
+- Novo Boot inspirado no PlayStation 3
+- Inicialização organizada
+- Carregamento dos componentes
+- Status READY
+- Sequência completa de Boot
+
+---
+
+## 📄 Logger
+
+- Logger totalmente reestruturado
+- Informações completas da Engine
+- Logs em arquivo
+- Boot Log
+- Status dos módulos
+
+Mostra automaticamente:
+
+- Engine
+- Platform
+- Version
+- Build
+- Developer
+- Threads
+- JIT
+- BlockCache
+- MemoryMap
+- NCE
+- Scheduler
+
+---
+
+## 🧠 Engine Core
 
 - Arquitetura Modular
 - Organização da Engine
-- Controle de Execução
-- Estrutura preparada para expansão
+- Controle principal
+- Preparação para expansão
 
 ---
 
-## 📦 Version System ##
+## 📦 Version System
 
-core/version/
-
-- Nome da Engine
+- Nome
 - Versão
 - Build
-- Desenvolvedor
 - Plataforma
-- Idioma
+- Desenvolvedor
+- Linguagem
 
 ---
 
-## ⚙️ Config Manager ##
+## ⚙️ Config Manager
 
 - Configuração da Engine
 - Configuração Modular
-- Preparação para múltiplos idiomas
 
 ---
 
-## 📄 Logger ##
+## 🌐 Network
 
-- Logger da Engine
-- Logs em arquivo
-- Informações da Engine
-- Níveis de Log
-- Preparação para Debug
-
----
-
-## 🌐 Network ##
-
-- Teste de conexão
 - Informações da Rede
-- Endereço IP
+- Estrutura inicial
 
 ---
 
-## 🎮 Game Modules ##
+## 🎮 Game Modules
 
-- Estrutura para módulos de jogos
-- Organização modular
-
----
-
-## 📦 Module Manager ##
-
-- Registro de módulos
-- Inicialização automática
-- Encerramento automático
+- Sistema modular
+- Organização dos jogos
 
 ---
 
-## 💿 Loader ##
+## 📦 Module Manager
 
-- ELF Loader
-- SELF Loader
-- SPRX Loader
-
----
-
-## 📁 Virtual File System (VFS) ##
-
-- Virtual File System
-- File System
-- Directory Manager
+- Registro
+- Inicialização
+- Encerramento
 
 ---
 
-## ⚙️ Kernel Base ##
-
-- Kernel
-- Process Manager
-- Thread Manager
-
----
-
-## 🕹 Emulator Core ##
+## 🕹 Emulator Core
 
 - Emulator
 - CPU
@@ -144,29 +141,136 @@ core/version/
 
 ---
 
-## 💽 Disc / Game Manager ##
+## ⚙️ CPU Core
+
+Novo sistema responsável por controlar:
+
+- Interpreter
+- Dynamic Recompiler (JIT)
+- Execução híbrida
+
+---
+
+## ⚡ JIT Compiler
+
+Primeira implementação da infraestrutura do Recompilador Dinâmico.
+
+Implementado:
+
+- Initialize()
+- CompileBlock()
+- Shutdown()
+
+Preparado para:
+
+- Tradução PowerPC → ARM64
+
+---
+
+## 📦 Block Cache
+
+Primeira estrutura de cache.
+
+Implementado:
+
+- Inserção
+- Pesquisa
+- Organização dos blocos traduzidos
+
+---
+
+## 🧠 Memory Map
+
+Implementação inicial do Memory Map.
+
+Preparado para:
+
+- Memória Virtual do PS3
+- Endereços PPE
+- Tradução ARM64
+
+---
+
+## ⚡ Native Code Execution (NCE)
+
+Primeira infraestrutura de execução nativa.
+
+Implementado:
+
+- Initialize()
+- LoadCode()
+- Execute()
+- Shutdown()
+
+Preparado para:
+
+- Execução ARM64
+- Integração com JIT
+- BlockCache
+- MemoryMap
+
+---
+
+## 📋 Scheduler
+
+Primeira versão do Scheduler.
+
+Inclui:
+
+- FIFO Queue
+- Escalonador
+- Organização das Threads
+
+---
+
+## 💿 Loader
+
+- ELF
+- SELF
+- SPRX
+
+---
+
+## 💽 Disc / Game Manager
 
 - Disc Manager
 - Game Manager
 
 ---
 
-## 🧠 Memory Manager ##
+## 📁 Virtual File System (VFS)
 
-- Gerenciamento de Memória
-- Leitura de memória
-- Escrita de memória
-- Inicialização de memória
+- VFS
+- FileSystem
+- Directory
 
 ---
 
-## 📁 Estrutura do Projeto ##
-```
+## ⚙️ Kernel
+
+- Kernel
+- Process
+- Thread
+
+---
+
+## 🧠 Memory Manager
+
+- Gerenciamento de Memória
+- Inicialização
+- Leitura
+- Escrita
+
+---
+
+# 📁 Estrutura do Projeto
+
+```text
 Pure3XEngenie/
+├── assets/
+│   └── images/
 ├── Config/
 ├── Docs/
-│   └── images/
-│       └── Pure3XEngenie-0.1.5-Alpha.png
 ├── build/
 ├── core/
 │   ├── boot/
@@ -174,163 +278,161 @@ Pure3XEngenie/
 │   ├── disc/
 │   ├── emulator/
 │   ├── gamemodules/
+│   ├── jit/
 │   ├── kernel/
 │   ├── loader/
 │   ├── logger/
 │   ├── memory/
 │   ├── modules/
 │   ├── network/
-│   ├── platform/
+│   ├── scheduler/
 │   ├── system/
 │   ├── version/
 │   └── vfs/
+├── include/
 ├── src/
 ├── CMakeLists.txt
 ├── README.md
 └── LICENSE
 ```
----
 
-## ⭐ Características ##
+## 📚 Documentação
 
-- C++20
-- Arquitetura Modular
-- Boot System
-- Version Manager
-- Config Manager
-- Logger
-- Network Manager
-- Module Manager
-- Emulator Core
-- Disc Manager
-- Memory Manager
-- Kernel Base
-- Loader
-- Virtual File System
+Toda a documentação oficial encontra-se na pasta:
 
----
+```text
+Docs/
+```
 
-## ⚙️ Tecnologias ##
-
-- C++20
-- CMake
-- Git
-- GitHub
-- Termux
-- Android NDK (Preparação)
-
----
-
-## 📚 Documentação ##
-
-Toda a documentação oficial encontra-se na pasta Docs/.
+Arquivos disponíveis:
 
 - OfficialDocumentation.md
 - DevelopmentRoadmap.md
 - DevelopmentNotes.md
+- Architecture.md
+- CPU_Architecture.md
+- Cell_Execution_Model.md
+- CoreEngine.md
+- ConfigManager.md
+- BuildGuide.md
+- BootSystem.md
+- Graphics.md
+- Installation.md
+- LanguageManager.md
+- LogSystem.md
+- NCE.md
+- NetworkManager.md
+- PS3Research.md
+- FAQ.md
 
 ---
 
-## 🗺️ Roadmap ##
+## 🗺️ Roadmap
 
-## ✅ v0.1.5 Alpha ##
+### ✅ v0.1.6 Alpha
 
-- Emulator Core
-- Disc Manager
-- Game Manager
-- Memory Manager
-- Module Manager
-- Kernel Base
-- Loader System
-- Virtual File System
-- Melhorias no Logger
-- Reorganização do Projeto
-- Migração para C++20
+- Novo Boot System
+- Logger reestruturado
+- CPU Core
+- JIT Compiler
+- Block Cache
+- Memory Map
+- Native Code Execution (NCE)
+- Scheduler
+- Melhor organização do projeto
+- Atualização do CMake
+- Estrutura preparada para Android NDK
 
 ---
 
-## 🚧 v0.1.6 Alpha ##
+### 🚧 v0.1.7 Alpha
 
-- Base RSX Graphics
-- Backend Vulkan
+- Decoder inicial do PPE
+- Expansão do JIT
+- Tradução PowerPC → ARM64
+- Melhorias no Scheduler
+- Integração CPU ↔ JIT
+- Melhorias no MemoryMap
+
+---
+
+### 🚧 v0.1.8 Alpha
+
+- Interpreter PPE
+- Interpreter SPU
+- Framework de Syscalls
+- Melhorias no Loader
+- Memory Manager avançado
+- Cache de Arquivos
+
+---
+
+### 🚧 v0.1.9 Alpha
+
+- Primeira execução de código PowerPC
+- Testes ARM64
+- Cache otimizado
+- Preparação para Vulkan
+- Melhorias de estabilidade
+
+---
+
+### 🚀 v0.2.0 Alpha
+
+- Backend Vulkan inicial
+- Framework RSX
 - Shader Manager
 - Texture Cache
 - Framebuffer Manager
 - Pipeline de Renderização
+- Base para Homebrew PS3
+- Primeiros testes gráficos
 
 ---
 
-## 🚧 v0.1.7 Alpha ##
+## 🔮 Futuro
 
-- Interpretador PPU
-- Interpretador SPU
-- Framework de Syscalls
-- Audio Framework
-- Input Manager
-- Cache de Arquivos
-- Melhorias de Desempenho
+Planejamento de longo prazo:
 
----
-
-## 🚧 v0.1.8 Alpha ##
-
-- Loader de Homebrew PS3
-- Leitura de PARAM.SFO
-- Execução inicial de EBOOT.BIN
-- Sistema de Save Data
-- Melhorias Gráficas
-- Melhorias de Áudio
-- Melhorias de Compatibilidade
-
----
-
-## 🚀 v0.1.9 Alpha ##
-
-- Primeiro Boot de Homebrew PS3
-- Compatibilidade inicial com jogos
-- Frontend Android
-- Geração do APK
-- Otimizações de desempenho
-- Melhorias de estabilidade
-- Testes públicos
-
----
-
-## 🔮 Futuro ##
-
-- Renderizador RSX Avançado
-- Vulkan Otimizado
-- Recompilador Dinâmico (JIT)
-- Shader Cache
-- Texture Cache
+- Recompilador Dinâmico (JIT) completo
+- Emulação do Cell Broadband Engine
+- PPE
+- SPUs
+- RSX
+- Vulkan otimizado
 - Audio Engine
-- Suporte a Controles
+- Input Manager
 - Save States
-- Interface Android
-- Compatibilidade crescente com PlayStation 3
+- Firmware PS3
+- Homebrew
+- Compatibilidade crescente com jogos comerciais
 
 ---
 
-## 👨‍💻 Desenvolvedor ##
+## 👨‍💻 Desenvolvedor
 
-Lhuis (LhuisDev)
+**Lhuis (LhuisDev)**
 
-Projeto independente desenvolvido para pesquisa, aprendizado e evolução de uma Engine Experimental de PlayStation 3 para Android.
+Projeto independente desenvolvido para pesquisa, aprendizado e evolução da emulação de PlayStation 3 para Android.
 
 ---
 
-## 📜 Licença ##
+## 📜 Licença
 
-Distribuído sob a licença MIT.
+Distribuído sob a licença **MIT**.
 
 Você pode estudar, modificar e contribuir com o projeto, respeitando os termos da licença e mantendo os créditos do autor original.
 
 ---
 
-## 📢 Aviso ##
+## 📢 Aviso
 
-A partir da versão v0.1.5 Alpha, o Pure3XEngenie passará a receber uma atualização oficial por noite.
+O Pure3XEngenie encontra-se em desenvolvimento contínuo na fase **Alpha**.
 
-Esse novo ciclo permitirá mais tempo para desenvolvimento, testes, correções e estabilidade antes de cada nova versão.
+Atualmente o projeto **não executa jogos, Homebrew ou firmware do PlayStation 3**.
 
-Obrigado por acompanhar o desenvolvimento do Pure3XEngenie! 🚀
+O foco das versões atuais é construir toda a infraestrutura da Engine antes da implementação da emulação completa.
+
+A partir da **v0.1.6 Alpha**, o projeto passou a receber atualizações frequentes, trazendo novos módulos, melhorias na arquitetura e preparação para Android ARM64.
+
+Obrigado por acompanhar o desenvolvimento do **Pure3XEngenie**! 🚀
