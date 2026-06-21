@@ -7,11 +7,11 @@ std::string GetEngineName() {
 }
 
 std::string GetVersion() {
-    return "0.1.6 Alpha";
+    return "0.1.7 Alpha";
 }
 
 std::string GetBuild() {
-    return "Build 001";
+    return "Build 007";
 }
 
 std::string GetDeveloper() {
@@ -26,4 +26,4 @@ std::string GetLanguage() {
     return "C++20";
 }
 
-}
+} // namespace Pure3X

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 project(Pure3XEngenie
-    VERSION 0.1.6
+    VERSION 0.1.7
     DESCRIPTION "Experimental PlayStation 3 Engine for Android"
     LANGUAGES CXX
 )
@@ -52,6 +52,33 @@ add_executable(Pure3XEngenie
     core/emulator/GPU.cpp
     core/emulator/SPU.cpp
     core/emulator/Memory.cpp
+
+    # PPU Interpreter
+    core/emulator/ppu/PPUInterpreter.cpp
+
+    # SPU Interpreter
+    core/emulator/spu/SPUInterpreter.cpp
+
+    # Syscalls
+    core/syscalls/SyscallManager.cpp
+
+    # Audio Framework
+    core/audio/AudioManager.cpp
+
+    # Input Framework
+    core/input/InputManager.cpp
+
+    # Cache Framework
+    core/cache/FileCache.cpp
+
+    # GPU Command Processor
+    core/gpu/CommandProcessor.cpp
+
+    # Memory Bus
+    core/bus/MemoryBus.cpp
+
+    # Thread Manager
+    core/threading/ThreadManager.cpp
 
     # Disc / Game Manager
     core/disc/Disc.cpp
@@ -106,6 +133,29 @@ target_include_directories(Pure3XEngenie PRIVATE
 
     # Emulator
     core/emulator
+    core/emulator/ppu
+    core/emulator/spu
+
+    # Syscalls
+    core/syscalls
+
+    # Audio
+    core/audio
+
+    # Input
+    core/input
+
+    # Cache
+    core/cache
+
+    # GPU
+    core/gpu
+
+    # Bus
+    core/bus
+
+    # Thread Manager
+    core/threading
 
     # Disc
     core/disc
