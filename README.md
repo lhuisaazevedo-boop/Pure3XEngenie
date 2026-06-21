@@ -1,30 +1,24 @@
 <p align="center">
-  <img src="assets/images/Pure3XEngenie-0.1.6-Alpha.png" alt="Pure3XEngenie" width="100%">
-</p>
-
-<h1 align="center">Pure3XEngenie</h1>
-
-<p align="center">
+  <img src="assets/images/Pure3XEngenie-0.1.7-Alpha.png" alt="Pure3XEngenie v0.1.7 Alpha" width="700">
+</p><h1 align="center">Pure3XEngenie</h1><p align="center">
 Engine Experimental de Emulação de PlayStation 3 para Android
-</p>
+</p>---
+
+## 🚀 Pure3XEngenie v0.1.7 Alpha
+
+«⚠️ O Pure3XEngenie encontra-se em desenvolvimento na fase Alpha.»
+
+A versão v0.1.7 Alpha representa mais um grande avanço na arquitetura do projeto, consolidando novos módulos essenciais para a futura emulação do PlayStation 3.
+
+Ainda não existe execução de jogos, firmware ou Homebrew.
+
+O foco desta versão é fortalecer toda a infraestrutura da Engine, preparando os principais componentes para as próximas fases do desenvolvimento.
 
 ---
 
-# 🚀 Pure3XEngenie v0.1.6 Alpha
+## 📌 Status Atual
 
-> ⚠️ **O Pure3XEngenie encontra-se em desenvolvimento na fase Alpha.**
-
-A versão **v0.1.6 Alpha** representa um grande avanço na arquitetura interna da Engine, iniciando oficialmente a infraestrutura necessária para a futura emulação do PlayStation 3 em dispositivos Android.
-
-**Ainda não existe execução de jogos, firmware ou Homebrew.**
-
-O foco desta versão é preparar toda a base da Engine para futuras implementações.
-
----
-
-# 📌 Status Atual
-
-O Pure3XEngenie é uma Engine de emulação de PlayStation 3 totalmente desenvolvida do zero em C++20, voltada exclusivamente para Android.
+O Pure3XEngenie é uma Engine de emulação de PlayStation 3 desenvolvida do zero em C++20, com arquitetura modular voltada para Android.
 
 ## Objetivos atuais
 
@@ -40,13 +34,7 @@ O Pure3XEngenie é uma Engine de emulação de PlayStation 3 totalmente desenvol
 - ARM64
 - Preparação para Vulkan
 
-## Status
-
-🚧 Alpha v0.1.6
-
----
-
-# ✅ Funcionalidades Implementadas
+## ✅ Funcionalidades Implementadas
 
 ## 🟢 Boot System
 
@@ -66,7 +54,7 @@ O Pure3XEngenie é uma Engine de emulação de PlayStation 3 totalmente desenvol
 - Boot Log
 - Status dos módulos
 
-Mostra automaticamente:
+## Mostra automaticamente:
 
 - Engine
 - Platform
@@ -141,37 +129,84 @@ Mostra automaticamente:
 
 ---
 
-## ⚙️ CPU Core
+#$ 🧠 PPU Interpreter
 
-Novo sistema responsável por controlar:
+- Estrutura inicial
+- Base para interpretação de instruções PowerPC
+- Preparação para integração com o Kernel
 
-- Interpreter
-- Dynamic Recompiler (JIT)
-- Execução híbrida
+---
+
+## ⚙️ SPU Interpreter
+
+- Estrutura inicial
+- Base para processamento das SPUs
+- Preparação para integração com Memory Manager e Scheduler
+
+---
+
+## 📞 Syscall Framework
+
+- Syscall Manager
+- Estrutura inicial das chamadas de sistema
+- Base para integração com Kernel
+
+---
+
+## 🔊 Audio Framework
+
+- Audio Manager
+- Estrutura inicial do sistema de áudio
+
+---
+
+## 🎮 Input Framework
+
+- Input Manager
+- Estrutura inicial para controles e dispositivos de entrada
+
+---
+
+## 💾 File Cache
+
+- Estrutura inicial de cache
+- Preparação para otimização de carregamento
+
+---
+
+## 🖥 GPU Command Processor
+
+- Estrutura inicial
+- Base para futuros comandos da GPU RSX
+
+---
+
+## 🧠 Memory Bus
+
+- Estrutura inicial
+- Comunicação entre CPU, SPU, GPU e Memory Manager
+
+---
+
+## 🧵 Thread Manager
+
+- Estrutura inicial
+- Preparação para gerenciamento de threads do emulador
 
 ---
 
 ## ⚡ JIT Compiler
 
-Primeira implementação da infraestrutura do Recompilador Dinâmico.
-
-Implementado:
-
 - Initialize()
 - CompileBlock()
 - Shutdown()
 
-Preparado para:
-
+##  Preparado para:
 - Tradução PowerPC → ARM64
 
 ---
 
 ## 📦 Block Cache
-
-Primeira estrutura de cache.
-
-Implementado:
 
 - Inserção
 - Pesquisa
@@ -181,28 +216,20 @@ Implementado:
 
 ## 🧠 Memory Map
 
-Implementação inicial do Memory Map.
-
-Preparado para:
-
-- Memória Virtual do PS3
-- Endereços PPE
+- Estrutura inicial
+- Memória Virtual
 - Tradução ARM64
 
 ---
 
 ## ⚡ Native Code Execution (NCE)
 
-Primeira infraestrutura de execução nativa.
-
-Implementado:
-
 - Initialize()
 - LoadCode()
 - Execute()
 - Shutdown()
 
-Preparado para:
+## Preparado para:
 
 - Execução ARM64
 - Integração com JIT
@@ -213,18 +240,14 @@ Preparado para:
 
 ## 📋 Scheduler
 
-Primeira versão do Scheduler.
-
-Inclui:
-
 - FIFO Queue
-- Escalonador
-- Organização das Threads
+- Instruction Scheduler
 
 ---
 
 ## 💿 Loader
 
+- Loader
 - ELF
 - SELF
 - SPRX
@@ -261,132 +284,55 @@ Inclui:
 - Leitura
 - Escrita
 
----
-
-# 📁 Estrutura do Projeto
-
-```text
-Pure3XEngenie/
-├── assets/
-│   └── images/
-├── Config/
-├── Docs/
-├── build/
-├── core/
-│   ├── boot/
-│   ├── config/
-│   ├── disc/
-│   ├── emulator/
-│   ├── gamemodules/
-│   ├── jit/
-│   ├── kernel/
-│   ├── loader/
-│   ├── logger/
-│   ├── memory/
-│   ├── modules/
-│   ├── network/
-│   ├── scheduler/
-│   ├── system/
-│   ├── version/
-│   └── vfs/
-├── include/
-├── src/
-├── CMakeLists.txt
-├── README.md
-└── LICENSE
-```
-
-## 📚 Documentação
-
-Toda a documentação oficial encontra-se na pasta:
-
-```text
-Docs/
-```
-
-Arquivos disponíveis:
-
-- OfficialDocumentation.md
-- DevelopmentRoadmap.md
-- DevelopmentNotes.md
-- Architecture.md
-- CPU_Architecture.md
-- Cell_Execution_Model.md
-- CoreEngine.md
-- ConfigManager.md
-- BuildGuide.md
-- BootSystem.md
-- Graphics.md
-- Installation.md
-- LanguageManager.md
-- LogSystem.md
-- NCE.md
-- NetworkManager.md
-- PS3Research.md
-- FAQ.md
-
----
-
 ## 🗺️ Roadmap
 
-### ✅ v0.1.6 Alpha
+## 🚧 v0.1.8 Alpha
 
-- Novo Boot System
-- Logger reestruturado
-- CPU Core
-- JIT Compiler
-- Block Cache
-- Memory Map
-- Native Code Execution (NCE)
-- Scheduler
-- Melhor organização do projeto
-- Atualização do CMake
-- Estrutura preparada para Android NDK
+- Evolução do PPU Interpreter
+- Evolução do SPU Interpreter
+- Expansão do Framework de Syscalls
+- Melhorias no Memory Bus
+- Melhorias no Thread Manager
+- Evolução do GPU Command Processor
+- Aprimoramento do Loader
+- Organização do Kernel
+- Otimizações da Engine
 
 ---
 
-### 🚧 v0.1.7 Alpha
+## 🚧 v0.1.9 Alpha
 
-- Decoder inicial do PPE
-- Expansão do JIT
-- Tradução PowerPC → ARM64
-- Melhorias no Scheduler
-- Integração CPU ↔ JIT
-- Melhorias no MemoryMap
-
----
-
-### 🚧 v0.1.8 Alpha
-
-- Interpreter PPE
-- Interpreter SPU
-- Framework de Syscalls
-- Melhorias no Loader
-- Memory Manager avançado
-- Cache de Arquivos
+- Primeiros testes internos de execução
+- Melhorias no Emulator Core
+- Expansão do Scheduler
+- Melhorias no Memory Manager
+- Evolução do Virtual File System (VFS)
+- Organização do sistema de módulos
+- Preparação para integração gráfica
 
 ---
 
-### 🚧 v0.1.9 Alpha
+## 🚀 v0.2.0 Alpha
 
-- Primeira execução de código PowerPC
-- Testes ARM64
-- Cache otimizado
-- Preparação para Vulkan
-- Melhorias de estabilidade
+- Preparação para Android NDK r29
+- Primeiro projeto nativo (Hello World)
+- Estrutura inicial JNI
+- Base para integração Android
+- Organização do ambiente de desenvolvimento
+- Primeiros testes nativos ARM64
 
 ---
 
-### 🚀 v0.2.0 Alpha
+## 🚀 v0.2.1 Alpha
 
-- Backend Vulkan inicial
+- Estrutura inicial do Render Backend
+- Primeiros testes com Vulkan
 - Framework RSX
 - Shader Manager
 - Texture Cache
 - Framebuffer Manager
 - Pipeline de Renderização
-- Base para Homebrew PS3
-- Primeiros testes gráficos
+- Preparação para execução de aplicações Homebrew
 
 ---
 
@@ -403,8 +349,10 @@ Planejamento de longo prazo:
 - Audio Engine
 - Input Manager
 - Save States
-- Firmware PS3
+- Firmware PlayStation 3
 - Homebrew
+- Game Library
+- Interface Android
 - Compatibilidade crescente com jogos comerciais
 
 ---
@@ -413,26 +361,19 @@ Planejamento de longo prazo:
 
 **Lhuis (LhuisDev)**
 
-Projeto independente desenvolvido para pesquisa, aprendizado e evolução da emulação de PlayStation 3 para Android.
-
----
-
-## 📜 Licença
-
-Distribuído sob a licença **MIT**.
+Distribuído sob a licença MIT.
 
 Você pode estudar, modificar e contribuir com o projeto, respeitando os termos da licença e mantendo os créditos do autor original.
 
----
 
 ## 📢 Aviso
 
-O Pure3XEngenie encontra-se em desenvolvimento contínuo na fase **Alpha**.
+O Pure3XEngenie encontra-se em desenvolvimento contínuo na fase Alpha.
 
-Atualmente o projeto **não executa jogos, Homebrew ou firmware do PlayStation 3**.
+Atualmente o projeto não executa jogos, Homebrew ou firmware do PlayStation 3.
 
 O foco das versões atuais é construir toda a infraestrutura da Engine antes da implementação da emulação completa.
 
-A partir da **v0.1.6 Alpha**, o projeto passou a receber atualizações frequentes, trazendo novos módulos, melhorias na arquitetura e preparação para Android ARM64.
+Cada nova versão adiciona módulos, melhorias na arquitetura e prepara a Engine para as próximas etapas do desenvolvimento.
 
-Obrigado por acompanhar o desenvolvimento do **Pure3XEngenie**! 🚀
+Obrigado por acompanhar o desenvolvimento do Pure3XEngenie! 🚀
