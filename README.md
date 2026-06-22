@@ -79,7 +79,7 @@ Esses componentes serão utilizados futuramente na construção do Render Backen
 A versão **v0.1.8 Alpha** reforça a base do Pure3XEngenie e estabelece uma infraestrutura ainda mais sólida para a implementação das futuras funcionalidades de emulação, renderização gráfica e compatibilidade com jogos de PlayStation 3.
 
 
-##:🗺️ Roadmap
+## 🗺️ Roadmap
 
 ## 🚧 v0.1.9 Alpha
 
