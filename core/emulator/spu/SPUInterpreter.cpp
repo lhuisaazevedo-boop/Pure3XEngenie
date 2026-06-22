@@ -11,24 +11,19 @@ SPUInterpreter::SPUInterpreter()
 bool SPUInterpreter::Initialize()
 {
     std::cout << "[SPU] Inicializando SPU Interpreter..." << std::endl;
+    state.Reset();
     return true;
 }
 
 void SPUInterpreter::Reset()
 {
-    std::cout << "[SPU] Resetando estado das SPUs..." << std::endl;
+    std::cout << "[SPU] Resetando SPU..." << std::endl;
+    state.Reset();
 }
 
-void SPUInterpreter::Execute()
+void SPUInterpreter::Execute(uint32_t instruction)
 {
-    std::cout << "[SPU] Executando instruções SPU..." << std::endl;
-
-    // Futuramente:
-    // - Interpretar instruções das SPUs.
-    // - Gerenciar Local Store (LS).
-    // - Integrar com o Memory Manager.
-    // - Integrar com o Scheduler.
-    // - Integrar com o JIT Compiler.
+    decoder.Decode(instruction);
 }
 
 void SPUInterpreter::Shutdown()

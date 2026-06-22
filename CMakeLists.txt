@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 project(Pure3XEngenie
-    VERSION 0.1.7
+    VERSION 0.1.8
     DESCRIPTION "Experimental PlayStation 3 Engine for Android"
     LANGUAGES CXX
 )
@@ -55,24 +55,39 @@ add_executable(Pure3XEngenie
 
     # PPU Interpreter
     core/emulator/ppu/PPUInterpreter.cpp
+    core/emulator/ppu/PPUState.cpp
 
     # SPU Interpreter
     core/emulator/spu/SPUInterpreter.cpp
+    core/emulator/spu/SPUDecoder.cpp
+    core/emulator/spu/SPUState.cpp
 
     # Syscalls
     core/syscalls/SyscallManager.cpp
+    core/syscalls/SyscallTable.cpp
 
     # Audio Framework
     core/audio/AudioManager.cpp
 
     # Input Framework
     core/input/InputManager.cpp
+    core/input/DualShock3.cpp
+    core/input/InputState.cpp
+    core/input/ButtonMap.cpp
 
     # Cache Framework
     core/cache/FileCache.cpp
 
-    # GPU Command Processor
+    # GPU
     core/gpu/CommandProcessor.cpp
+    core/gpu/RSXState.cpp
+    core/gpu/CommandBuffer.cpp
+
+    # RSX
+    core/rsx/Renderer.cpp
+    core/rsx/ShaderManager.cpp
+    core/rsx/TextureManager.cpp
+    core/rsx/VertexBuffer.cpp
 
     # Memory Bus
     core/bus/MemoryBus.cpp
@@ -86,13 +101,20 @@ add_executable(Pure3XEngenie
 
     # Memory Manager
     core/memory/MemoryManager.cpp
+    core/memory/MemoryMap.cpp
+    core/memory/VirtualMemory.cpp
+    core/memory/MemoryAllocator.cpp
+    core/memory/AddressTranslator.cpp
 
     # Loader
     core/loader/Loader.cpp
+    core/loader/ExecutableLoader.cpp
+    core/loader/LoaderContext.cpp
+    core/loader/FirmwareManager.cpp
+    core/loader/FirmwareInfo.cpp
     core/loader/ELF/ElfLoader.cpp
     core/loader/SELF/SelfLoader.cpp
     core/loader/SPRX/SprxLoader.cpp
-
     # Virtual File System (VFS)
     core/vfs/VFS.cpp
     core/vfs/FileSystem.cpp
@@ -102,11 +124,12 @@ add_executable(Pure3XEngenie
     core/kernel/Kernel.cpp
     core/kernel/Process.cpp
     core/kernel/Thread.cpp
+    core/kernel/ProcessManager.cpp
+    core/kernel/ThreadScheduler.cpp
 
     # JIT
     core/jit/JITCompiler.cpp
     core/jit/BlockCache.cpp
-    core/jit/MemoryMap.cpp
     core/jit/NCE.cpp
 
     # Scheduler
@@ -118,8 +141,10 @@ target_include_directories(Pure3XEngenie PRIVATE
 
     .
 
+    # Config
     Config
 
+    # Core
     core
     core/boot
     core/config
@@ -150,6 +175,9 @@ target_include_directories(Pure3XEngenie PRIVATE
 
     # GPU
     core/gpu
+
+    # RSX
+    core/rsx
 
     # Bus
     core/bus

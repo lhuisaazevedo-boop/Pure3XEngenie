@@ -7,11 +7,11 @@ std::string GetEngineName() {
 }
 
 std::string GetVersion() {
-    return "0.1.7 Alpha";
+    return "0.1.8 Alpha";
 }
 
 std::string GetBuild() {
-    return "Build 007";
+    return "Build 008";
 }
 
 std::string GetDeveloper() {
@@ -19,7 +19,7 @@ std::string GetDeveloper() {
 }
 
 std::string GetPlatform() {
-    return "Android";
+    return "Android ARM64";
 }
 
 std::string GetLanguage() {
