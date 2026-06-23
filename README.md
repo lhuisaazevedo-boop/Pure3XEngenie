@@ -1,15 +1,15 @@
 <p align="center">
-  <img src="assets/images/Pure3XEngenie-0.1.9-Alpha.png" alt="Pure3XEngenie" width="900">
+  <img src="assets/images/Pure3XEngenie-0.1.9-Alpha.png" alt="Pure3XEngenie">
 </p>
 
 <h1 align="center">Pure3XEngenie</h1>
 
 <p align="center">
-Engine Experimental de Emulação de PlayStation 3 para Android
+  Engine Experimental de Emulação de PlayStation 3 para Android
 </p>
 
 <p align="center">
-Projeto desenvolvido em C++20 com foco em Android ARM64, Android NDK r29 e arquitetura modular.
+  Projeto desenvolvido em C++20 com foco em Android ARM64, Android NDK r29 e arquitetura modular.
 </p>
 
 <p align="center">
@@ -22,10 +22,16 @@ Projeto desenvolvido em C++20 com foco em Android ARM64, Android NDK r29 e arqui
   </a>
 </p>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Versão-v0.1.9_Alpha-orange">
+  <img src="https://img.shields.io/badge/C%2B%2B-20-blue">
+  <img src="https://img.shields.io/badge/Android-NDK_r29-green">
+  <img src="https://img.shields.io/badge/Status-Em_Desenvolvimento-red">
+</p>
+
 ---
 
-## 🚀 Pure3XEngenie v0.1.9 Alpha
-
+# 🚀 Pure3XEngenie v0.1.9 Alpha
 A versão **v0.1.9 Alpha** consolida a nova base da Engine com suporte inicial para módulos Android, JNI Bridge, APK Loader e evolução da arquitetura principal do projeto.
 
 Esta atualização marca o encerramento do ciclo 0.1.x e inicia a preparação para a série **0.2.x**, que terá foco total em Android, Android NDK r29, integração nativa ARM64 e infraestrutura para futuras implementações do Render Backend.
