@@ -5,32 +5,26 @@
 <h1 align="center">Pure3XEngenie</h1>
 
 <p align="center">
-  Engine Experimental de Emulação de PlayStation 3 para Android
+Engine Experimental de Emulação de PlayStation 3 para Android
 </p>
 
 <p align="center">
-  Projeto desenvolvido em C++20 com foco em Android ARM64, Android NDK r29 e arquitetura modular para futuras implementações do ecossistema PlayStation 3.
+Projeto desenvolvido em C++20 com foco em Android ARM64, Android NDK r29 e arquitetura modular.
 </p>
 
 <p align="center">
   <a href="https://github.com/lhuisaazevedo-boop/Pure3XEngenie">
-    <img src="https://img.shields.io/badge/GitHub-Pure3XEngenie-blue?style=for-the-badge&logo=github">
+    GitHub
   </a>
+  •
   <a href="https://x.com/Pure3X_PS3">
-    <img src="https://img.shields.io/badge/X-@Pure3X__PS3-black?style=for-the-badge&logo=x">
+    @Pure3X_PS3
   </a>
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Versão-v0.1.9_Alpha-orange?style=for-the-badge">
-  <img src="https://img.shields.io/badge/C%2B%2B-20-blue?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Android-NDK_r29-green?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Status-Em_Desenvolvimento-red?style=for-the-badge">
 </p>
 
 ---
 
-# 🚀 Pure3XEngenie v0.1.9 Alpha
+## 🚀 Pure3XEngenie v0.1.9 Alpha
 
 A versão **v0.1.9 Alpha** consolida a nova base da Engine com suporte inicial para módulos Android, JNI Bridge, APK Loader e evolução da arquitetura principal do projeto.
 
