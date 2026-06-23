@@ -2,10 +2,9 @@
 
 namespace Pure3X {
 
-class Engine
-{
+class HardwareInfo {
 public:
-    void run();
+    static void Show();
 };
 
 }

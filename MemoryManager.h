@@ -2,10 +2,10 @@
 
 namespace Pure3X {
 
-class Engine
+class MemoryManager
 {
 public:
-    void run();
+    static void ShowInfo();
 };
 
 }

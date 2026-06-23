@@ -20,6 +20,8 @@ public:
 
     std::size_t GetSize() const;
 
+    static void ShowInfo();
+
 private:
     std::vector<uint8_t> m_memory;
 };

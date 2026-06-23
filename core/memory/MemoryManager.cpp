@@ -1,4 +1,5 @@
 #include "MemoryManager.h"
+#include <iostream>
 
 namespace Pure3X
 {
@@ -37,6 +38,16 @@ void MemoryManager::Write8(uint64_t address, uint8_t value)
 std::size_t MemoryManager::GetSize() const
 {
     return m_memory.size();
+}
+
+void MemoryManager::ShowInfo()
+{
+    std::cout << "\n====== MEMORY MANAGER ======\n";
+    std::cout << "Type      : Virtual Memory\n";
+    std::cout << "Page Size : 4096 Bytes\n";
+    std::cout << "Status    : Ready\n";
+    std::cout << "Mode      : PS3 Memory Map\n";
+    std::cout << "============================\n";
 }
 
 } // namespace Pure3X

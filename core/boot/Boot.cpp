@@ -7,7 +7,8 @@
 #include <iostream>
 #include <thread>
 
-namespace Pure3X {
+namespace Pure3X
+{
 
 static void BootProgress(const std::string& module)
 {
@@ -15,8 +16,8 @@ static void BootProgress(const std::string& module)
 
     std::cout << std::left << std::setw(12) << module << " ";
 
-    for (int i = 0; i <= width; i++) {
-
+    for (int i = 0; i <= width; i++)
+    {
         int percent = (i * 100) / width;
 
         std::cout << "\r";
@@ -24,17 +25,21 @@ static void BootProgress(const std::string& module)
         std::cout << " [";
 
         for (int j = 0; j < width; j++)
+        {
             std::cout << (j < i ? "█" : " ");
+        }
 
         std::cout << "] ";
         std::cout << std::setw(3) << percent << "%";
 
         std::cout.flush();
 
-        std::this_thread::sleep_for(std::chrono::milliseconds(25));
+        std::this_thread::sleep_for(
+            std::chrono::milliseconds(25)
+        );
     }
 
-    std::cout << "  READY\n";
+    std::cout << " READY\n";
 }
 
 void bootSystem()
@@ -44,7 +49,7 @@ void bootSystem()
     std::cout << "\n";
     std::cout << "=============================================\n";
     std::cout << "          Pure3XEngenie Boot System\n";
-    std::cout << "=============================================\n\n";
+    std::cout << "=============================================\n";
 
     std::cout << "Engine     : " << GetEngineName() << '\n';
     std::cout << "Version    : " << GetVersion() << '\n';
@@ -60,20 +65,16 @@ void bootSystem()
     BootProgress("Memory");
     BootProgress("Network");
     BootProgress("Logger");
-
     BootProgress("JIT");
-    BootProgress("BlockCache");
-    BootProgress("MemoryMap");
-    BootProgress("NCE");
+    BootProgress("Cache");
     BootProgress("Scheduler");
 
-    std::cout << "\n=============================================\n";
-    std::cout << "             Engine Ready\n";
-    std::cout << "=============================================\n\n";
+    std::cout << "\n";
+    std::cout << "=============================================\n";
+    std::cout << "               Engine Ready\n";
+    std::cout << "=============================================\n";
 
     Log::Info("[BOOT] Sistema iniciado com sucesso.");
-
-    Log::Shutdown();
 }
 
 } // namespace Pure3X

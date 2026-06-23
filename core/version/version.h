@@ -1,5 +1,5 @@
-#ifndef PURE3X_VERSION_H
-#define PURE3X_VERSION_H
+
+#pragma once
 
 #include <string>
 
@@ -13,5 +13,3 @@ std::string GetPlatform();
 std::string GetLanguage();
 
 }
-
-#endif

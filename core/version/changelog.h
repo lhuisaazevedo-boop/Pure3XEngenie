@@ -1,25 +1,52 @@
 #pragma once
 
-namespace Pure3XEngenie {
-namespace Changelog {
+namespace Pure3X {
 
-constexpr const char* Current = R"(
+static const char* CHANGELOG = R"(
 
-v0.1.5 Alpha
-------------
+=========================================
+Pure3XEngenie v0.1.9 Alpha
+=========================================
 
-• Novo sistema GameModules
-• Preparação para Module Manager
-• Base para Loader (ELF, SELF e SPRX)
-• Melhorias no Boot System
-• Logger otimizado
-• Config Manager atualizado
-• Estrutura modular refinada
-• Correções internas
-• Melhorias de desempenho
-• Preparação para futuras versões
+[Core]
++ Reorganização do núcleo do engine
++ Melhorias na estrutura modular
+
+[Config]
++ Novo ConfigManager
++ Config.ini avançado
++ Suporte a perfis Auto/Low/Medium/High
++ Preparação para múltiplos idiomas
+
+[Version]
++ Atualização do sistema de versão
++ Informações de build aprimoradas
++ Base para codename e status
+
+[Logs]
++ Revisão do sistema de logs
++ Melhor documentação interna
+
+[Android]
++ Preparação para Android NDK r29
++ Planejamento da infraestrutura Android
+
+[Documentation]
++ Roadmap v0.2.0 criado
++ Documentação reorganizada
++ Melhor descrição dos módulos
+
+[Next]
+- Driver Manager
+- Shader Cache
+- Pipeline Cache
+- Memory Cache
+- Frontend Android
+- JNI Layer
+
+Status:
+Development Alpha
 
 )";
 
-} // namespace Changelog
-} // namespace Pure3XEngenie
+}

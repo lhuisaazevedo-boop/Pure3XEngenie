@@ -3,46 +3,69 @@
 #include <fstream>
 #include <iostream>
 
-ConfigManager::ConfigManager() {
-    configPath = "Config/config.ini";
-}
+namespace Pure3X {
 
-bool ConfigManager::LoadConfig() {
-    std::ifstream file(configPath);
+bool ConfigManager::LoadConfig(const std::string& path)
+{
+    std::ifstream file(path);
 
-    if (!file.is_open()) {
+    if (!file.is_open())
+    {
+        std::cout << "[Config] config.ini nao encontrado: "
+                  << path << std::endl;
+
         return false;
     }
 
-    file.close();
-    return true;
-}
+    std::cout << "[Config] Carregando configuracoes..."
+              << std::endl;
 
-bool ConfigManager::SaveConfig() {
-    std::ofstream file(configPath);
+    std::string line;
 
-    if (!file.is_open()) {
-        std::cout << "[ERRO] Nao foi possivel criar config.ini\n";
-        return false;
+    while (std::getline(file, line))
+    {
+        if (line.empty())
+            continue;
+
+        if (line[0] == '#')
+            continue;
+
+        std::cout << "[Config] " << line
+                  << std::endl;
     }
 
-    file << "# Pure3XEngenie Config\n";
-    file << "language=pt_BR\n";
-    file << "debug=true\n";
-    file << "log_level=INFO\n";
-
     file.close();
 
-    std::cout << "[CONFIG] Arquivo config.ini criado com sucesso.\n";
+    std::cout << "[Config] Configuracoes carregadas."
+              << std::endl;
+
     return true;
 }
 
-void ConfigManager::SetValue(const std::string& key,
-                             const std::string& value) {
-    // Implementação futura
+void ConfigManager::SaveConfig(const std::string& path)
+{
+    std::ofstream file(path);
+
+    if (!file.is_open())
+    {
+        std::cout << "[Config] Erro ao salvar config.ini"
+                  << std::endl;
+
+        return;
+    }
+
+    file << "# Pure3XEngenie v0.1.9 Alpha\n";
+    file << "\n";
+
+    file << "[Engine]\n";
+    file << "Version=0.1.9 Alpha\n";
+    file << "Language=pt_BR\n";
+    file << "Profile=Auto\n";
+
+    file.close();
+
+    std::cout << "[Config] Configuracoes salvas."
+              << std::endl;
 }
 
-std::string ConfigManager::GetValue(const std::string& key) {
-    // Implementação futura
-    return "";
-}
+} // namespace Pure3X

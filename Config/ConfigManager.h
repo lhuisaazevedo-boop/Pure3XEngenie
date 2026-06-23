@@ -1,23 +1,23 @@
-#ifndef CONFIG_MANAGER_H
-#define CONFIG_MANAGER_H
+#pragma once
 
 #include <string>
 
-class ConfigManager {
+namespace Pure3X {
+
+class ConfigManager
+{
 public:
-    ConfigManager();
 
-    bool LoadConfig();
-    bool SaveConfig();
+    // Carrega config.ini
+    static bool LoadConfig(const std::string& path);
 
-    void SetValue(const std::string& key,
-                  const std::string& value);
-
-    std::string GetValue(
-        const std::string& key);
+    // Salva config.ini
+    static void SaveConfig(const std::string& path);
 
 private:
-    std::string configPath;
+
+    ConfigManager() = default;
+    ~ConfigManager() = default;
 };
 
-#endif
+} // namespace Pure3X
