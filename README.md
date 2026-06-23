@@ -1,11 +1,15 @@
 <p align="center">
-  <img src="assets/images/Pure3XEngenie-0.1.8-Alpha.png" alt="Pure3XEngenie v0.1.8 Alpha" width="100%">
+  <img src="assets/images/Pure3XEngenie-0.1.9-Alpha.png" alt="Pure3XEngenie" width="900">
 </p>
 
 <h1 align="center">Pure3XEngenie</h1>
 
 <p align="center">
-Engine Experimental de Emulação de PlayStation 3 para Android
+  Engine Experimental de Emulação de PlayStation 3 para Android
+</p>
+
+<p align="center">
+  Projeto desenvolvido em C++20 com foco em Android ARM64, Android NDK r29 e arquitetura modular para futuras implementações do ecossistema PlayStation 3.
 </p>
 
 <p align="center">
@@ -17,115 +21,147 @@ Engine Experimental de Emulação de PlayStation 3 para Android
   </a>
 </p>
 
----
-
-# 🚀 Pure3XEngenie v0.1.8 Alpha
-
-## 🚀 Pure3XEngenie v0.1.8 Alpha
-
-A versão **v0.1.8 Alpha** representa mais um grande avanço na evolução do Pure3XEngenie, consolidando novos módulos da Engine e expandindo sua arquitetura interna.
-
-O foco desta atualização foi fortalecer a infraestrutura dos sistemas de entrada (Input), iniciar a implementação do framework gráfico RSX e continuar a organização dos componentes centrais da Engine, preparando o projeto para as próximas etapas do desenvolvimento.
+<p align="center">
+  <img src="https://img.shields.io/badge/Versão-v0.1.9_Alpha-orange?style=for-the-badge">
+  <img src="https://img.shields.io/badge/C%2B%2B-20-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Android-NDK_r29-green?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Status-Em_Desenvolvimento-red?style=for-the-badge">
+</p>
 
 ---
 
-## ✨ Principais novidades
+# 🚀 Pure3XEngenie v0.1.9 Alpha
 
-### 🎮 Input Framework
+A versão **v0.1.9 Alpha** consolida a nova base da Engine com suporte inicial para módulos Android, JNI Bridge, APK Loader e evolução da arquitetura principal do projeto.
 
-Foi implementada a primeira base do novo sistema de entrada da Engine.
-
-Inclui:
-
-- DualShock3
-- InputState
-- ButtonMap
-- Estrutura para múltiplos Gamepads
-- Organização do gerenciamento de dispositivos
-
-Esta implementação servirá como base para futuros controles Bluetooth, USB e APIs nativas do Android.
+Esta atualização marca o encerramento do ciclo 0.1.x e inicia a preparação para a série **0.2.x**, que terá foco total em Android, Android NDK r29, integração nativa ARM64 e infraestrutura para futuras implementações do Render Backend.
 
 ---
+## 📱 Android Framework
 
-### 🖥 RSX Framework
+Novos módulos adicionados:
 
-A Engine agora possui a estrutura inicial do processador gráfico RSX.
+- Android NDK Bridge
+- JNI Bridge
+- APK Loader
+- Estrutura Android inicial
+- Melhor organização dos módulos Android
 
-Novos módulos:
-
-- Renderer
-- ShaderManager
-- TextureManager
-- VertexBuffer
-
-Esses componentes serão utilizados futuramente na construção do Render Backend Vulkan.
-
----
-
-### 🔧 Melhorias Gerais
+## 🔧 Melhorias Gerais
 
 - Atualização completa do CMake
-- Organização dos módulos da Engine
-- Correções na compilação
-- Melhor estrutura do código-fonte
-- Documentação atualizada
-- README reformulado
-- Nova capa oficial da versão v0.1.8 Alpha
-- Roadmap atualizado
-- Melhor preparação para as próximas versões
+- Melhor organização da Engine
+- Correções de compilação
+- Estrutura modular expandida
+- Backup oficial v0.1.9 Alpha
+- Release oficial publicada no GitHub
 
 ---
 
-A versão **v0.1.8 Alpha** reforça a base do Pure3XEngenie e estabelece uma infraestrutura ainda mais sólida para a implementação das futuras funcionalidades de emulação, renderização gráfica e compatibilidade com jogos de PlayStation 3.
+## 🎯 Foco Atual
 
+A partir da versão v0.2.0 Alpha, o desenvolvimento do Pure3XEngenie entrará em uma nova fase.
 
-## 🗺️ Roadmap
+O foco principal das próximas semanas será a evolução da infraestrutura Android utilizando o Android NDK r29, preparando a Engine para futuras interfaces gráficas, integração nativa e sistemas avançados de execução.
 
-## 🚧 v0.1.9 Alpha
-
-- Evolução do RSX Framework
-- Expansão do Input Framework
-- Suporte para novos Gamepads
-- Melhorias no Memory Manager
-- Evolução do Scheduler
-- Organização do Kernel
-- Aprimoramento do Loader
-- Continuação da infraestrutura da Engine
+Esta será a prioridade principal do projeto antes das próximas etapas da emulação.
 
 ---
 
-## 🚀 v0.2.0 Alpha
+## 🗺️ Roadmap de Desenvolvimento
 
-- Primeiros testes nativos para Android
-- Estrutura inicial JNI
-- Integração com Android NDK
-- Base do Render Backend
-- Organização do Frontend
+### 🚀 v0.2.0 Alpha
+
+Foco total em Android.
+
+Objetivos principais:
+
+- Evolução da integração Android NDK r29
+- Estruturação do Android Framework
+- Expansão do APK Loader
+- Melhorias no JNI Bridge
+- Organização dos módulos Android
+- Primeiros testes de inicialização nativa
+- Estrutura do Frontend Android
+- Melhor gerenciamento de assets
+- Melhor integração entre Engine e Android
 - Continuação da arquitetura ARM64
 
 ---
 
-## 🚀 v0.2.1 Alpha
+### 🚀 v0.2.1 Alpha
 
-- Evolução do Render Backend
-- Primeiros testes com Vulkan
-- Pipeline RSX
-- Shader Cache
-- Texture Cache
-- Framebuffer Manager
-- Base para execução de Homebrew
+Render Backend Inicial.
+
+Planejamento:
+
+- Estrutura inicial do Render Backend
+- Gerenciamento de superfícies gráficas
+- Sistema de apresentação de quadros
+- Organização do pipeline gráfico
+- Melhorias no gerenciamento de memória
+- Expansão do sistema de cache
+- Melhor integração com módulos RSX
 
 ---
 
-## 🚀 v0.2.2 Alpha
+### 🚀 v0.2.2 Alpha
 
-- Evolução do Emulator Core
-- Melhorias no RSX
-- Evolução do Kernel
-- Expansão das Syscalls
-- Melhorias do Virtual File System (VFS)
-- Otimizações da Engine
-- Preparação para futuras implementações de jogos
+RSX Framework Expansion.
+
+Objetivos:
+
+- Evolução do RSX Framework
+- Estrutura inicial de comandos gráficos
+- Organização de buffers
+- Melhorias no gerenciamento de shaders
+- Expansão do sistema de texturas
+- Otimizações internas do pipeline
+
+---
+
+### 🚀 v0.2.3 Alpha
+
+Cell Framework Expansion.
+
+Objetivos:
+
+- Evolução do Cell Engine
+- Melhorias no gerenciamento de PPE
+- Melhorias no gerenciamento de SPEs
+- Expansão do Scheduler
+- Organização do sistema de tarefas
+- Melhor integração entre CPU e GPU
+
+---
+
+### 🚀 v0.2.4 Alpha
+
+Kernel e Sistema.
+
+Objetivos:
+
+- Expansão do Kernel
+- Novas Syscalls
+- Melhorias do Virtual File System
+- Melhor gerenciamento de processos
+- Melhor gerenciamento de threads
+- Aprimoramento da infraestrutura principal
+
+---
+
+### 🚀 v0.2.5 Alpha
+
+Preparação para Emulação.
+
+Objetivos:
+
+- Consolidação da arquitetura da Engine
+- Integração dos principais módulos
+- Melhorias gerais de desempenho
+- Otimizações de memória
+- Refinamento da estrutura Android
+- Preparação para futuras fases da emulação PlayStation 3
 
 ---
 
@@ -133,7 +169,7 @@ A versão **v0.1.8 Alpha** reforça a base do Pure3XEngenie e estabelece uma inf
 
 Lhuis (LhuisDev)
 
-Projeto desenvolvido do zero em C++20, com foco em uma arquitetura moderna, modular e otimizada para Android.
+Projeto desenvolvido do zero em C++20 com foco em Android ARM64, Android NDK r29 e arquitetura modular voltada para pesquisa e desenvolvimento de tecnologias de emulação.
 
 ---
 
@@ -141,16 +177,14 @@ Projeto desenvolvido do zero em C++20, com foco em uma arquitetura moderna, modu
 
 Distribuído sob a licença MIT.
 
-Você pode estudar, modificar e contribuir com o projeto, respeitando os termos da licença e mantendo os créditos do autor original.
-
 ---
 
 ## 📢 Aviso
 
-O Pure3XEngenie é um projeto experimental voltado para pesquisa e desenvolvimento de uma Engine de emulação de PlayStation 3 para Android.
+O Pure3XEngenie é um projeto experimental em estágio Alpha.
 
-As versões Alpha concentram-se na construção da infraestrutura da Engine, incluindo CPU, SPU, RSX, Kernel, Loader, Sistema de Memória, Input, Áudio e demais componentes internos.
+O objetivo atual não é executar jogos comerciais, mas construir uma infraestrutura sólida, moderna e escalável para futuras etapas do desenvolvimento.
 
-Cada atualização amplia a arquitetura do projeto e prepara a base para as futuras etapas de compatibilidade, renderização gráfica e execução de aplicações.
+A série 0.2.x terá foco total na plataforma Android e na evolução dos componentes nativos utilizando Android NDK r29.
 
-Obrigado por acompanhar o desenvolvimento do Pure3XEngenie! 🚀
+Obrigado por acompanhar o desenvolvimento do Pure3XEngenie.
