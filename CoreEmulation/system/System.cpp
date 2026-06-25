@@ -1,5 +1,5 @@
 #include "System.h"
-#include "../../core/version/version.h"
+#include "../version/version.h"
 
 #include <chrono>
 #include <iostream>
@@ -29,7 +29,6 @@ void System::showStatus()
 
         std::cout << " OK\n";
     };
-
     Check("CPU");
     Check("RAM");
     Check("CORE");
@@ -47,6 +46,13 @@ void System::showStatus()
     std::cout << "NCE.............OK\n";
     std::cout << "Scheduler.......OK\n";
 
+    std::cout << "===================================\n\n";
+
+    std::cout << "=========== DESEMPENHO ============\n";
+    std::cout << "Renderer    : Vulkan\n";
+    std::cout << "FPS         : --\n";
+    std::cout << "Frame Time  : -- ms\n";
+    std::cout << "VSync       : OFF\n";
     std::cout << "===================================\n\n";
 
     std::cout << "=========================================\n";

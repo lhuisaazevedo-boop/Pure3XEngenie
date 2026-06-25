@@ -9,12 +9,12 @@ std::string GetEngineName()
 
 std::string GetVersion()
 {
-    return "0.1.9 Alpha";
+    return "0.2.0 Alpha";
 }
 
 std::string GetBuild()
 {
-    return "Build 019";
+    return "Build 020";
 }
 
 std::string GetDeveloper()
