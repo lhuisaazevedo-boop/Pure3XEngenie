@@ -11,7 +11,7 @@ Projeto desenvolvido em <b>C++20</b> com foco em <b>Android ARM64</b>, <b>Androi
   <img src="https://img.shields.io/badge/Status-Alpha-red">
 </p>---
 
-##:🚀 Pure3XEngenie v0.2.1 Alpha
+## 🚀 Pure3XEngenie v0.2.1 Alpha
 
 A versão v0.2.1 Alpha representa a consolidação da infraestrutura Android do Pure3XEngenie.
 
