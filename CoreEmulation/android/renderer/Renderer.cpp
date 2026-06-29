@@ -1,5 +1,7 @@
 #include <iostream>
+
 #include "Renderer.h"
+#include "../../graphics/CubeRenderer.h"
 
 namespace Pure3X
 {
@@ -14,6 +16,10 @@ void Renderer::ShowInfo()
     std::cout << "OpenGL   : Future Support\n";
     std::cout << "Frame    : Ready\n";
     std::cout << "==============================\n";
+
+    CubeRenderer::Initialize();
+    CubeRenderer::Render3D();
+    CubeRenderer::Shutdown();
 }
 
-}
+} // namespace Pure3X

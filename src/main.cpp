@@ -1,18 +1,51 @@
-#include "../CoreEmulation/boot/Boot.h"
 #include "../CoreEmulation/Engine.h"
-#include "../CoreEmulation/android/AndroidBridge.h"
+
+#include "../CoreEmulation/android/core/AndroidCore.h"
+#include "../CoreEmulation/android/runtime/AndroidRuntime.h"
+
+#include "../CoreEmulation/cell/CellSystem.h"
+
+#include <iostream>
+
+using namespace Pure3X;
 
 int main()
 {
-    // Inicializa o Boot
-    Pure3X::bootSystem();
+    std::cout << "=====================================\n";
+    std::cout << "       Pure3XEngenie v0.2.1 Alpha\n";
+    std::cout << "=====================================\n\n";
 
-    // Inicializa a camada Android
-    Pure3X::AndroidBridge::ShowInfo();
+    if (!AndroidCore::Initialize())
+    {
+        std::cerr << "[ERRO] AndroidCore falhou.\n";
+        return -1;
+    }
 
-    // Inicializa a Engine
-    Pure3X::Engine engine;
+    if (!AndroidRuntime::Initialize())
+    {
+        std::cerr << "[ERRO] AndroidRuntime falhou.\n";
+
+        AndroidCore::Shutdown();
+        return -1;
+    }
+
+    if (!CellSystem::Initialize())
+    {
+        std::cerr << "[ERRO] CellSystem falhou.\n";
+
+        AndroidRuntime::Shutdown();
+        AndroidCore::Shutdown();
+        return -1;
+    }
+
+    Engine engine;
     engine.run();
+
+    CellSystem::Shutdown();
+    AndroidRuntime::Shutdown();
+    AndroidCore::Shutdown();
+
+    std::cout << "\n[Pure3XEngenie] Encerrada com sucesso.\n";
 
     return 0;
 }

@@ -3,18 +3,15 @@
 namespace Pure3X
 {
 
-class InputManager
+class AndroidRuntime
 {
 public:
-    InputManager() = default;
-    ~InputManager() = default;
-
+    // Inicialização
     static bool Initialize();
-    static void Update();
     static void Shutdown();
 
 private:
-    static bool m_initialized;
+    AndroidRuntime() = delete;
 };
 
 } // namespace Pure3X

@@ -1,14 +1,9 @@
 #pragma once
 
-namespace Pure3X
-{
+namespace Pure3X {
 
-class InputManager
-{
+class InputManager {
 public:
-    InputManager() = default;
-    ~InputManager() = default;
-
     static bool Initialize();
     static void Update();
     static void Shutdown();

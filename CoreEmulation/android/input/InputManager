@@ -1,4 +1,5 @@
-#pragma once
+#ifndef PURE3X_INPUT_MANAGER_H
+#define PURE3X_INPUT_MANAGER_H
 
 namespace Pure3X
 {
@@ -6,15 +7,18 @@ namespace Pure3X
 class InputManager
 {
 public:
-    InputManager() = default;
-    ~InputManager() = default;
-
     static bool Initialize();
+
     static void Update();
+
     static void Shutdown();
 
+    static bool IsReady();
+
 private:
-    static bool m_initialized;
+    static bool ready;
 };
 
-} // namespace Pure3X
+}
+
+#endif
