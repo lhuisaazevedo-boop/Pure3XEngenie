@@ -1,212 +1,157 @@
 <p align="center">
-  <img src="assets/images/Pure3XEngenie-0.2.0-Alpha.png" alt="Pure3XEngenie" width="100%">
-</p>
-
-<h1 align="center">Pure3XEngenie</h1>
-
-<p align="center">
+  <img src="assets/images/Pure3XEngenie-0.2.1-alpha.png" alt="Pure3XEngenie">
+</p><h1 align="center">Pure3XEngenie</h1><p align="center">
 Engine Experimental de Emulação de PlayStation 3 para Android
-</p>
-
-<p align="center">
+</p><p align="center">
 Projeto desenvolvido em <b>C++20</b> com foco em <b>Android ARM64</b>, <b>Android NDK r29</b> e arquitetura modular.
-</p>
-
-<p align="center">
-  <a href="https://github.com/lhuisaazevedo-boop/Pure3XEngenie">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white">
-  </a>
-
-  <a href="https://x.com/Pure3X_PS3">
-    <img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white">
-  </a>
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Versão-v0.2.0_Alpha-orange">
+</p><p align="center">
+  <img src="https://img.shields.io/badge/Versão-v0.2.1_Alpha-orange">
   <img src="https://img.shields.io/badge/C++20-blue">
   <img src="https://img.shields.io/badge/Android-NDK_r29-green">
-  <img src="https://img.shields.io/badge/Status-Em_Desenvolvimento-red">
-</p>
+  <img src="https://img.shields.io/badge/Status-Alpha-red">
+</p>---
 
----
+##:🚀 Pure3XEngenie v0.2.1 Alpha
 
-# 🚀 Pure3XEngenie v0.2.0 Alpha
+A versão v0.2.1 Alpha representa a consolidação da infraestrutura Android do Pure3XEngenie.
 
-A versão **v0.2.0 Alpha** marca oficialmente o início da série **0.2.x** do Pure3XEngenie.
-
-Esta atualização representa a maior evolução da Engine desde o início do projeto, introduzindo uma arquitetura mais organizada, modular e preparada para o desenvolvimento da futura infraestrutura de emulação do PlayStation 3 no Android.
-
-Durante esta versão foram implementados diversos módulos do sistema, melhorias no Boot System, novos menus, gerenciamento interno mais robusto e expansão da plataforma Android utilizando o Android NDK r29.
-
-O objetivo desta etapa é consolidar uma base sólida para as próximas versões da série **0.2.x**, preparando a Engine para Render Backend, Cell Engine, RSX GPU e demais componentes da arquitetura do PlayStation 3.
+Durante esta atualização foram realizados avanços importantes na arquitetura interna da Engine, integração com Android NDK r29, organização dos módulos, geração da biblioteca compartilhada e preparação para o primeiro APK experimental.
 
 ---
 
 ## ✨ Principais Novidades
 
-- Nova arquitetura modular
+- Android Runtime
+- Android Core
 - Android Bridge
 - JNI Bridge
-- APK Loader
-- Android NDK Manager
-- Surface Manager
+- Vulkan Framework
 - Window Manager
-- Renderer Manager
-- Firmware Manager
-- XMB Manager
+- Display Manager
+- Audio Manager
 - Input Manager
-- Novo Status do Sistema
-- Melhorias no Boot System
-- Menus totalmente reorganizados
-- Melhor gerenciamento interno
-- Estrutura preparada para futuras versões
+- Graphics Manager
+- Shader Manager
+- Swapchain Manager
+- Thread Manager
+- Service Manager
+- Network Manager
+- Debug Manager
+- Log Manager
+- FileSystem
+- Melhorias no Cell Engine
+- Compilação completa via CMake
+- Geração da biblioteca "liblhuis.pure3x.so"
 
 ---
 
 ## 📱 Android Framework
 
-Novos componentes adicionados nesta versão:
-
-- Android Bridge
-- JNI Bridge
-- APK Loader
-- Android NDK Manager
-- Surface Manager
-- Window Manager
-- Renderer
-- Input Manager
+- Android NDK r29 integrado
+- Inicialização do Android Runtime
+- Estrutura preparada para APK
 - Melhor organização dos módulos Android
-- Estrutura preparada para futuras integrações nativas
+- Base preparada para Vulkan
 
 ---
 
 ## 🔧 Melhorias Gerais
 
-- Atualização completa do CMake.
-- Reorganização da estrutura do projeto.
-- Melhor organização do CoreEmulation.
-- Expansão da arquitetura modular.
-- Melhorias no sistema de Boot.
-- Atualização do Status do Sistema.
-- Novo Input Manager integrado.
-- Melhor gerenciamento dos componentes internos.
-- Organização da pasta `assets/images`.
-- Backup oficial da versão **v0.2.0 Alpha** em formato ZIP.
-- Release oficial publicada no GitHub.
+- Nova organização do CoreEmulation
+- Correções no sistema de Build
+- Atualização do CMake
+- Melhor gerenciamento interno
+- Estrutura modular expandida
+- Backup oficial da versão v0.2.1 Alpha
+- Release oficial publicada no GitHub
 
 ---
 
-## 🎯 Foco Atual
+## 🎯 Status Atual
 
-A partir da versão **v0.2.0 Alpha**, o Pure3XEngenie entra em uma nova fase de desenvolvimento.
+Atualmente o projeto já consegue:
 
-O principal objetivo agora é consolidar a infraestrutura da Engine para Android, expandindo os módulos internos e preparando a base para futuras implementações do sistema de renderização, gerenciamento de memória, processamento do Cell Engine e integração nativa utilizando o Android NDK r29.
-
-Todo o trabalho desta série será voltado para criar uma arquitetura sólida, organizada e escalável para as próximas etapas do projeto.
+- Compilar sem erros
+- Gerar executável
+- Gerar biblioteca compartilhada
+- Inicializar praticamente todos os módulos Android
+- Preparar a infraestrutura para o primeiro APK
 
 ---
 
 ## 🗺️ Roadmap de Desenvolvimento
-### 🚀 v0.2.1 Alpha
 
-**Render Backend Inicial**
+## 🚀 v0.2.2 Alpha
 
-Objetivos:
+- Menu principal da Engine
+- Vulkan Runtime
+- Render Backend
+- Window System
 
-- Estrutura inicial do Render Backend.
-- Melhorias no Renderer.
-- Evolução do Input Manager.
-- Otimizações gerais de desempenho.
+## 🚀 v0.2.3 Alpha
 
----
+- Primeiro Cubo 3D
+- Renderização Vulkan
+- Pipeline gráfico inicial
 
-### 🚀 v0.2.2 Alpha
+## 🚀 v0.2.4 Alpha
 
-**RSX Framework Expansion**
+- RSX Framework
+- Buffers
+- Texturas
+- Shaders
 
-Objetivos:
+## 🚀 v0.2.5 Alpha
 
-- Evolução do RSX Framework.
-- Organização dos buffers gráficos.
-- Melhorias no gerenciamento de shaders.
-- Expansão do sistema de texturas.
+- Cell Engine
+- PPE
+- SPU
+- Scheduler
 
----
+## 🚀 v0.2.6 Alpha
 
-### 🚀 v0.2.3 Alpha
+- Kernel
+- Syscalls
+- Virtual File System
+- Process Manager
 
-**Cell Framework Expansion**
+## 🚀 v0.2.7 Alpha
 
-Objetivos:
+- Integração dos módulos
+- Melhorias de desempenho
+- Otimização de memória
 
-- Evolução do Cell Engine.
-- Melhorias no gerenciamento de PPE.
-- Melhorias no gerenciamento de SPEs.
-- Expansão do Scheduler.
+## 🚀 v0.2.8 Alpha
 
----
+- Interface inicial
+- Preparação do APK
+- Ajustes gerais
 
-### 🚀 v0.2.4 Alpha
+## 🚀 v0.2.9 Alpha
 
-**Kernel e Sistema**
-
-Objetivos:
-
-- Expansão do Kernel.
-- Novas Syscalls.
-- Melhorias no Virtual File System.
-- Melhor gerenciamento de processos e threads.
-
----
-
-### 🚀 v0.2.5 Alpha
-
-**Preparação para Emulação**
-
-Objetivos:
-
-- Consolidação da arquitetura da Engine.
-- Integração dos principais módulos.
-- Melhorias gerais de desempenho.
-- Otimizações de memória.
-
----
-
-### 🚀 v0.2.6 Alpha
-
-**Preparação para a Primeira APK**
-
-Objetivos:
-
-- Integração completa dos módulos Android.
-- Refinamento da interface da Engine.
-- Melhorias na estabilidade.
-- Correções gerais.
-- Preparação da infraestrutura para a primeira APK Alpha.
+- Primeiro APK experimental
+- Inicialização da interface
+- Base para futuras versões Beta
 
 ---
 
 ## 👨‍💻 Desenvolvedor
 
-**Lhuis (LhuisDev)**
+Lhuis (LhuisDev)
 
-Projeto desenvolvido do zero em **C++20**, com foco em Android ARM64, Android NDK r29 e arquitetura modular voltada para pesquisa e desenvolvimento de tecnologias de emulação.
+Projeto desenvolvido do zero utilizando C++20, Android NDK r29 e arquitetura modular voltada para pesquisa e desenvolvimento de tecnologias de emulação de PlayStation 3 para Android.
 
 ---
 
 ## 📜 Licença
 
-Distribuído sob a licença **MIT**.
+MIT License
 
 ---
+## 
+📢
+O Pure3XEngenie é um projeto experimental em fase Alpha.
 
-## 📢 Aviso
+O objetivo atual é construir uma infraestrutura sólida, moderna e escalável para a futura emulação do PlayStation 3 no Android.
 
-O **Pure3XEngenie** é um projeto experimental em estágio **Alpha**.
-
-O objetivo atual não é executar jogos comerciais, mas construir uma infraestrutura sólida, moderna e escalável para futuras etapas do desenvolvimento.
-
-A série **0.2.x** concentra os esforços na evolução da plataforma Android, da arquitetura nativa ARM64 e na preparação para a primeira APK experimental do projeto.
-
-Obrigado por acompanhar o desenvolvimento do **Pure3XEngenie**! 🚀
+Obrigado por acompanhar o desenvolvimento do Pure3XEngenie! 🚀
