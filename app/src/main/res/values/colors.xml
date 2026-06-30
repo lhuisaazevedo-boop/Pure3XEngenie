@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="pure3x_black">#050505</color>
+
+    <color name="pure3x_green">#7CFF00</color>
+
+    <color name="pure3x_dark_green">#33AA33</color>
+
+    <color name="pure3x_white">#FFFFFF</color>
+
+    <color name="pure3x_gray">#B0B0B0</color>
+
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Pure3XEngenie" parent="Theme.Material3.Dark.NoActionBar">
+
+        <item name="android:windowBackground">#050505</item>
+
+        <item name="android:statusBarColor">#000000</item>
+
+        <item name="android:navigationBarColor">#000000</item>
+
+        <item name="android:windowFullscreen">true</item>
+
+        <item name="android:windowNoTitle">true</item>
+
+        <item name="android:colorBackground">#050505</item>
+
+        <item name="android:textColorPrimary">#7CFF00</item>
+
+        <item name="android:textColorSecondary">#A0FFA0</item>
+
+    </style>
+
+</resources>

@@ -1,0 +1,36 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace "com.pure3x.engine"
+
+    compileSdk 35
+    buildToolsVersion "36.0.0"
+
+    defaultConfig {
+        applicationId "com.pure3x.engine"
+        minSdk 29
+        targetSdk 35
+        versionCode 24
+        versionName "0.2.4"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+        debug {
+            minifyEnabled false
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['src/main/jniLibs']
+        }
+    }
+}
+
+dependencies {
+}

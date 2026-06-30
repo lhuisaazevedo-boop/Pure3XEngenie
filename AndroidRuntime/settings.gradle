@@ -1,0 +1,2 @@
+rootProject.name = "Pure3XEngenie"
+include(":app")

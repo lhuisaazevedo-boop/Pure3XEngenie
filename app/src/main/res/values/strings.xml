@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Pure3XEngenie</string>
+
+    <string name="engine_name">Pure3XEngenie</string>
+
+    <string name="engine_version">v0.2.2 Alpha</string>
+
+    <string name="engine_desc">
+        Engine Experimental de Emulação de PlayStation 3 para Android.
+    </string>
+
+    <string name="engine_status">Status: Alpha</string>
+
+    <string name="engine_author">Desenvolvedor: LhuisDev</string>
+
+    <string name="engine_cpp">C++20</string>
+
+    <string name="engine_ndk">Android NDK r29</string>
+
+</resources>
