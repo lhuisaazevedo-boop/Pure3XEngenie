@@ -5,12 +5,21 @@ import android.os.Bundle;
 
 public class MainActivity extends Activity {
 
+    static {
+        System.loadLibrary("lhuis.pure3x");
+    }
+
+    // Método nativo
+    public native void initEngine();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Carrega a tela principal da Engine
         setContentView(R.layout.activity_main);
+
+        // Inicializa a Engine
+        initEngine();
     }
 
     @Override

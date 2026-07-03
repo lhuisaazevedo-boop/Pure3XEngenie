@@ -12,23 +12,29 @@ android {
         applicationId "com.pure3x.engine"
         minSdk 29
         targetSdk 35
-        versionCode 24
-        versionName "0.2.4"
+        versionCode 1
+        versionName "1.0"
     }
 
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
         }
-        debug {
+
+        release {
             minifyEnabled false
         }
     }
 
     sourceSets {
         main {
-            jniLibs.srcDirs = ['src/main/jniLibs']
+            jniLibs.srcDirs = ["src/main/jniLibs"]
         }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
     }
 }
 

@@ -49,7 +49,7 @@ void Engine::run()
     while (true)
     {
         std::cout << "\n==========================================\n";
-        std::cout << "          Pure3XEngenie v0.2.2\n";
+        std::cout << "          Pure3XEngenie v0.2.3\n";
         std::cout << "==========================================\n";
         std::cout << " 1  - Iniciar Engine\n";
         std::cout << " 2  - Status do Sistema\n";

@@ -15,6 +15,14 @@ std::string GetBuild();
 std::string GetDeveloper();
 
 // ================================
+// Android Runtime
+// ================================
+
+std::string GetAndroidRuntimeName();
+std::string GetAndroidRuntimeVersion();
+std::string GetAndroidRuntimeStatus();
+
+// ================================
 // Platform Information
 // ================================
 

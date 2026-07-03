@@ -3,6 +3,10 @@
 namespace Pure3X
 {
 
+// ================================
+// Engine Information
+// ================================
+
 std::string GetEngineName()
 {
     return "Pure3XEngenie";
@@ -10,22 +14,50 @@ std::string GetEngineName()
 
 std::string GetVersion()
 {
-    return "0.2.1 Alpha";
+    return "0.2.3 Alpha";
 }
 
 std::string GetBuild()
 {
-    return "Build 021";
+    return "Build 023";
 }
 
 std::string GetDeveloper()
 {
-    return "LhuisDev";
+    return "Pure3XDev";
 }
+
+// ================================
+// Android Runtime
+// ================================
+
+std::string GetAndroidRuntimeName()
+{
+    return "Pure3X Android Runtime";
+}
+
+std::string GetAndroidRuntimeVersion()
+{
+    return "0.2.3 Alpha";
+}
+
+std::string GetAndroidRuntimeStatus()
+{
+    return "Ready";
+}
+
+// ================================
+// Platform Information
+// ================================
 
 std::string GetPlatform()
 {
-    return "Android / ARM64";
+    return "Android";
+}
+
+std::string GetArchitecture()
+{
+    return "ARM64";
 }
 
 std::string GetLanguage()
@@ -33,15 +65,18 @@ std::string GetLanguage()
     return "C++20";
 }
 
+// ================================
+// Graphics
+// ================================
+
 std::string GetGraphicsBackend()
 {
-    return "Vulkan 1.3";
+    return "OpenGL ES";
 }
 
-std::string GetArchitecture()
-{
-    return "ARM64 (aarch64)";
-}
+// ================================
+// Engine Status
+// ================================
 
 std::string GetStatus()
 {
@@ -50,7 +85,7 @@ std::string GetStatus()
 
 std::string GetCodename()
 {
-    return "Genesis";
+    return "Alpha";
 }
 
-}
+} // namespace Pure3X

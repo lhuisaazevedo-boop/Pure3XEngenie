@@ -1,52 +1,52 @@
 #pragma once
 
-namespace Pure3X {
+namespace Pure3X
+{
 
 static const char* CHANGELOG = R"(
 
-=========================================
-Pure3XEngenie v0.1.9 Alpha
-=========================================
+==========================================
+Pure3XEngenie v0.2.3 Alpha
+==========================================
 
 [Core]
-+ Reorganização do núcleo do engine
-+ Melhorias na estrutura modular
++ Android Runtime integrado ao Core.
++ Atualização da estrutura do Engine.
++ Novos gerenciadores iniciais.
++ Melhor organização dos módulos.
 
-[Config]
-+ Novo ConfigManager
-+ Config.ini avançado
-+ Suporte a perfis Auto/Low/Medium/High
-+ Preparação para múltiplos idiomas
+[Android Runtime]
++ Runtime Manager.
++ Memory Manager.
++ RSX Manager.
++ PPU Manager.
++ SPU Manager.
++ Audio Manager.
++ Input Manager.
++ Boot Manager.
++ Emulator Core.
++ Native Bridge.
 
-[Version]
-+ Atualização do sistema de versão
-+ Informações de build aprimoradas
-+ Base para codename e status
+==========================================
+Próxima versão
+==========================================
 
-[Logs]
-+ Revisão do sistema de logs
-+ Melhor documentação interna
+[Next - v0.2.4 Alpha]
 
-[Android]
-+ Preparação para Android NDK r29
-+ Planejamento da infraestrutura Android
-
-[Documentation]
-+ Roadmap v0.2.0 criado
-+ Documentação reorganizada
-+ Melhor descrição dos módulos
-
-[Next]
-- Driver Manager
-- Shader Cache
-- Pipeline Cache
-- Memory Cache
-- Frontend Android
-- JNI Layer
++ Novo Menu Principal da Engine.
++ Sistema completo de Configurações.
++ Informações detalhadas do Sistema.
++ Estrutura inicial do Game Loader.
++ Melhor gerenciamento de memória.
++ Organização completa dos módulos.
++ Integração entre Core e Android Runtime.
++ Melhorias na interface.
++ Base para Firmware PS3.
++ Base para carregamento de jogos.
 
 Status:
 Development Alpha
 
 )";
 
-}
+} // namespace Pure3X
