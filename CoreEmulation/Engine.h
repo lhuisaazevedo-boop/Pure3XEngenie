@@ -1,11 +1,15 @@
 #pragma once
 
-namespace Pure3X {
+namespace Pure3X
+{
 
 class Engine
 {
 public:
-    void run();
+    static bool Initialize();
+    static void Shutdown();
+
+    static void run();
 };
 
 }

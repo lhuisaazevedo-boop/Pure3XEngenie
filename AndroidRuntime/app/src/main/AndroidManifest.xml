@@ -15,9 +15,9 @@
             android:exported="true">
 
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
         </activity>
@@ -25,16 +25,22 @@
         <!-- Main -->
         <activity
             android:name=".MainActivity"
-            android:exported="false"/>
+            android:exported="false" />
 
         <!-- Home -->
         <activity
             android:name=".HomeActivity"
-            android:exported="false"/>
+            android:exported="false" />
 
+        <!-- Engine -->
         <activity
-           android:name=".EngineActivity"
-           android:exported="false"/>
+            android:name=".EngineActivity"
+            android:exported="false" />
+
+        <!-- Render -->
+        <activity
+            android:name=".RenderActivity"
+            android:exported="false" />
 
     </application>
 

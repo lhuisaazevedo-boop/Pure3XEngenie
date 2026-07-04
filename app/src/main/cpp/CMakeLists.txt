@@ -7,17 +7,19 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Compila o projeto principal
 add_subdirectory(
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../../../
+    ${CMAKE_SOURCE_DIR}/..
     ${CMAKE_BINARY_DIR}/Pure3XBuild
 )
 
+# Biblioteca de log do Android
 find_library(
     log-lib
     log
 )
 
-# Vincula a biblioteca gerada pelo projeto principal
+# Vincula a biblioteca principal ao log
 target_link_libraries(
-    Pure3XEngenie
+    lhuis.pure3x
+    PRIVATE
     ${log-lib}
 )

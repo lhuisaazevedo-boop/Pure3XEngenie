@@ -28,7 +28,16 @@ public class HomeActivity extends Activity {
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, EngineActivity.class);
+
+                Toast.makeText(
+                        HomeActivity.this,
+                        "Abrindo RenderActivity...",
+                        Toast.LENGTH_SHORT
+                ).show();
+
+                Log.i(TAG, "Abrindo RenderActivity");
+
+                Intent intent = new Intent(HomeActivity.this, RenderActivity.class);
                 startActivity(intent);
             }
         });
@@ -38,7 +47,7 @@ public class HomeActivity extends Activity {
             public void onClick(View v) {
                 Toast.makeText(
                         HomeActivity.this,
-                        "Configurações ainda em desenvolvimento.",
+                        "Configurações em desenvolvimento.",
                         Toast.LENGTH_SHORT
                 ).show();
             }
@@ -60,8 +69,8 @@ public class HomeActivity extends Activity {
             public void onClick(View v) {
                 Toast.makeText(
                         HomeActivity.this,
-                        "Pure3XEngenie v0.2.3 Alpha",
-                        Toast.LENGTH_SHORT
+                        "Pure3XEngenie v0.2.4 Alpha\nPowered by Pure3X Runtime",
+                        Toast.LENGTH_LONG
                 ).show();
             }
         });

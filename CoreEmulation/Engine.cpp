@@ -42,15 +42,78 @@
 namespace Pure3X
 {
 
+bool Engine::Initialize()
+{
+    std::cout << "\n=========================================\n";
+    std::cout << "      Pure3XEngenie v0.2.4 Alpha\n";
+    std::cout << "=========================================\n";
+
+    std::cout << "[1/8] Boot Panel...\n";
+    BootPanel::Show();
+
+    std::cout << "[2/8] Splash Screen...\n";
+    SplashScreen::Show();
+
+    std::cout << "[3/8] Android Bridge...\n";
+    if (!AndroidBridge::Initialize())
+    {
+        std::cout << "[ERRO] Android Bridge.\n";
+        return false;
+    }
+
+    std::cout << "[4/8] Android Runtime...\n";
+    if (!AndroidRuntime::Initialize())
+    {
+        AndroidBridge::Shutdown();
+        std::cout << "[ERRO] Android Runtime.\n";
+        return false;
+    }
+
+    std::cout << "[5/8] JNI Bridge...\n";
+    JNIBridge::ShowInfo();
+
+    std::cout << "[6/8] Window Manager...\n";
+    if (!WindowManager::Initialize())
+    {
+        Shutdown();
+        return false;
+    }
+
+    std::cout << "[7/8] Vulkan Context...\n";
+    if (!VulkanContext::Initialize())
+    {
+        Shutdown();
+        return false;
+    }
+
+    std::cout << "[8/8] Cube Renderer...\n";
+    CubeRenderer::Initialize();
+
+    std::cout << "\n[OK] Engine inicializada.\n";
+
+    return true;
+}
+
+void Engine::Shutdown()
+{
+    CubeRenderer::Shutdown();
+    VulkanContext::Shutdown();
+    WindowManager::Shutdown();
+
+    AndroidRuntime::Shutdown();
+    AndroidBridge::Shutdown();
+
+    std::cout << "[OK] Engine encerrada.\n";
+ }
 void Engine::run()
 {
     int option = 0;
 
     while (true)
     {
-        std::cout << "\n==========================================\n";
-        std::cout << "          Pure3XEngenie v0.2.3\n";
-        std::cout << "==========================================\n";
+        std::cout << "\n=========================================\n";
+        std::cout << "      Pure3XEngenie v0.2.4 Alpha\n";
+        std::cout << "=========================================\n";
         std::cout << " 1  - Iniciar Engine\n";
         std::cout << " 2  - Status do Sistema\n";
         std::cout << " 3  - Configuracoes\n";
@@ -72,7 +135,7 @@ void Engine::run()
         std::cout << "19  - Android Runtime\n";
         std::cout << "20  - Android Bridge\n";
         std::cout << "21  - Vulkan Context\n";
-        std::cout << "22  - JNIBridge\n";
+        std::cout << "22  - JNI Bridge\n";
         std::cout << "23  - Sair\n\n";
 
         std::cout << "Escolha uma opcao: ";
@@ -88,43 +151,30 @@ void Engine::run()
         {
             case 1:
             {
-                BootPanel::Show();
-                SplashScreen::Show();
-
-                if (!AndroidBridge::Initialize())
+                if (!Engine::Initialize())
                 {
-                    std::cout << "[ERRO] Falha ao iniciar Android Bridge.\n";
-                    break;
-                }
-
-                if (!AndroidRuntime::Initialize())
-                {
-                    std::cout << "[ERRO] Falha ao iniciar Android Runtime.\n";
-                    AndroidBridge::Shutdown();
+                    std::cout << "\n[ERRO] Falha ao iniciar a Engine.\n";
                     break;
                 }
 
                 if (!WindowManager::Initialize())
                 {
-                    std::cout << "[ERRO] Falha ao iniciar Window Manager.\n";
-                    AndroidRuntime::Shutdown();
-                    AndroidBridge::Shutdown();
+                    std::cout << "[ERRO] Window Manager.\n";
+                    Engine::Shutdown();
                     break;
                 }
 
                 if (!VulkanContext::Initialize())
                 {
-                    std::cout << "[ERRO] Falha ao iniciar Vulkan.\n";
+                    std::cout << "[ERRO] Vulkan Context.\n";
                     WindowManager::Shutdown();
-                    AndroidRuntime::Shutdown();
-                    AndroidBridge::Shutdown();
+                    Engine::Shutdown();
                     break;
                 }
 
                 CubeRenderer::Initialize();
 
-                std::cout << "[Engine] Engine Android iniciada.\n";
-
+                std::cout << "\n[Engine] Pure3XEngenie iniciada com sucesso.\n";
                 while (WindowManager::IsRunning())
                 {
                     WindowManager::PollEvents();
@@ -139,8 +189,7 @@ void Engine::run()
                 CubeRenderer::Shutdown();
                 VulkanContext::Shutdown();
                 WindowManager::Shutdown();
-                AndroidRuntime::Shutdown();
-                AndroidBridge::Shutdown();
+                Engine::Shutdown();
 
                 break;
             }
@@ -198,6 +247,7 @@ void Engine::run()
                 SPUManager::ShowInfo();
                 break;
             }
+
             case 11:
             {
                 XMBManager::ShowInfo();
@@ -233,13 +283,13 @@ void Engine::run()
                 SurfaceManager::ShowStatus();
                 break;
             }
-
             case 17:
             {
-                WindowManager::Initialize();
+                   std::cout << "Window Manager: "
+              << (WindowManager::IsRunning() ? "Executando" : "Parado")
+              << "\n";
                 break;
             }
-
             case 18:
             {
                 Renderer::ShowInfo();
@@ -248,19 +298,28 @@ void Engine::run()
 
             case 19:
             {
-                AndroidRuntime::Initialize();
+                if (AndroidRuntime::Initialize())
+                    std::cout << "[OK] Android Runtime iniciado.\n";
+                else
+                    std::cout << "[ERRO] Android Runtime.\n";
                 break;
             }
 
             case 20:
             {
-                AndroidRuntime::Initialize();
+                if (AndroidBridge::Initialize())
+                    std::cout << "[OK] Android Bridge iniciado.\n";
+                else
+                    std::cout << "[ERRO] Android Bridge.\n";
                 break;
             }
 
             case 21:
             {
-                VulkanContext::Initialize();
+                if (VulkanContext::Initialize())
+                    std::cout << "[OK] Vulkan Context iniciado.\n";
+                else
+                    std::cout << "[ERRO] Vulkan Context.\n";
                 break;
             }
 
@@ -272,7 +331,11 @@ void Engine::run()
 
             case 23:
             {
-                std::cout << "\n[SAINDO] Encerrando Pure3XEngenie...\n";
+                std::cout << "\n==========================================\n";
+                std::cout << " Encerrando Pure3XEngenie v0.2.4 Alpha\n";
+                std::cout << "==========================================\n";
+
+                Engine::Shutdown();
                 return;
             }
 
@@ -282,11 +345,12 @@ void Engine::run()
                 break;
             }
         }
+
         if (option >= 2 && option <= 22)
         {
             std::cout << "\n==========================================\n";
             std::cout << "Pressione ENTER para voltar ao menu...";
-            std::cout << "\n==========================================";
+            std::cout << "\n==========================================\n";
 
             std::cin.ignore(1000, '\n');
             std::cin.get();

@@ -1,373 +1,142 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.22)
 
 project(
     Pure3XEngenie
-    VERSION 0.2.2
+    VERSION 0.2.4
     DESCRIPTION "PlayStation 3 Engine for Android"
     LANGUAGES CXX
 )
 
-# ============================================================
-# C++ Standard
-# ============================================================
+# ==========================================================
+# C++ Configuration
+# ==========================================================
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-# ============================================================
-# Packages
-# ============================================================
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
-find_package(Vulkan REQUIRED)
-find_package(Threads REQUIRED)
-
-# ============================================================
-# Android Shared Library
-# ============================================================
+# ==========================================================
+# Android Library
+# ==========================================================
 
 add_library(
     lhuis.pure3x
     SHARED
-
-    CoreEmulation/Engine.cpp
-
-    # Android Core
-    CoreEmulation/android/core/AndroidCore.cpp
-    CoreEmulation/android/runtime/AndroidRuntime.cpp
-    CoreEmulation/android/bridge/AndroidBridge.cpp
-
-    # Vulkan
-    CoreEmulation/Graphics/Vulkan/VulkanContext.cpp
-
-    # Cell
-    CoreEmulation/cell/CellSystem.cpp
 )
 
-# ============================================================
+# ==========================================================
 # Include Directories
-# ============================================================
+# ==========================================================
 
 target_include_directories(
     lhuis.pure3x
     PRIVATE
 
     include
+    src
+
     CoreEmulation
 
-    # Boot
-    CoreEmulation/boot
-
-    # Graphics
-    CoreEmulation/graphics
-    CoreEmulation/Graphics
-    CoreEmulation/Graphics/Frame
-    CoreEmulation/Graphics/Vulkan
-
-    # Android
     CoreEmulation/android
-    CoreEmulation/android/core
-    CoreEmulation/android/runtime
-    CoreEmulation/android/bridge
-    CoreEmulation/android/config
-    CoreEmulation/android/system
-    CoreEmulation/android/device
-    CoreEmulation/android/display
-    CoreEmulation/android/window
-    CoreEmulation/android/audio
-    CoreEmulation/android/filesystem
-    CoreEmulation/android/input
-    CoreEmulation/android/network
-    CoreEmulation/android/services
-    CoreEmulation/android/graphics
-    CoreEmulation/android/shaders
-    CoreEmulation/android/swapchain
-    CoreEmulation/android/thread
-    CoreEmulation/android/debug
-    CoreEmulation/android/logs
-    CoreEmulation/android/jni
-    CoreEmulation/android/apk
-    CoreEmulation/android/ndk
-    CoreEmulation/android/surface
-    CoreEmulation/android/renderer
-
-    # Cell
+    CoreEmulation/boot
+    CoreEmulation/system
+    CoreEmulation/graphics
     CoreEmulation/cell
-    CoreEmulation/cell/PPE
-    CoreEmulation/cell/SPE
-    CoreEmulation/cell/Memory
-    CoreEmulation/cell/DMA
-    CoreEmulation/cell/Scheduler
 )
 
-# ============================================================
+# ==========================================================
 # Source Files
-# ============================================================
+# ==========================================================
 
 target_sources(
     lhuis.pure3x
     PRIVATE
-# ========================================================
-    # Main
-    # ========================================================
 
+    # Main
     src/main.cpp
 
-    # ========================================================
     # Core
-    # ========================================================
-
     CoreEmulation/Engine.cpp
 
-    # ========================================================
+    # Android
+    CoreEmulation/android/core/AndroidCore.cpp
+    CoreEmulation/android/runtime/AndroidRuntime.cpp
+    CoreEmulation/android/bridge/AndroidBridge.cpp
+
     # Boot
-    # ========================================================
+    CoreEmulation/boot/Boot.cpp
 
-    CoreEmulation/boot/BootPanel.cpp
-    CoreEmulation/boot/BootSystem.cpp
-    CoreEmulation/boot/BootHardware.cpp
-    CoreEmulation/boot/BootGraphics.cpp
-    CoreEmulation/boot/BootMemory.cpp
-    CoreEmulation/boot/BootFirmware.cpp
-    CoreEmulation/boot/BootAndroid.cpp
-    CoreEmulation/boot/BootModules.cpp
-    CoreEmulation/boot/SplashScreen.cpp
-
-    # ========================================================
     # System
-    # ========================================================
-
     CoreEmulation/system/System.cpp
 
-    # ========================================================
-    # Version
-    # ========================================================
-
-    CoreEmulation/version/version.cpp
-    CoreEmulation/version/changelog.cpp
-
-    # ========================================================
-    # Logger
-    # ========================================================
-
-    CoreEmulation/logger/Log.cpp
-
-    # ========================================================
-    # Config
-    # ========================================================
-
-    CoreEmulation/config/ConfigManager.cpp
-
-    # ========================================================
-    # Hardware
-    # ========================================================
-
-    CoreEmulation/hardware/HardwareInfo.cpp
-
-    # ========================================================
     # Graphics
-    # ========================================================
+    CoreEmulation/rsx/Renderer.cpp
 
-    CoreEmulation/graphics/CubeRenderer.cpp
-
-    # ========================================================
-    # Frame
-    # ========================================================
-
-    CoreEmulation/Graphics/Frame/FrameManager.cpp
-
-    # ========================================================
-    # Vulkan
-    # ========================================================
-
-    CoreEmulation/Graphics/Vulkan/VulkanContext.cpp
-    CoreEmulation/Graphics/Vulkan/VulkanDevice.cpp
-    CoreEmulation/Graphics/Vulkan/VulkanSwapchain.cpp
-    CoreEmulation/Graphics/Vulkan/VulkanRenderer.cpp
-
-    # ========================================================
-    # Menu
-    # ========================================================
-
-    CoreEmulation/menu/ConfigMenu.cpp
-    CoreEmulation/menu/NetworkMenu.cpp
-    CoreEmulation/menu/InputMenu.cpp
-
-    # ========================================================
-    # Android Runtime
-    # ========================================================
-
-    CoreEmulation/android/core/AndroidCore.cpp
-    CoreEmulation/android/runtime/AndroidRuntime.cpp
-    CoreEmulation/android/bridge/AndroidBridge.cpp
-
-    CoreEmulation/android/config/AndroidConfig.cpp
-    CoreEmulation/android/system/SystemManager.cpp
-    CoreEmulation/android/device/DeviceManager.cpp
-    CoreEmulation/android/display/DisplayManager.cpp
-    CoreEmulation/android/window/Window.cpp
-    CoreEmulation/android/window/WindowManager.cpp
-    CoreEmulation/android/audio/AudioManager.cpp
-    CoreEmulation/android/filesystem/FileSystem.cpp
-    CoreEmulation/android/input/InputManager.cpp
-    CoreEmulation/android/network/NetworkManager.cpp
-    CoreEmulation/android/services/ServiceManager.cpp
-    CoreEmulation/android/graphics/GraphicsManager.cpp
-    CoreEmulation/android/shaders/ShaderManager.cpp
-    CoreEmulation/android/swapchain/SwapchainManager.cpp
-    CoreEmulation/android/thread/ThreadManager.cpp
-    CoreEmulation/android/debug/DebugManager.cpp
-    CoreEmulation/android/logs/LogManager.cpp
-
-    CoreEmulation/android/vulkan/VulkanAndroidSurface.cpp
-
-    CoreEmulation/android/jni/JNIBridge.cpp
-    CoreEmulation/android/apk/APKLoader.cpp
-    CoreEmulation/android/ndk/NDKManager.cpp
-    CoreEmulation/android/surface/SurfaceManager.cpp
-    CoreEmulation/android/renderer/Renderer.cpp
-# ========================================================
-    # Config
-    # ========================================================
-
-    CoreEmulation/config/ConfigManager.cpp
-
-    # ========================================================
-    # Hardware
-    # ========================================================
-
-    CoreEmulation/hardware/HardwareInfo.cpp
-
-    # ========================================================
-    # Graphics
-    # ========================================================
-
-    CoreEmulation/graphics/CubeRenderer.cpp
-
-    # ========================================================
-    # Frame
-    # ========================================================
-
-    CoreEmulation/Graphics/Frame/FrameManager.cpp
-
-    # ========================================================
-    # Vulkan
-    # ========================================================
-
-    CoreEmulation/Graphics/Vulkan/VulkanContext.cpp
-    CoreEmulation/Graphics/Vulkan/VulkanDevice.cpp
-    CoreEmulation/Graphics/Vulkan/VulkanSwapchain.cpp
-    CoreEmulation/Graphics/Vulkan/VulkanRenderer.cpp
-
-    # ========================================================
-    # Menu
-    # ========================================================
-
-    CoreEmulation/menu/ConfigMenu.cpp
-    CoreEmulation/menu/NetworkMenu.cpp
-    CoreEmulation/menu/InputMenu.cpp
-
-    # ========================================================
-    # Android Runtime
-    # ========================================================
-
-    CoreEmulation/android/core/AndroidCore.cpp
-    CoreEmulation/android/runtime/AndroidRuntime.cpp
-    CoreEmulation/android/bridge/AndroidBridge.cpp
-
-    CoreEmulation/android/config/AndroidConfig.cpp
-    CoreEmulation/android/system/SystemManager.cpp
-    CoreEmulation/android/device/DeviceManager.cpp
-    CoreEmulation/android/display/DisplayManager.cpp
-    CoreEmulation/android/window/Window.cpp
-    CoreEmulation/android/window/WindowManager.cpp
-    CoreEmulation/android/audio/AudioManager.cpp
-    CoreEmulation/android/filesystem/FileSystem.cpp
-    CoreEmulation/android/input/InputManager.cpp
-    CoreEmulation/android/network/NetworkManager.cpp
-    CoreEmulation/android/services/ServiceManager.cpp
-    CoreEmulation/android/graphics/GraphicsManager.cpp
-    CoreEmulation/android/shaders/ShaderManager.cpp
-    CoreEmulation/android/swapchain/SwapchainManager.cpp
-    CoreEmulation/android/thread/ThreadManager.cpp
-    CoreEmulation/android/debug/DebugManager.cpp
-    CoreEmulation/android/logs/LogManager.cpp
-
-    CoreEmulation/android/vulkan/VulkanAndroidSurface.cpp
-
-    CoreEmulation/android/jni/JNIBridge.cpp
-# ========================================================
-    # Cell Broadband Engine
-    # ========================================================
-
+    # Cell
     CoreEmulation/cell/CellSystem.cpp
-    CoreEmulation/cell/CellEngine.cpp
-
-    # PPE
-    CoreEmulation/cell/PPE/PPE.cpp
-    CoreEmulation/cell/PPE/PPEThread.cpp
-
-    # SPE
-    CoreEmulation/cell/SPE/SPE.cpp
-    CoreEmulation/cell/SPE/SPEThread.cpp
-    CoreEmulation/cell/SPE/SPUDecoder.cpp
-
-    # Memory
-    CoreEmulation/cell/Memory/CellMemory.cpp
-
-    # DMA
-    CoreEmulation/cell/DMA/DMAManager.cpp
-
-    # Scheduler
-    CoreEmulation/cell/Scheduler/CellScheduler.cpp
-
-    # ========================================================
-    # Future Modules
-    # ========================================================
-
-    CoreEmulation/rsx/RSX.cpp
-    CoreEmulation/memory/MemoryManager.cpp
-    CoreEmulation/ppu/PPUInterpreter.cpp
-    CoreEmulation/spu/SPUManager.cpp
-    CoreEmulation/xmb/XMBManager.cpp
-    CoreEmulation/firmware/FirmwareManager.cpp
-
-    CoreEmulation/android/apk/APKLoader.cpp
-    CoreEmulation/android/ndk/NDKManager.cpp
-    CoreEmulation/android/surface/SurfaceManager.cpp
-    CoreEmulation/android/renderer/Renderer.cpp
 )
-# ============================================================
-# Compile Definitions
-# ============================================================
+
+# ==========================================================
+# Link Libraries
+# ==========================================================
+if(ANDROID)
+    find_library(log-lib log)
+    find_library(android-lib android)
+    find_library(jnigraphics-lib jnigraphics)
+endif()
+
+find_package(Threads REQUIRED)
+find_package(Vulkan QUIET)
+
+target_link_libraries(
+    lhuis.pure3x
+    Threads::Threads
+)
+
+if(ANDROID)
+    target_link_libraries(
+        lhuis.pure3x
+        ${log-lib}
+        ${android-lib}
+        ${jnigraphics-lib}
+    )
+endif()
+
+if(Vulkan_FOUND)
+    target_link_libraries(
+        lhuis.pure3x
+        Vulkan::Vulkan
+    )
+endif()
+# ==========================================================
+# Compiler Options
+# ==========================================================
+
+target_compile_options(
+    lhuis.pure3x
+    PRIVATE
+
+    -std=c++20
+    -Wall
+    -Wextra
+    -Wno-unused-parameter
+    -fexceptions
+    -frtti
+)
+
+# ==========================================================
+# Build Configuration
+# ==========================================================
 
 target_compile_definitions(
     lhuis.pure3x
     PRIVATE
-        PURE3X_ENGINE=1
-        PURE3X_ANDROID=1
-        PURE3X_CELL=1
-        PURE3X_RSX=1
-        PURE3X_VULKAN=1
-        PURE3X_AUDIO=1
-        PURE3X_NETWORK=1
-)
 
-target_compile_definitions(
-    lhuis.pure3x
-    PRIVATE
-        PURE3X_ENGINE=1
-        PURE3X_ANDROID=1
-        PURE3X_CELL=1
-        PURE3X_RSX=1
-        PURE3X_VULKAN=1
-        PURE3X_AUDIO=1
-        PURE3X_NETWORK=1
+    PURE3X_ENGINE
+    PURE3X_ANDROID
 )
-
-# ============================================================
-# Build Type
-# ============================================================
 
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
 
@@ -383,45 +152,43 @@ else()
         lhuis.pure3x
         PRIVATE
         RELEASE_BUILD=1
+        NDEBUG
     )
 
 endif()
-# ============================================================
-# Install
-# ============================================================
 
-install(
-    TARGETS
-        lhuis.pure3x
-    LIBRARY DESTINATION lib
-)
-
-# ============================================================
-# Target Properties
-# ============================================================
+# ==========================================================
+# Output
+# ==========================================================
 
 set_target_properties(
     lhuis.pure3x
     PROPERTIES
-        OUTPUT_NAME "lhuis.pure3x"
-        LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+
+    OUTPUT_NAME "lhuis.pure3x"
 )
 
-# ============================================================
+# ==========================================================
 # Build Summary
-# ============================================================
+# ==========================================================
 
 message(STATUS "")
-message(STATUS "===========================================")
-message(STATUS "      Pure3XEngenie v0.2.2")
-message(STATUS "===========================================")
-message(STATUS "Project      : ${PROJECT_NAME}")
-message(STATUS "Version      : ${PROJECT_VERSION}")
-message(STATUS "Compiler     : ${CMAKE_CXX_COMPILER_ID}")
-message(STATUS "C++ Standard : ${CMAKE_CXX_STANDARD}")
-message(STATUS "Build Type   : ${CMAKE_BUILD_TYPE}")
-message(STATUS "System       : ${CMAKE_SYSTEM_NAME}")
-message(STATUS "Processor    : ${CMAKE_SYSTEM_PROCESSOR}")
-message(STATUS "Output       : liblhuis.pure3x.so")
-message(STATUS "===========================================")
+message(STATUS "==========================================")
+message(STATUS "      Pure3XEngenie v0.2.4 Alpha")
+message(STATUS "==========================================")
+message(STATUS "Engine      : Pure3XEngenie")
+message(STATUS "Library     : lhuis.pure3x")
+message(STATUS "Platform    : Android")
+message(STATUS "C++         : C++20")
+message(STATUS "Build Type  : ${CMAKE_BUILD_TYPE}")
+
+if(Vulkan_FOUND)
+    message(STATUS "Graphics    : Vulkan Enabled")
+else()
+    message(STATUS "Graphics    : Vulkan Disabled")
+endif()
+
+message(STATUS "==========================================")
+message(STATUS "Configuration completed successfully.")
+message(STATUS "==========================================")
 message(STATUS "")

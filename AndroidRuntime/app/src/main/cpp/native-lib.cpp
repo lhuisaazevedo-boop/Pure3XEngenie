@@ -6,9 +6,14 @@
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_pure3x_engenie_MainActivity_initEngine(
+Java_com_pure3x_engine_MainActivity_initEngine(
         JNIEnv* env,
         jobject thiz) {
 
-    LOGI("Pure3XEngenie inicializada com sucesso!");
+    LOGI("==================================");
+    LOGI("Pure3XEngenie Native Runtime");
+    LOGI("Engine inicializada com sucesso!");
+    LOGI("Vulkan Runtime OK");
+    LOGI("Android Runtime OK");
+    LOGI("==================================");
 }

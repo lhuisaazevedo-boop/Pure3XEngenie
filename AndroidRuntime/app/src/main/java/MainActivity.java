@@ -40,7 +40,7 @@ public class MainActivity extends Activity {
 
         TextView versao = new TextView(this);
         versao.setText(
-                "\nv0.2.3 Alpha\n\n" +
+                "\nv0.2.4 Alpha\n\n" +
                 "Inicializando Engine...\n\n" +
                 "Powered by Pure3X Runtime"
         );
@@ -56,9 +56,11 @@ public class MainActivity extends Activity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+
+                Intent intent = new Intent(MainActivity.this, RenderActivity.class);
                 startActivity(intent);
                 finish();
+
             }
         }, 2500);
     }

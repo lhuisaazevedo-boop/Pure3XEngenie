@@ -1,12 +1,15 @@
 #include <jni.h>
 #include <android/log.h>
 
+#include "Engine.h"
+
 #define TAG "Pure3XEngenie"
 
 extern "C" {
 
 // Chamado automaticamente quando a biblioteca é carregada
 JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM* vm, void*) {
+
     __android_log_print(
         ANDROID_LOG_INFO,
         TAG,
@@ -28,8 +31,22 @@ Java_com_pure3x_engenie_MainActivity_initEngine(
         "Inicializando Engine..."
     );
 
-    // Futuramente:
-    // Engine::Get().Initialize();
+    if (Pure3X::Engine::Initialize())
+    {
+        __android_log_print(
+            ANDROID_LOG_INFO,
+            TAG,
+            "Pure3XEngenie inicializada com sucesso!"
+        );
+    }
+    else
+    {
+        __android_log_print(
+            ANDROID_LOG_ERROR,
+            TAG,
+            "Falha ao inicializar Pure3XEngenie!"
+        );
+    }
 }
 
 }
