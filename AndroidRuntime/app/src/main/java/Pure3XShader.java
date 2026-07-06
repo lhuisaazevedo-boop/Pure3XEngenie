@@ -15,6 +15,7 @@ public class Pure3XShader {
         GLES30.glCompileShader(shader);
 
         int[] status = new int[1];
+
         GLES30.glGetShaderiv(
                 shader,
                 GLES30.GL_COMPILE_STATUS,
@@ -24,10 +25,7 @@ public class Pure3XShader {
 
         if (status[0] == 0) {
 
-            Log.e(
-                    TAG,
-                    GLES30.glGetShaderInfoLog(shader)
-            );
+            Log.e(TAG, GLES30.glGetShaderInfoLog(shader));
 
             GLES30.glDeleteShader(shader);
             return 0;
@@ -42,11 +40,13 @@ public class Pure3XShader {
 
         int vertex = loadShader(
                 GLES30.GL_VERTEX_SHADER,
-                vertexShader);
+                vertexShader
+        );
 
         int fragment = loadShader(
                 GLES30.GL_FRAGMENT_SHADER,
-                fragmentShader);
+                fragmentShader
+        );
 
         int program = GLES30.glCreateProgram();
 
@@ -66,10 +66,7 @@ public class Pure3XShader {
 
         if (status[0] == 0) {
 
-            Log.e(
-                    TAG,
-                    GLES30.glGetProgramInfoLog(program)
-            );
+            Log.e(TAG, GLES30.glGetProgramInfoLog(program));
 
             GLES30.glDeleteProgram(program);
             return 0;

@@ -56,11 +56,9 @@ public class MainActivity extends Activity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-
-                Intent intent = new Intent(MainActivity.this, RenderActivity.class);
+                Intent intent = new Intent(MainActivity.this, RendererActivity.class);
                 startActivity(intent);
                 finish();
-
             }
         }, 2500);
     }
