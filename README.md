@@ -1,35 +1,29 @@
 <p align="center">
-  <img src="assets/images/alpha/Pure3XEngenie-0.2.4-Alpha.png" width="650" alt="Pure3XEngenie v0.2.4 Alpha">
+  <img src="assets/images/alpha/Pure3XEngenie-0.2.4-Alpha.png" width="100%">
 </p>
 
 <h1 align="center">Pure3XEngenie</h1>
 
 <p align="center">
-  <b>Engine Experimental de Emulação de PlayStation 3 para Android</b>
+<b>Experimental PlayStation 3 Emulator Engine for Android</b>
 </p>
 
 <p align="center">
-Desenvolvido em <b>C++20</b>, utilizando <b>Android NDK r29</b>, com foco em
-<b>alto desempenho</b>, <b>arquitetura modular</b> e <b>OpenGL ES 3.0</b>.
+Powered by <b>C++20</b> • Android NDK r29 • OpenGL ES 3.0 • ARM64
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Versão-v0.2.4_Alpha-blue" alt="Versão">
-  <img src="https://img.shields.io/badge/C++20-Standard-blue" alt="C++20">
-  <img src="https://img.shields.io/badge/Android-NDK_r29-green" alt="NDK">
-  <img src="https://img.shields.io/badge/OpenGL_ES-3.0-orange" alt="OpenGL ES">
-  <img src="https://img.shields.io/badge/Arquitetura-ARM64-black" alt="ARM64">
-  <img src="https://img.shields.io/badge/Status-Alpha-red" alt="Status">
-</p>
-
-<p align="center">
-  <b>🌐 Acompanhe o desenvolvimento</b><br>
-  <a href="https://x.com/Pure3X_PS3">@Pure3X_PS3 no X (Twitter)</a>
+<img src="https://img.shields.io/badge/Version-v0.2.4_Alpha-3b82f6">
+<img src="https://img.shields.io/badge/C++-20-blue">
+<img src="https://img.shields.io/badge/OpenGL_ES-3.0-success">
+<img src="https://img.shields.io/badge/Android-NDK_r29-brightgreen">
+<img src="https://img.shields.io/badge/Architecture-ARM64-black">
+<img src="https://img.shields.io/badge/Status-Alpha-red">
 </p>
 
 ---
 
-## 🚀 Sobre o Projeto
+# 🚀 Sobre o Projeto
 
 O **Pure3XEngenie** é uma engine experimental de emulação de PlayStation 3 para Android desenvolvida do zero em **C++20**. O projeto busca oferecer uma base moderna, modular e otimizada para dispositivos ARM64, utilizando recursos nativos do Android através do **Android NDK** e renderização com **OpenGL ES 3.0**.
 
