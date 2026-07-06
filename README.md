@@ -13,12 +13,28 @@ Powered by <b>C++20</b> • Android NDK r29 • OpenGL ES 3.0 • ARM64
 </p>
 
 <p align="center">
-<img src="https://img.shields.io/badge/Version-v0.2.4_Alpha-3b82f6">
-<img src="https://img.shields.io/badge/C++-20-blue">
-<img src="https://img.shields.io/badge/OpenGL_ES-3.0-success">
-<img src="https://img.shields.io/badge/Android-NDK_r29-brightgreen">
-<img src="https://img.shields.io/badge/Architecture-ARM64-black">
-<img src="https://img.shields.io/badge/Status-Alpha-red">
+  <img src="https://img.shields.io/badge/Version-v0.2.4_Alpha-blue">
+  <img src="https://img.shields.io/badge/C++-20-blue">
+  <img src="https://img.shields.io/badge/OpenGL_ES-3.0-orange">
+  <img src="https://img.shields.io/badge/Android-NDK_r29-green">
+  <img src="https://img.shields.io/badge/Architecture-ARM64-black">
+  <img src="https://img.shields.io/badge/Status-Alpha-red">
+</p>
+
+<p align="center">
+🌐 <b>Follow the development</b><br><br>
+
+🐦 <b>X (Twitter)</b><br>
+https://x.com/Pure3X_PS3
+
+💻 <b>GitHub</b><br>
+https://github.com/lhuisaazevedo-boop/Pure3XEngenie
+
+🌍 <b>Official Website</b><br>
+Coming Soon
+
+💬 <b>Official Discord</b><br>
+Coming Soon
 </p>
 
 ---
