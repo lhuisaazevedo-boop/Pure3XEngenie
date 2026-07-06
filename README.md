@@ -1,15 +1,15 @@
 <p align="center">
-  <img src="assets/images/alpha/Pure3XEngenie-0.2.4-Alpha.png" width="100%">
+  <img src="assets/images/alpha/Pure3XEngenie-0.2.4-Alpha.png" width="100%" alt="Pure3XEngenie v0.2.4 Alpha">
 </p>
 
 <h1 align="center">Pure3XEngenie</h1>
 
 <p align="center">
-<b>Experimental PlayStation 3 Emulator Engine for Android</b>
+  <b>Experimental PlayStation 3 Emulator Engine for Android</b>
 </p>
 
 <p align="center">
-Powered by <b>C++20</b> • Android NDK r29 • OpenGL ES 3.0 • ARM64
+  Powered by <b>C++20</b> • Android NDK r29 • OpenGL ES 3.0 • ARM64
 </p>
 
 <p align="center">
@@ -22,19 +22,18 @@ Powered by <b>C++20</b> • Android NDK r29 • OpenGL ES 3.0 • ARM64
 </p>
 
 <p align="center">
-🌐 <b>Follow the development</b><br><br>
+  <b>🌐 Follow the Development</b>
+</p>
 
-🐦 <b>X (Twitter)</b><br>
-https://x.com/Pure3X_PS3
-
-💻 <b>GitHub</b><br>
-https://github.com/lhuisaazevedo-boop/Pure3XEngenie
-
-🌍 <b>Official Website</b><br>
-Coming Soon
-
-💬 <b>Official Discord</b><br>
-Coming Soon
+<p align="center">
+  <a href="https://x.com/Pure3X_PS3">
+    <img src="https://img.shields.io/badge/X-@Pure3X__PS3-000000?logo=x&logoColor=white">
+  </a>
+  <a href="https://github.com/lhuisaazevedo-boop/Pure3XEngenie">
+    <img src="https://img.shields.io/badge/GitHub-Pure3XEngenie-181717?logo=github&logoColor=white">
+  </a>
+  <img src="https://img.shields.io/badge/Website-Coming_Soon-0A84FF">
+  <img src="https://img.shields.io/badge/Discord-Coming_Soon-5865F2?logo=discord&logoColor=white">
 </p>
 
 ---
