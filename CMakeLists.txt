@@ -25,6 +25,12 @@ add_library(
     lhuis.pure3x
     SHARED
 )
+# ==========================================================
+# Build Options
+# ==========================================================
+
+option(PURE3X_BUILD_ANDROID "Build Android Library" OFF)
+option(PURE3X_BUILD_VIEWER "Build Termux X11 Viewer" ON)
 
 # ==========================================================
 # Include Directories
@@ -36,14 +42,16 @@ target_include_directories(
 
     include
     src
-
-    CoreEmulation
-
+    CoreEmulation/android/window
+    CoreEmulation/android/surface
     CoreEmulation/android
     CoreEmulation/boot
     CoreEmulation/system
     CoreEmulation/graphics
     CoreEmulation/cell
+    CoreEmulation/cell/Memory
+    CoreEmulation/cell/PPU
+    CoreEmulation/cell/SPU
 )
 
 # ==========================================================
@@ -64,6 +72,10 @@ target_sources(
     CoreEmulation/android/core/AndroidCore.cpp
     CoreEmulation/android/runtime/AndroidRuntime.cpp
     CoreEmulation/android/bridge/AndroidBridge.cpp
+    CoreEmulation/android/window/AndroidNativeWindow.cpp
+    CoreEmulation/android/surface/AndroidSurface.cpp
+    CoreEmulation/android/jni/JNIBridge.cpp
+    CoreEmulation/android/jni/NativeBridge.cpp
 
     # Boot
     CoreEmulation/boot/Boot.cpp
@@ -76,12 +88,26 @@ target_sources(
 
     # Cell
     CoreEmulation/cell/CellSystem.cpp
+
+    # Memory
+    CoreEmulation/cell/Memory/MemoryManager.cpp
+    CoreEmulation/cell/Memory/DMAController.cpp
+
+    # PPU
+    CoreEmulation/cell/PPU/PPUState.cpp
+    CoreEmulation/cell/PPU/PPUInterpreter.cpp
+    CoreEmulation/cell/PPU/InstructionDecoder.cpp
+    CoreEmulation/cell/PPU/InstructionExecutor.cpp
+
+    # SPU
+    CoreEmulation/cell/SPU/SPUState.cpp
+    CoreEmulation/cell/SPU/SPUInterpreter.cpp
 )
 
 # ==========================================================
 # Link Libraries
-# ==========================================================
-if(ANDROID)
+#==========================================================
+if(PURE3X_BUILD_ANDROID)
     find_library(log-lib log)
     find_library(android-lib android)
     find_library(jnigraphics-lib jnigraphics)
@@ -95,7 +121,7 @@ target_link_libraries(
     Threads::Threads
 )
 
-if(ANDROID)
+if(PURE3X_BUILD_ANDROID)
     target_link_libraries(
         lhuis.pure3x
         ${log-lib}
@@ -191,4 +217,79 @@ endif()
 message(STATUS "==========================================")
 message(STATUS "Configuration completed successfully.")
 message(STATUS "==========================================")
-message(STATUS "")
+
+# ==========================================================
+# Termux X11 Viewer (Development)
+# ==========================================================
+
+if(PURE3X_BUILD_VIEWER)
+
+add_executable(Pure3XViewer
+
+    viewer/main.cpp
+
+    # Núcleo
+    viewer/Application.cpp
+    viewer/RenderLoop.cpp
+    viewer/Scene.cpp
+    viewer/Window.cpp
+
+    # Renderização
+    viewer/Renderer.cpp
+    viewer/RendererGL.cpp
+    viewer/EGLContext.cpp
+    viewer/Pure3XEGLContext.cpp
+
+    # Android
+    CoreEmulation/android/window/AndroidNativeWindow.cpp
+    CoreEmulation/android/surface/AndroidSurface.cpp
+
+    # Câmera e Objetos
+    viewer/Camera.cpp
+    viewer/Cube.cpp
+    viewer/Model.cpp
+    viewer/Mesh.cpp
+    viewer/Transform.cpp
+
+    # Buffers
+    viewer/VertexBuffer.cpp
+    viewer/IndexBuffer.cpp
+    viewer/VertexArray.cpp
+
+    # Shaders
+    viewer/Shader.cpp
+    viewer/Texture.cpp
+    viewer/Material.cpp
+
+    # Matemática
+    viewer/Vector3.cpp
+    viewer/Matrix4.cpp
+
+    # Sistema
+    viewer/Engine.cpp
+    viewer/Logger.cpp
+    viewer/Input.cpp
+    viewer/FPSCounter.cpp
+    viewer/ResourceManager.cpp
+)
+
+target_compile_features(Pure3XViewer PRIVATE cxx_std_20)
+
+target_include_directories(Pure3XViewer PRIVATE
+    ${CMAKE_SOURCE_DIR}/viewer
+    ${CMAKE_SOURCE_DIR}
+    ${CMAKE_SOURCE_DIR}/CoreEmulation
+    ${CMAKE_SOURCE_DIR}/CoreEmulation/android
+    /data/data/com.termux/files/usr/include
+)
+
+target_link_libraries(Pure3XViewer
+    EGL
+    GLESv2
+    X11
+    pthread
+    dl
+    m
+)
+
+endif()

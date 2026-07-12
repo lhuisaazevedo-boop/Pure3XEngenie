@@ -89,22 +89,29 @@ bool Engine::Initialize()
     std::cout << "[8/8] Cube Renderer...\n";
     CubeRenderer::Initialize();
 
+    running = true;
+
     std::cout << "\n[OK] Engine inicializada.\n";
 
     return true;
 }
-
 void Engine::Shutdown()
 {
+    std::cout << "\n[Engine] Encerrando...\n";
+
     CubeRenderer::Shutdown();
+
     VulkanContext::Shutdown();
+
     WindowManager::Shutdown();
 
     AndroidRuntime::Shutdown();
+
     AndroidBridge::Shutdown();
 
     std::cout << "[OK] Engine encerrada.\n";
- }
+}
+
 void Engine::run()
 {
     int option = 0;
@@ -114,6 +121,7 @@ void Engine::run()
         std::cout << "\n=========================================\n";
         std::cout << "      Pure3XEngenie v0.2.4 Alpha\n";
         std::cout << "=========================================\n";
+
         std::cout << " 1  - Iniciar Engine\n";
         std::cout << " 2  - Status do Sistema\n";
         std::cout << " 3  - Configuracoes\n";
@@ -151,45 +159,15 @@ void Engine::run()
         {
             case 1:
             {
-                if (!Engine::Initialize())
+                if (!Initialize())
                 {
                     std::cout << "\n[ERRO] Falha ao iniciar a Engine.\n";
-                    break;
                 }
-
-                if (!WindowManager::Initialize())
+                else
                 {
-                    std::cout << "[ERRO] Window Manager.\n";
-                    Engine::Shutdown();
-                    break;
+                    std::cout << "\n[OK] Engine iniciada com sucesso.\n";
+                    Shutdown();
                 }
-
-                if (!VulkanContext::Initialize())
-                {
-                    std::cout << "[ERRO] Vulkan Context.\n";
-                    WindowManager::Shutdown();
-                    Engine::Shutdown();
-                    break;
-                }
-
-                CubeRenderer::Initialize();
-
-                std::cout << "\n[Engine] Pure3XEngenie iniciada com sucesso.\n";
-                while (WindowManager::IsRunning())
-                {
-                    WindowManager::PollEvents();
-
-                    VulkanContext::BeginFrame();
-
-                    CubeRenderer::Render3D();
-
-                    VulkanContext::EndFrame();
-                }
-
-                CubeRenderer::Shutdown();
-                VulkanContext::Shutdown();
-                WindowManager::Shutdown();
-                Engine::Shutdown();
 
                 break;
             }
@@ -241,7 +219,6 @@ void Engine::run()
                 PPUInterpreter::ShowInfo();
                 break;
             }
-
             case 10:
             {
                 SPUManager::ShowInfo();
@@ -283,11 +260,14 @@ void Engine::run()
                 SurfaceManager::ShowStatus();
                 break;
             }
+
             case 17:
             {
-                   std::cout << "Window Manager: "
-              << (WindowManager::IsRunning() ? "Executando" : "Parado")
-              << "\n";
+                std::cout << "Window Manager: "
+                          << (WindowManager::IsRunning()
+                                  ? "Executando"
+                                  : "Parado")
+                          << std::endl;
                 break;
             }
             case 18:
@@ -302,6 +282,7 @@ void Engine::run()
                     std::cout << "[OK] Android Runtime iniciado.\n";
                 else
                     std::cout << "[ERRO] Android Runtime.\n";
+
                 break;
             }
 
@@ -311,6 +292,7 @@ void Engine::run()
                     std::cout << "[OK] Android Bridge iniciado.\n";
                 else
                     std::cout << "[ERRO] Android Bridge.\n";
+
                 break;
             }
 
@@ -320,6 +302,7 @@ void Engine::run()
                     std::cout << "[OK] Vulkan Context iniciado.\n";
                 else
                     std::cout << "[ERRO] Vulkan Context.\n";
+
                 break;
             }
 
@@ -331,11 +314,11 @@ void Engine::run()
 
             case 23:
             {
-                std::cout << "\n==========================================\n";
+                std::cout << "\n=========================================\n";
                 std::cout << " Encerrando Pure3XEngenie v0.2.4 Alpha\n";
-                std::cout << "==========================================\n";
+                std::cout << "=========================================\n";
 
-                Engine::Shutdown();
+                Shutdown();
                 return;
             }
 
@@ -348,9 +331,9 @@ void Engine::run()
 
         if (option >= 2 && option <= 22)
         {
-            std::cout << "\n==========================================\n";
+            std::cout << "\n=========================================\n";
             std::cout << "Pressione ENTER para voltar ao menu...";
-            std::cout << "\n==========================================\n";
+            std::cout << "\n=========================================\n";
 
             std::cin.ignore(1000, '\n');
             std::cin.get();

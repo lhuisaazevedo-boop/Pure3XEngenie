@@ -14,12 +14,12 @@ std::string GetEngineName()
 
 std::string GetVersion()
 {
-    return "0.2.3 Alpha";
+    return "0.2.5 Alpha";
 }
 
 std::string GetBuild()
 {
-    return "Build 023";
+    return "Build 025";
 }
 
 std::string GetDeveloper()
@@ -38,7 +38,7 @@ std::string GetAndroidRuntimeName()
 
 std::string GetAndroidRuntimeVersion()
 {
-    return "0.2.3 Alpha";
+    return "0.2.5 Alpha";
 }
 
 std::string GetAndroidRuntimeStatus()
@@ -71,7 +71,7 @@ std::string GetLanguage()
 
 std::string GetGraphicsBackend()
 {
-    return "OpenGL ES";
+    return "Vulkan (Recommended) / OpenGL ES";
 }
 
 // ================================

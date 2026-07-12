@@ -12,7 +12,7 @@ using namespace Pure3X;
 int main()
 {
     std::cout << "=====================================\n";
-    std::cout << "       Pure3XEngenie v0.2.1 Alpha\n";
+    std::cout << "      Pure3XEngenie v0.2.4 Alpha\n";
     std::cout << "=====================================\n\n";
 
     if (!AndroidCore::Initialize())
@@ -24,7 +24,6 @@ int main()
     if (!AndroidRuntime::Initialize())
     {
         std::cerr << "[ERRO] AndroidRuntime falhou.\n";
-
         AndroidCore::Shutdown();
         return -1;
     }
@@ -32,14 +31,24 @@ int main()
     if (!CellSystem::Initialize())
     {
         std::cerr << "[ERRO] CellSystem falhou.\n";
-
         AndroidRuntime::Shutdown();
         AndroidCore::Shutdown();
         return -1;
     }
 
     Engine engine;
+
+    if (!engine.Initialize())
+    {
+        std::cerr << "[ERRO] Engine falhou.\n";
+        CellSystem::Shutdown();
+        AndroidRuntime::Shutdown();
+        AndroidCore::Shutdown();
+        return -1;
+    }
+
     engine.run();
+    engine.Shutdown();
 
     CellSystem::Shutdown();
     AndroidRuntime::Shutdown();

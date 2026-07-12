@@ -47,8 +47,61 @@ public class Pure3XRenderer implements GLSurfaceView.Renderer {
             "    FragColor = vec4(0.0, 1.0, 0.0, 1.0);\n" +
             "}";
 
-    private final float[] vertices = Pure3XCube.VERTICES;
+    private final float[] vertices = {
+        // Frente
+        -0.5f,  0.5f,  0.5f,
+         0.5f,  0.5f,  0.5f,
+         0.5f, -0.5f,  0.5f,
 
+        -0.5f,  0.5f,  0.5f,
+         0.5f, -0.5f,  0.5f,
+        -0.5f, -0.5f,  0.5f,
+
+        // Trás
+        -0.5f,  0.5f, -0.5f,
+         0.5f, -0.5f, -0.5f,
+         0.5f,  0.5f, -0.5f,
+
+        -0.5f,  0.5f, -0.5f,
+        -0.5f, -0.5f, -0.5f,
+         0.5f, -0.5f, -0.5f,
+
+        // Esquerda
+        -0.5f,  0.5f, -0.5f,
+        -0.5f,  0.5f,  0.5f,
+        -0.5f, -0.5f,  0.5f,
+
+        -0.5f,  0.5f, -0.5f,
+        -0.5f, -0.5f,  0.5f,
+        -0.5f, -0.5f, -0.5f,
+
+        // Direita
+         0.5f,  0.5f, -0.5f,
+         0.5f, -0.5f,  0.5f,
+         0.5f,  0.5f,  0.5f,
+
+         0.5f,  0.5f, -0.5f,
+         0.5f, -0.5f, -0.5f,
+         0.5f, -0.5f,  0.5f,
+
+        // Superior
+        -0.5f,  0.5f, -0.5f,
+         0.5f,  0.5f, -0.5f,
+         0.5f,  0.5f,  0.5f,
+
+        -0.5f,  0.5f, -0.5f,
+         0.5f,  0.5f,  0.5f,
+        -0.5f,  0.5f,  0.5f,
+
+        // Inferior
+        -0.5f, -0.5f, -0.5f,
+         0.5f, -0.5f,  0.5f,
+         0.5f, -0.5f, -0.5f,
+
+        -0.5f, -0.5f, -0.5f,
+        -0.5f, -0.5f,  0.5f,
+         0.5f, -0.5f,  0.5f
+    };
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
 
@@ -71,7 +124,10 @@ public class Pure3XRenderer implements GLSurfaceView.Renderer {
                 fragmentShader
         );
 
-        mvpLocation = GLES30.glGetUniformLocation(shaderProgram, "uMVP");
+        mvpLocation = GLES30.glGetUniformLocation(
+                shaderProgram,
+                "uMVP"
+        );
 
         GLES30.glGenVertexArrays(1, vao, 0);
         GLES30.glGenBuffers(1, vbo, 0);
@@ -81,7 +137,7 @@ public class Pure3XRenderer implements GLSurfaceView.Renderer {
         GLES30.glBindBuffer(GLES30.GL_ARRAY_BUFFER, vbo[0]);
         GLES30.glBufferData(
                 GLES30.GL_ARRAY_BUFFER,
-                vertices.length * 4,
+                vertices.length * Float.BYTES,
                 vertexBuffer,
                 GLES30.GL_STATIC_DRAW
         );
@@ -91,7 +147,7 @@ public class Pure3XRenderer implements GLSurfaceView.Renderer {
                 3,
                 GLES30.GL_FLOAT,
                 false,
-                3 * 4,
+                3 * Float.BYTES,
                 0
         );
 
@@ -100,10 +156,11 @@ public class Pure3XRenderer implements GLSurfaceView.Renderer {
         GLES30.glBindBuffer(GLES30.GL_ARRAY_BUFFER, 0);
         GLES30.glBindVertexArray(0);
     }
-
     @Override
     public void onSurfaceChanged(GL10 gl, int width, int height) {
+
         GLES30.glViewport(0, 0, width, height);
+
         camera.setProjection(width, height);
     }
 
@@ -152,10 +209,30 @@ public class Pure3XRenderer implements GLSurfaceView.Renderer {
         );
 
         GLES30.glBindVertexArray(0);
-    }
 
+        GLES30.glUseProgram(0);
+    }
     public float getFPS() {
         return runtime.getFPS();
     }
-}
 
+    public Pure3XCamera getCamera() {
+        return camera;
+    }
+
+    public Pure3XRuntime getRuntime() {
+        return runtime;
+    }
+
+    public float getAngle() {
+        return angle;
+    }
+
+    public void setAngle(float angle) {
+        this.angle = angle;
+    }
+
+    public void resetRotation() {
+        angle = 0.0f;
+    }
+}

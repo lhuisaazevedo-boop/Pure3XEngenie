@@ -1,8 +1,12 @@
 #include "JNIBridge.h"
+#include "../surface/AndroidSurface.h"
+
 #include <iostream>
 
 namespace Pure3X
 {
+
+ANativeWindow* JNIBridge::s_window = nullptr;
 
 void JNIBridge::ShowInfo()
 {
@@ -13,6 +17,17 @@ void JNIBridge::ShowInfo()
     std::cout << "Status   : Ready\n";
     std::cout << "Target   : APK Android\n";
     std::cout << "======================\n";
+}
+
+void JNIBridge::SetNativeWindow(ANativeWindow* window)
+{
+    s_window = window;
+    AndroidSurface::SetSurface(window);
+}
+
+ANativeWindow* JNIBridge::GetNativeWindow()
+{
+    return AndroidSurface::GetSurface();
 }
 
 }
