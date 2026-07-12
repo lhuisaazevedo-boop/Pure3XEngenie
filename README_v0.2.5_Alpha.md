@@ -82,6 +82,23 @@ O **Pure3XEngenie v0.2.5 Alpha** marca um importante avanço na infraestrutura d
 - Informações de GPU, CPU, RAM em tempo real.
 - Suporte Vulkan.
 
+#### ❄️ Pure3X Time Freezer
+
+Novo sistema exclusivo do Pure3XEngenie.
+
+##### Recursos planejados
+
+- ⏸️ Pausar a emulação em tempo real.
+- ▶️ Continuar a execução do jogo.
+- ⏩ Fast Forward (2x, 4x e 8x) para acelerar cenas e carregamentos quando suportado.
+- 📊 Exibir FPS, CPU, GPU/RSX e uso de RAM durante a emulação.
+- 📝 Registrar eventos no sistema de logs.
+- ⚙️ Integração com a futura interface XMB do Pure3XEngenie.
+
+##### Objetivo
+
+Criar uma ferramenta de controle da emulação para oferecer mais flexibilidade durante os testes e melhorar a experiência do usuário.
+
 ### v0.3.1 Beta 🎉
 - **Primeira distribuição pública do APK Beta**.
 - Expansão dos testes em diversos dispositivos Android.
