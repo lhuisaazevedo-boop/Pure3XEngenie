@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/images/alpha/Pure3XEngenie-0.2.4-Alpha.png" width="100%" alt="Pure3XEngenie v0.2.4 Alpha">
+  <img src="assets/images/alpha/Pure3XEngenie-0.2.5.png" width="100%">
 </p>
 
 <h1 align="center">Pure3XEngenie</h1>
@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-v0.2.4_Alpha-blue">
+  <img src="https://img.shields.io/badge/Version-v0.2.5_Alpha-blue">
   <img src="https://img.shields.io/badge/C++-20-blue">
   <img src="https://img.shields.io/badge/OpenGL_ES-3.0-orange">
   <img src="https://img.shields.io/badge/Android-NDK_r29-green">
@@ -27,173 +27,122 @@
 
 <p align="center">
   <a href="https://x.com/Pure3X_PS3">
-    <img src="https://img.shields.io/badge/X-@Pure3X__PS3-000000?logo=x&logoColor=white">
+    <img src="https://img.shields.io/badge/X-@Pure3X__PS3-000000?logo=x">
   </a>
+
   <a href="https://github.com/lhuisaazevedo-boop/Pure3XEngenie">
-    <img src="https://img.shields.io/badge/GitHub-Pure3XEngenie-181717?logo=github&logoColor=white">
+    <img src="https://img.shields.io/badge/GitHub-Pure3XEngenie-181717?logo=github">
   </a>
+
   <img src="https://img.shields.io/badge/Website-Coming_Soon-0A84FF">
-  <img src="https://img.shields.io/badge/Discord-Coming_Soon-5865F2?logo=discord&logoColor=white">
+  <img src="https://img.shields.io/badge/Discord-Coming_Soon-5865F2">
 </p>
 
 ---
 
 # 🚀 Sobre o Projeto
 
-O **Pure3XEngenie** é uma engine experimental de emulação de PlayStation 3 para Android desenvolvida do zero em **C++20**. O projeto busca oferecer uma base moderna, modular e otimizada para dispositivos ARM64, utilizando recursos nativos do Android através do **Android NDK** e renderização com **OpenGL ES 3.0**.
+O **Pure3XEngenie** é um projeto experimental de emulação de PlayStation 3 desenvolvido para Android.
 
-A versão **v0.2.4 Alpha** consolida a infraestrutura do projeto e prepara o caminho para a futura interface Android nativa (Android UI), mantendo foco em desempenho e organização do código.
+O objetivo é construir uma engine moderna utilizando **C++20**, **Android NDK r29**, **OpenGL ES 3.0** e arquitetura modular, preparada para evoluir até uma emulação nativa de alto desempenho em dispositivos ARM64.
 
-## 🔹 v0.2.4 Alpha
-
-### 🎯 Objetivos Concluídos
-
-- ✅ Renderização nativa utilizando OpenGL ES 3.0.
-- ✅ Contexto gráfico Android (EGL + ANativeWindow) totalmente funcional.
-- ✅ Cubo 3D renderizado diretamente pela Engine.
-- ✅ Estrutura inicial da Android Runtime consolidada.
-- ✅ Expansão da arquitetura Java para suporte à futura Android UI.
-- ✅ Integração aprimorada entre C++20, Android NDK r29 e Java.
-- ✅ Organização modular da Engine para futuras funcionalidades.
-- ✅ Estrutura preparada para AndroidBridge e sistema de logs nativos.
-- ✅ Preparação da base para Menu Principal, Configurações e Informações do Sistema.
-- ✅ Base pronta para implementação da Android UI na próxima versão.
-- ✅ Documentação atualizada.
-- ✅ Imagens oficiais da versão adicionadas ao projeto.
-- ✅ Backup oficial da versão v0.2.4 Alpha gerado.
-
-### 🚀 Próximos Passos (v0.2.5 Alpha)
-
-- 🎨 Desenvolvimento da Android UI nativa.
-- 📂 Gerenciador de jogos (Game Loader).
-- ⚙️ Menu de Configurações.
-- 📊 Painel de Informações do Sistema.
-- 📈 Contador de FPS na interface.
-- 🎮 Estrutura inicial da interface inspirada na XMB.
-
-# 🗺️ Roadmap de Desenvolvimento
-
-O Pure3XEngenie continuará evoluindo em etapas, priorizando estabilidade, desempenho e recursos nativos para Android.
+A versão **v0.2.5 Alpha** marca um importante avanço na infraestrutura do aplicativo Android, adicionando gerenciamento inicial de firmware PS3, melhorias na interface e uma base mais sólida para as próximas versões.
 
 ---
 
-## 🔹 v0.2.5 Alpha — Android UI
+# 🔹 v0.2.5 Alpha
 
-### Objetivos
-- 🎨 Interface Android nativa.
-- 🏠 Menu principal da Engine.
-- ⚙️ Tela de Configurações.
-- 📊 Informações do Sistema.
-- 📈 Contador de FPS.
-- 📂 Estrutura inicial do Game Loader.
-- 📝 Sistema de logs aprimorado.
+## 🎯 Principais novidades
 
----
-
-## 🔹 v0.2.6 Alpha — Game Manager
-
-### Objetivos
-- 🎮 Gerenciador de jogos.
-- 📂 Navegação por pastas.
-- 💿 Detecção automática de jogos.
-- 🖼️ Capas dos jogos.
-- ⭐ Lista de jogos recentes.
-- 🔍 Melhor organização da biblioteca.
+- ✅ APK Android atualizado.
+- ✅ Dashboard reformulado.
+- ✅ Biblioteca de Jogos aprimorada.
+- ✅ FirmwareManager utilizando DocumentFile.
+- ✅ Seleção de firmware através do Storage Access Framework.
+- ✅ Detecção inicial do arquivo PS3UPDAT.PUP.
+- ✅ Correções no MainActivity.
+- ✅ Melhor organização do código Java.
+- ✅ Melhorias de estabilidade.
+- ✅ Build Android otimizada.
+- ✅ Base preparada para futuras melhorias da XMB.
 
 ---
 
-## 🔹 v0.2.7 Alpha — Core Evolution
+# 🛣️ Roadmap de Desenvolvimento
 
-### Objetivos
-- ⚡ Melhorias no Core da Engine.
-- 🧠 Evolução do sistema PPU.
-- 🎨 Melhorias no Renderizador RSX.
-- 🔊 Base do sistema de áudio.
-- 🎮 Base do sistema de entrada (Input).
+## 🔹 v0.2.6 Alpha
 
----
+- Separação completa entre Firmware PS3 e Biblioteca de Jogos.
+- Reconhecimento permanente do firmware.
+- Primeira versão da XMB.
+- Melhorias no Dashboard.
+- Correções gerais do APK.
 
-## 🔹 v0.2.8 Alpha — Android Experience
+## 🔹 v0.2.7 Alpha
 
-### Objetivos
-- 📱 Melhor integração com Android.
-- 📂 Gerenciamento de armazenamento.
-- ⚙️ Novas opções gráficas.
-- 📈 Monitor de desempenho.
-- 🔧 Otimizações gerais.
+- Scanner automático de jogos.
+- Organização da biblioteca.
+- Leitura inicial dos metadados dos jogos.
+- Melhor gerenciamento de armazenamento.
 
----
+## 🔹 v0.2.8 Alpha
 
-## 🔹 v0.2.9 Alpha — Performance Update
+- Interface inspirada na XMB.
+- Configurações gráficas.
+- Informações reais de CPU, RAM, GPU e Vulkan.
+- Melhorias de desempenho.
 
-### Objetivos
-- 🚀 Grande otimização da Engine.
-- 🧹 Limpeza e organização do código.
-- 🛠️ Correções de bugs.
-- 📚 Atualização completa da documentação.
-- ✅ Preparação para a fase Beta.
+## 🔹 v0.2.9 Alpha
 
----
+- Preparação do núcleo de emulação.
+- Integração Java + C++.
+- Melhorias na arquitetura da Engine.
+- Base final antes da Beta.
 
-# 🚀 Série Beta
+## 🔹 v0.3.0 Beta
 
-## 🔷 v0.3.0 Beta
+- Site oficial do Pure3XEngenie.
+- Documentação completa.
+- Wiki oficial.
+- Changelog online.
+- Identidade visual definitiva.
 
-### Objetivos
-- 🎉 Primeira versão Beta oficial.
-- 🎮 Android UI completa.
-- 📂 Game Manager funcional.
-- ⚙️ Sistema de Configurações completo.
-- 📊 Monitor de desempenho.
-- 🚀 Melhor estabilidade.
-- 📦 Primeiro APK público para testes.
+## 🔹 v0.3.1 Beta
 
----
+- Primeira distribuição pública do APK Beta.
+- Expansão dos testes em dispositivos Android.
+- Coleta de feedback da comunidade.
 
-## 🔷 v0.3.1 Beta
+## 🔹 v0.3.2 Beta
 
-### Objetivos
-- ⚡ Melhorias de desempenho.
-- 🛠️ Correções de bugs reportados.
-- 🎨 Refinamento da interface.
-- 🎮 Compatibilidade com mais jogos.
-- 📚 Documentação expandida.
-- 🌐 Preparação para comunidade.
+- Lançamento do servidor oficial no Discord.
+- Organização da comunidade.
+- Canal de suporte.
+- Divulgação das próximas versões.
 
 ---
 
-# 🌐 Em breve
-
-O ecossistema do Pure3XEngenie continuará crescendo.
-
-### Em desenvolvimento
-
-- 🌍 Site Oficial do Pure3XEngenie.
-- 💬 Servidor Oficial no Discord.
-- 📖 Documentação online.
-- 📦 Releases oficiais.
-- 📰 Notícias e Devlogs.
-- 🤝 Área para contribuidores.
-- 🎮 Futuras versões Beta e Stable.
-
-> O projeto continua em desenvolvimento ativo. Novidades serão adicionadas conforme a evolução da Engine.
+> **Pure3XEngenie é um projeto independente em desenvolvimento contínuo. Cada versão Alpha aproxima o projeto de uma futura Beta pública e de uma engine de emulação PS3 totalmente desenvolvida para Android.**
 
 # 🔗 Links do Projeto
 
-- 🌐 Site Oficial: **Em breve**
-- 💬 Discord Oficial: **Em breve**
-- 🐦 X (Twitter): https://x.com/Pure3X_PS3
-- 💻 GitHub: https://github.com/lhuisaazevedo-boop/Pure3XEngenie
+🌐 **Site Oficial:** Em breve
+
+💬 **Discord Oficial:** Em breve
+
+🐦 **X (Twitter):** https://x.com/Pure3X_PS3
+
+💻 **GitHub:** https://github.com/lhuisaazevedo-boop/Pure3XEngenie
 
 ---
 
 # 📢 Aviso
 
-O **Pure3XEngenie** é um projeto experimental de pesquisa e desenvolvimento.
+O **Pure3XEngenie** é um projeto experimental de pesquisa e desenvolvimento voltado para a emulação de PlayStation 3 no Android.
 
-Atualmente encontra-se em fase **Alpha**, portanto diversas funcionalidades ainda estão em desenvolvimento e podem sofrer alterações sem aviso prévio.
+Atualmente o projeto encontra-se em fase **Alpha**. Diversas funcionalidades ainda estão em desenvolvimento e podem sofrer alterações conforme a evolução da Engine.
 
-O projeto evolui gradualmente a cada versão, priorizando desempenho, estabilidade e uma arquitetura moderna para Android utilizando **C++20**, **Android NDK r29** e **OpenGL ES 3.0**.
+O desenvolvimento prioriza desempenho, estabilidade, arquitetura modular e compatibilidade com dispositivos Android modernos, utilizando **C++20**, **Android NDK r29** e **OpenGL ES 3.0**.
 
 ---
 
@@ -203,18 +152,22 @@ Sugestões, correções e melhorias são sempre bem-vindas.
 
 Caso encontre algum problema, abra uma **Issue** no GitHub ou acompanhe as novidades pelos canais oficiais do projeto.
 
+Toda contribuição ajuda na evolução do **Pure3XEngenie**.
+
 ---
 
 # 📄 Licença
 
-Este projeto está licenciado sob a **GNU General Public License v3.0 (GPL-3.0)**.
+Este projeto está licenciado sob a **MIT License**.
 
 Consulte o arquivo **LICENSE** para mais informações.
 
----
+# ⚠️ Aviso Legal
 
-<p align="center">
-Desenvolvido com ❤️ por <b>Pure3XDev</b>
+O **Pure3XEngenie** é um projeto independente, experimental e de código aberto voltado para pesquisa e desenvolvimento na área de emulação.
 
-© 2026 Pure3XEngenie Project. Todos os direitos reservados.
-</p>
+Este projeto **não possui qualquer vínculo, afiliação, autorização ou parceria com a Sony Interactive Entertainment, PlayStation® ou qualquer empresa do grupo Sony**.
+
+"PlayStation" e "PS3" são marcas registradas de seus respectivos proprietários e são mencionadas apenas para fins de compatibilidade e identificação da plataforma alvo.
+
+Os usuários são responsáveis por utilizar apenas firmware, jogos e demais conteúdos obtidos de forma legal e em conformidade com a legislação aplicável.
