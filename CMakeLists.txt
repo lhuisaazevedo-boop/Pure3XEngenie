@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.22)
 
 project(
     Pure3XEngenie
-    VERSION 0.2.4
+    VERSION 0.2.5
     DESCRIPTION "PlayStation 3 Engine for Android"
     LANGUAGES CXX
 )
@@ -29,8 +29,8 @@ add_library(
 # Build Options
 # ==========================================================
 
-option(PURE3X_BUILD_ANDROID "Build Android Library" OFF)
-option(PURE3X_BUILD_VIEWER "Build Termux X11 Viewer" ON)
+set(PURE3X_BUILD_ANDROID OFF)
+option(PURE3X_BUILD_VIEWER "Build Termux X11 Viewer" OFF)
 
 # ==========================================================
 # Include Directories
@@ -76,6 +76,17 @@ target_sources(
     CoreEmulation/android/surface/AndroidSurface.cpp
     CoreEmulation/android/jni/JNIBridge.cpp
     CoreEmulation/android/jni/NativeBridge.cpp
+
+    # Android Managers
+    CoreEmulation/android/config/AndroidConfig.cpp
+    CoreEmulation/android/system/SystemManager.cpp
+    CoreEmulation/android/device/DeviceManager.cpp
+    CoreEmulation/android/graphics/GraphicsManager.cpp
+    CoreEmulation/android/shaders/ShaderManager.cpp
+    CoreEmulation/android/thread/ThreadManager.cpp
+    CoreEmulation/android/network/NetworkManager.cpp
+    CoreEmulation/android/services/ServiceManager.cpp
+    CoreEmulation/android/debug/DebugManager.cpp
 
     # Boot
     CoreEmulation/boot/Boot.cpp
@@ -200,7 +211,7 @@ set_target_properties(
 
 message(STATUS "")
 message(STATUS "==========================================")
-message(STATUS "      Pure3XEngenie v0.2.4 Alpha")
+message(STATUS "      Pure3XEngenie v0.2.5 Alpha")
 message(STATUS "==========================================")
 message(STATUS "Engine      : Pure3XEngenie")
 message(STATUS "Library     : lhuis.pure3x")
