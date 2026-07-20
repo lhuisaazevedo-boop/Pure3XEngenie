@@ -88,11 +88,20 @@ target_sources(
     CoreEmulation/android/services/ServiceManager.cpp
     CoreEmulation/android/debug/DebugManager.cpp
 
+    # APK
+    CoreEmulation/android/apk/APKLoader.cpp
+
     # Boot
     CoreEmulation/boot/Boot.cpp
 
     # System
     CoreEmulation/system/System.cpp
+
+    # Firmware
+    CoreEmulation/firmware/FirmwareManager.cpp
+
+    # Menu
+    CoreEmulation/menu/InputMenu.cpp
 
     # Graphics
     CoreEmulation/rsx/Renderer.cpp

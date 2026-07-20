@@ -1,46 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.pure3x.engine">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
+        android:label="Cubo3D"
         android:allowBackup="true"
-        android:icon="@drawable/pure3xengenie_launcher"
-        android:label="Pure3XEngenie"
-        android:supportsRtl="true"
-        android:theme="@android:style/Theme.DeviceDefault.Light.NoActionBar">
+        android:supportsRtl="true">
 
-        <!-- Splash -->
         <activity
-            android:name=".SplashActivity"
+            android:name=".MainActivity"
             android:exported="true">
 
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category
+                    android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
 
         </activity>
-
-        <!-- Main -->
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-
-        <!-- Home -->
-        <activity
-            android:name=".HomeActivity"
-            android:exported="false" />
-
-        <!-- Engine -->
-        <activity
-            android:name=".EngineActivity"
-            android:exported="false" />
-
-        <!-- Render -->
-        <activity
-            android:name=".RenderActivity"
-            android:exported="false" />
 
     </application>
 
