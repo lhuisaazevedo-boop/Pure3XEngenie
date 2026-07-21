@@ -11,12 +11,20 @@ project(
 # C++ Configuration
 # ==========================================================
 
+# Utilizar o padrão ISO C++20
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+# Gerar código independente de posição (necessário para .so no Android)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
+# ==========================================================
+# Build Options
+# ==========================================================
+
+option(PURE3X_BUILD_ANDROID "Build Android backend" ON)
+option(PURE3X_BUILD_VIEWER "Build Termux X11 Viewer" OFF)
 # ==========================================================
 # Android Library
 # ==========================================================
@@ -25,12 +33,6 @@ add_library(
     lhuis.pure3x
     SHARED
 )
-# ==========================================================
-# Build Options
-# ==========================================================
-
-set(PURE3X_BUILD_ANDROID OFF)
-option(PURE3X_BUILD_VIEWER "Build Termux X11 Viewer" OFF)
 
 # ==========================================================
 # Include Directories
@@ -42,6 +44,7 @@ target_include_directories(
 
     include
     src
+
     CoreEmulation/android/window
     CoreEmulation/android/surface
     CoreEmulation/android
@@ -76,6 +79,14 @@ target_sources(
     CoreEmulation/android/surface/AndroidSurface.cpp
     CoreEmulation/android/jni/JNIBridge.cpp
     CoreEmulation/android/jni/NativeBridge.cpp
+    CoreEmulation/android/filesystem/FileSystem.cpp
+    CoreEmulation/android/logs/LogManager.cpp
+    CoreEmulation/android/renderer/Renderer.cpp
+    CoreEmulation/boot/BootPanel.cpp
+    CoreEmulation/version/version.cpp
+    CoreEmulation/android/input/InputManager.cpp
+    CoreEmulation/android/display/DisplayManager.cpp
+    CoreEmulation/menu/InputMenu.cpp
 
     # Android Managers
     CoreEmulation/android/config/AndroidConfig.cpp
@@ -93,21 +104,29 @@ target_sources(
 
     # Boot
     CoreEmulation/boot/Boot.cpp
+    CoreEmulation/boot/BootMemory.cpp
+    CoreEmulation/boot/BootSystem.cpp
+
+    # Scheduler
+    CoreEmulation/cell/Scheduler/CellScheduler.cpp
 
     # System
     CoreEmulation/system/System.cpp
 
+    # Audio
+    CoreEmulation/audio/AudioManager.cpp
+
     # Firmware
     CoreEmulation/firmware/FirmwareManager.cpp
 
-    # Menu
-    CoreEmulation/menu/InputMenu.cpp
-
     # Graphics
     CoreEmulation/rsx/Renderer.cpp
+    CoreEmulation/graphics/CubeRenderer.cpp
 
     # Cell
     CoreEmulation/cell/CellSystem.cpp
+    CoreEmulation/cell/DMA/DMAManager.cpp
+    CoreEmulation/cell/Memory/CellMemory.cpp
 
     # Memory
     CoreEmulation/cell/Memory/MemoryManager.cpp
@@ -122,40 +141,60 @@ target_sources(
     # SPU
     CoreEmulation/cell/SPU/SPUState.cpp
     CoreEmulation/cell/SPU/SPUInterpreter.cpp
+
+    # Vulkan
+    CoreEmulation/Graphics/Vulkan/VulkanContext.cpp
 )
 
 # ==========================================================
 # Link Libraries
-#==========================================================
-if(PURE3X_BUILD_ANDROID)
-    find_library(log-lib log)
-    find_library(android-lib android)
-    find_library(jnigraphics-lib jnigraphics)
-endif()
-
+# ==========================================================
 find_package(Threads REQUIRED)
 find_package(Vulkan QUIET)
 
+if(PURE3X_BUILD_ANDROID)
+    # Tenta encontrar as libs nativas. Se falhar (Termux), usa o nome direto como fallback
+    find_library(LOG_LIB log)
+    if(NOT LOG_LIB)
+        set(LOG_LIB log)
+    endif()
+
+    find_library(ANDROID_LIB android)
+    if(NOT ANDROID_LIB)
+        set(ANDROID_LIB android)
+    endif()
+
+    find_library(JNIGRAPHICS_LIB jnigraphics)
+    if(NOT JNIGRAPHICS_LIB)
+        set(JNIGRAPHICS_LIB jnigraphics)
+    endif()
+endif()
+
 target_link_libraries(
     lhuis.pure3x
+    PRIVATE
     Threads::Threads
 )
 
 if(PURE3X_BUILD_ANDROID)
     target_link_libraries(
         lhuis.pure3x
-        ${log-lib}
-        ${android-lib}
-        ${jnigraphics-lib}
+        PRIVATE
+        ${LOG_LIB}
+        ${ANDROID_LIB}
+        ${JNIGRAPHICS_LIB}
     )
 endif()
 
 if(Vulkan_FOUND)
     target_link_libraries(
         lhuis.pure3x
+        PRIVATE
         Vulkan::Vulkan
     )
 endif()
+
+
 # ==========================================================
 # Compiler Options
 # ==========================================================
@@ -163,13 +202,11 @@ endif()
 target_compile_options(
     lhuis.pure3x
     PRIVATE
-
-    -std=c++20
-    -Wall
-    -Wextra
-    -Wno-unused-parameter
-    -fexceptions
-    -frtti
+        -Wall
+        -Wextra
+        -Wno-unused-parameter
+        -fexceptions
+        -frtti
 )
 
 # ==========================================================
@@ -179,39 +216,33 @@ target_compile_options(
 target_compile_definitions(
     lhuis.pure3x
     PRIVATE
-
-    PURE3X_ENGINE
-    PURE3X_ANDROID
+        PURE3X_ENGINE
+        PURE3X_ANDROID
 )
 
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
-
     target_compile_definitions(
         lhuis.pure3x
         PRIVATE
-        DEBUG_BUILD=1
+            DEBUG_BUILD=1
     )
-
 else()
-
     target_compile_definitions(
         lhuis.pure3x
         PRIVATE
-        RELEASE_BUILD=1
-        NDEBUG
+            RELEASE_BUILD=1
+            NDEBUG
     )
-
 endif()
 
 # ==========================================================
-# Output
+# Output Properties
 # ==========================================================
 
 set_target_properties(
     lhuis.pure3x
     PROPERTIES
-
-    OUTPUT_NAME "lhuis.pure3x"
+        OUTPUT_NAME "lhuis.pure3x"
 )
 
 # ==========================================================
@@ -244,72 +275,75 @@ message(STATUS "==========================================")
 
 if(PURE3X_BUILD_VIEWER)
 
-add_executable(Pure3XViewer
+    add_executable(Pure3XViewer
+        viewer/main.cpp
 
-    viewer/main.cpp
+        # Núcleo
+        viewer/Application.cpp
+        viewer/RenderLoop.cpp
+        viewer/Scene.cpp
+        viewer/Window.cpp
 
-    # Núcleo
-    viewer/Application.cpp
-    viewer/RenderLoop.cpp
-    viewer/Scene.cpp
-    viewer/Window.cpp
+        # Renderização
+        viewer/Renderer.cpp
+        viewer/RendererGL.cpp
+        viewer/EGLContext.cpp
+        viewer/Pure3XEGLContext.cpp
 
-    # Renderização
-    viewer/Renderer.cpp
-    viewer/RendererGL.cpp
-    viewer/EGLContext.cpp
-    viewer/Pure3XEGLContext.cpp
+        # Android
+        CoreEmulation/android/window/AndroidNativeWindow.cpp
+        CoreEmulation/android/surface/AndroidSurface.cpp
 
-    # Android
-    CoreEmulation/android/window/AndroidNativeWindow.cpp
-    CoreEmulation/android/surface/AndroidSurface.cpp
+        # Câmera e Objetos
+        viewer/Camera.cpp
+        viewer/Cube.cpp
+        viewer/Model.cpp
+        viewer/Mesh.cpp
+        viewer/Transform.cpp
 
-    # Câmera e Objetos
-    viewer/Camera.cpp
-    viewer/Cube.cpp
-    viewer/Model.cpp
-    viewer/Mesh.cpp
-    viewer/Transform.cpp
+        # Buffers
+        viewer/VertexBuffer.cpp
+        viewer/IndexBuffer.cpp
+        viewer/VertexArray.cpp
 
-    # Buffers
-    viewer/VertexBuffer.cpp
-    viewer/IndexBuffer.cpp
-    viewer/VertexArray.cpp
+        # Shaders
+        viewer/Shader.cpp
+        viewer/Texture.cpp
+        viewer/Material.cpp
 
-    # Shaders
-    viewer/Shader.cpp
-    viewer/Texture.cpp
-    viewer/Material.cpp
+        # Matemática
+        viewer/Vector3.cpp
+        viewer/Matrix4.cpp
 
-    # Matemática
-    viewer/Vector3.cpp
-    viewer/Matrix4.cpp
+        # Sistema
+        viewer/Engine.cpp
+        viewer/Logger.cpp
+        viewer/Input.cpp
+        viewer/FPSCounter.cpp
+        viewer/ResourceManager.cpp
+    )
 
-    # Sistema
-    viewer/Engine.cpp
-    viewer/Logger.cpp
-    viewer/Input.cpp
-    viewer/FPSCounter.cpp
-    viewer/ResourceManager.cpp
-)
+    target_compile_features(Pure3XViewer PRIVATE cxx_std_20)
 
-target_compile_features(Pure3XViewer PRIVATE cxx_std_20)
+    target_include_directories(
+        Pure3XViewer
+        PRIVATE
+            ${CMAKE_SOURCE_DIR}/viewer
+            ${CMAKE_SOURCE_DIR}
+            ${CMAKE_SOURCE_DIR}/CoreEmulation
+            ${CMAKE_SOURCE_DIR}/CoreEmulation/android
+            /data/data/com.termux/files/usr/include
+    )
 
-target_include_directories(Pure3XViewer PRIVATE
-    ${CMAKE_SOURCE_DIR}/viewer
-    ${CMAKE_SOURCE_DIR}
-    ${CMAKE_SOURCE_DIR}/CoreEmulation
-    ${CMAKE_SOURCE_DIR}/CoreEmulation/android
-    /data/data/com.termux/files/usr/include
-)
-
-target_link_libraries(Pure3XViewer
-    EGL
-    GLESv2
-    X11
-    pthread
-    dl
-    m
-)
+    target_link_libraries(
+        Pure3XViewer
+        PRIVATE
+            EGL
+            GLESv2
+            X11
+            pthread
+            dl
+            m
+    )
 
 endif()
