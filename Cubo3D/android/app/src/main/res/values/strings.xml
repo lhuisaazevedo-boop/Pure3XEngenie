@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Cubo3D Engine</string>
+    <string name="version">v0.2.5 Alpha</string>
+
+    <!-- Inicialização -->
+    <string name="start_engine">Iniciar Cubo3D</string>
+    <string name="engine_init">Inicializando motor gráfico...</string>
+    <string name="engine_ready">Motor gráfico pronto</string>
+
+    <!-- Drivers -->
+    <string name="driver_opengl">OpenGL ES 3.0</string>
+    <string name="driver_vulkan">Vulkan</string>
+    <string name="driver_settings">Configurações Gráficas</string>
+    <string name="driver_test">Teste de Desempenho</string>
+    <string name="driver_loading">Carregando driver gráfico...</string>
+
+    <!-- Renderização -->
+    <string name="renderer">Renderizador</string>
+    <string name="scene">Cena</string>
+    <string name="texture">Texturas</string>
+    <string name="shader">Shaders</string>
+    <string name="fps_counter">Contador de FPS</string>
+
+    <!-- Sistema -->
+    <string name="system_info">Informações do Sistema</string>
+
+    <!-- Sobre -->
+    <string name="about">Sobre</string>
+    <string name="about_text">
+        Cubo3D é um motor gráfico nativo desenvolvido para o projeto Pure3XEngenie.
+    </string>
+
+    <!-- Status -->
+    <string name="status_loading">Carregando recursos...</string>
+    <string name="status_ready">Sistema pronto</string>
+    <string name="status_wait">Aguardando inicialização...</string>
+
+</resources>

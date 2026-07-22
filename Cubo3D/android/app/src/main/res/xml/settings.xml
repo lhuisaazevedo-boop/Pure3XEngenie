@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Motor Gráfico Cubo3D">
+        <SwitchPreference
+            android:key="enable_cubo3d"
+            android:title="Iniciar Cubo3D"
+            android:summary="Ativa o motor gráfico personalizado"
+            android:defaultValue="true" />
+
+        <ListPreference
+            android:key="render_driver"
+            android:title="Driver de Renderização"
+            android:summary="Escolha a API gráfica"
+            android:entries="@array/driver_options"
+            android:entryValues="@array/driver_values"
+            android:defaultValue="opengl" />
+
+        <SwitchPreference
+            android:key="vsync"
+            android:title="Sincronização Vertical"
+            android:summary="Reduz rasgos na tela"
+            android:defaultValue="true" />
+
+        <SwitchPreference
+            android:key="fps_counter"
+            android:title="Mostrar Contador de FPS"
+            android:summary="Exibe taxa de quadros na tela"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Informações">
+        <Preference
+            android:key="version"
+            android:title="Versão"
+            android:summary="@string/version" />
+
+        <Preference
+            android:key="about"
+            android:title="Sobre o Pure3XEngenie"
+            android:summary="Motor gráfico e núcleo desenvolvidos do zero para Android" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
+
